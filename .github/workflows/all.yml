@@ -1,0 +1,15 @@
+name: Check all websites
+
+on:
+  schedule:
+    - cron:  '*/30 5-21 * * *' # every 30min
+  workflow_dispatch:
+
+jobs:
+  check_all_websites:
+    uses: metaodi/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    with:
+      csv-path: csv/all.csv
+    secrets:
+      MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
+
