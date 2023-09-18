@@ -14,7 +14,7 @@ DIR="$(cd "$(dirname "$0")" && pwd)"
 for artifact in $DIR/../hashes/text/*.txt
 do
     slug=$(basename $artifact .txt)
-    $DIR/update_count.py -d $DIR/website.db -o $slug
+    $DIR/update_count.py -d $DIR/website.db -s $slug
 done
 
 # update error_counts in db from artifacts
