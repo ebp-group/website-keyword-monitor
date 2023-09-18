@@ -143,22 +143,20 @@ if __name__ == "__main__":
     keywords = load_keywords()
     old_hashes = load_old_hashes(file_path)
 
+    log.info("Write new hash file...")
+    hashes = get_text_hashes(texts)
+    hashes_str = "\n".join(hashes)
+    with open(file_path, "w") as f:
+        f.write(hashes_str)
+    log.info(f"Hashes: {hashes_str}")
+
     # find matches, where a match is defined as:
     # - contains one or more of the defined keywords
     # - the hash of the text is not in the hash-file (i.e. it's something new)
     matches = match_texts(texts, keywords, old_hashes)
-
     if matches:
         match_str = "\n\n\n\n".join(matches)
         log.info(f"Matches: {match_str}")
         print(match_str)
-
-        log.info("Write new hash file...")
-        hashes = get_text_hashes(texts)
-        hashes_str = "\n".join(hashes)
-        with open(file_path, "w") as f:
-            f.write(hashes_str)
-
-        log.info(f"Hashes: {hashes_str}")
     else:
         log.info("No matches found.")
