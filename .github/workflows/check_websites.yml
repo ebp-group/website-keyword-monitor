@@ -67,6 +67,11 @@ jobs:
           mkdir text
           matches=$(./lib/website_hash.py -u "${{ matrix.url }}" -f "hashes/${{ matrix.slug }}.txt" -s "${{ matrix.selector }}" -t "${{ matrix.type }}" -o text/${{ matrix.slug }}.txt --verbose)
           echo $matches
+          {
+            echo 'matches<<EOF'
+            echo $matches
+            echo EOF
+          } >> " $GITHUB_OUTPUT"
           if [[ -n "$matches" ]] ; then
             echo "has_matches=1" >> $GITHUB_OUTPUT
           fi
