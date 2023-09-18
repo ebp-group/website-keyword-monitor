@@ -1,3 +1,5 @@
+[![Check all websites](https://github.com/metaodi/website-keyword-monitor/actions/workflows/all.yml/badge.svg)](https://github.com/metaodi/website-keyword-monitor/actions/workflows/all.yml)
+
 # website-keyword-monitor
 
 Website Monitoring mit Schlüsselwörtern, implementiert in Python und GitHub Actions.
