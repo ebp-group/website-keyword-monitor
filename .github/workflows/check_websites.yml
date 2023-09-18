@@ -85,7 +85,7 @@ jobs:
         uses: chrisdleech-pol/github-action-notify-teams@v1.0.0
         with: 
           TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
-          TEAMS_MSG_TITLE: "🟢 Website hat Änderungen"
+          TEAMS_MSG_TITLE: "🟢 Webseite «${{matrix.label }}» hat Änderungen"
           TEAMS_MSG_SUMMARY: "[${{matrix.label }}](${{ matrix.url }}): ${{ steps.website.outputs.matches }}"
           TEAMS_MSG_TYPE: "success"
             
