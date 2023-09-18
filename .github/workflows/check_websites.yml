@@ -102,7 +102,7 @@ jobs:
         uses: actions/upload-artifact@v3
         if: ${{ always() }}
         with:
-          name: hashes
+          name: output
           path: |
             text
             error_counts

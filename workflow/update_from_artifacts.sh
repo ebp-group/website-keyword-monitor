@@ -11,14 +11,14 @@ trap "cleanup" EXIT
 DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # update hashes in db from artifacts
-for artifact in $DIR/../hashes/text/*.txt
+for artifact in $DIR/../output/text/*.txt
 do
     slug=$(basename $artifact .txt)
     $DIR/update_count.py -d $DIR/website.db -s $slug
 done
 
 # update error_counts in db from artifacts
-for artifact in $DIR/../hashes/error_counts/*.txt
+for artifact in $DIR/../output/error_counts/*.txt
 do
     error_slug=$(basename $artifact .txt)
     $DIR/increase_error_count.py -d $DIR/website.db --slug="${error_slug}"
