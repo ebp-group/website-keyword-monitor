@@ -87,9 +87,15 @@ def match_texts(texts, keywords, old_hashes):
     matched = []
     for text in texts:
         if any([p.match(text) for p in keywords]):
+            log.debug(f"Found a match in the following text: \n {text}")
+           
             text_hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
+            log.debug(f"Check against hash list to see if it's new: {text_hash}")
             if text_hash not in old_hashes:
+                log.debug("New match found!")
                 matched.append(text)
+            else:
+                log.debug("Text already known, no new match.")
    
     return matched
 
