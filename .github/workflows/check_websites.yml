@@ -7,11 +7,7 @@ on:
         required: true
         type: string
     secrets:
-      TELEGRAM_CHAT_ID:
-        required: true
-      TELEGRAM_TOKEN:
-        required: true
-      TELEGRAM_ERROR_CHAT_ID:
+      MS_TEAMS_WEBHOOK_URL:
         required: true
 jobs:
   build-matrix:
@@ -79,15 +75,13 @@ jobs:
 
       - name: Notify telegram about website changes
         if: steps.website.outputs.matches != ''
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
-          message: |
-            🟢 Website hat Änderungen: [${{matrix.label }}](${{ matrix.url }})
-            ${{ steps.website.outputs.matches }}
-
+        uses: chrisdleech-pol/github-action-notify-teams@@v1.0.0
+        with: 
+          TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
+          TEAMS_MSG_TITLE: 🟢 Website hat Änderungen: [${{matrix.label }}](${{ matrix.url }})
+          TEAMS_MSG_SUMMARY: ${{ steps.website.outputs.matches }}
+          TEAMS_MSG_TYPE: "success"
+            
       - name: Note error for later
         if: ${{ failure() }}
         run: |
@@ -96,13 +90,13 @@ jobs:
       
       - name: Notify telegram failure
         if: ${{ failure()  && matrix.error_count > 3 }}
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_ERROR_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
-          message: |
-            🔴 [Website-Check für «${{ matrix.label }}» fehlgeschlagen](https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true)
+        uses: chrisdleech-pol/github-action-notify-teams@v1.0.0
+        with: 
+          TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
+          TEAMS_MSG_TITLE: 🔴 [Website-Check für «${{ matrix.label }}» fehlgeschlagen](https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true)
+          TEAMS_MSG_SUMMARY: 
+          TEAMS_MSG_TYPE: "failure"
+            
       
       - name: Upload hash as artifact
         uses: actions/upload-artifact@v3
@@ -176,10 +170,10 @@ jobs:
 
       - name: Notify telegram failure
         if: ${{ failure()  || cancelled() }}
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_ERROR_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          format: markdown
-          message: |
-            🔴 [Website Checker Job fehlgeschlagen](https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true)
+        uses: chrisdleech-pol/github-action-notify-teams@v1.0.0
+        with: 
+          TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
+          TEAMS_MSG_TITLE: 🔴 [Website Checker Job fehlgeschlagen](https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true)
+          TEAMS_MSG_SUMMARY: 
+          TEAMS_MSG_TYPE: "failure"
+            
