@@ -66,9 +66,9 @@ def get_texts_from_selector(url, selector, verify, dl_type='static'):
 def load_keywords():
     keywords = []
     with open(os.path.join(__location__, '..', 'keywords.txt')) as f:
-        keywords = [line.rstrip() for line in f]
+        keywords = [line.strip() for line in f]
     
-    regex_keywords = [re.compile(rf'.*{keyword}.*', re.IGNORECASE) for keyword in keywords]
+    regex_keywords = [re.compile(rf'.*{k}.*', re.IGNORECASE) for k in keywords]
     return regex_keywords
 
 
@@ -76,7 +76,7 @@ def load_old_hashes(path):
     old_hashes = []
     try:
         with open(path) as f:
-            old_hashes = [line.rstrip() for line in f]
+            old_hashes = [line.strip() for line in f]
     except IOError:
         log.info(f"Hash-File at {path} does not exist.")
     
