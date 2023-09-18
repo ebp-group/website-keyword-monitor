@@ -1,2 +1,3 @@
 label,active,slug,error_count,url,selector,type
 "Municipality of Aubonne, News",yes,aubonne_news,0,https://www.aubonne.ch/accueil,div.article,static
+"Municipality of Aubonne, Pilier public",yes,aubonne_pilier_public,0,https://www.aubonne.ch/administration/pilier-public,div.article,static
