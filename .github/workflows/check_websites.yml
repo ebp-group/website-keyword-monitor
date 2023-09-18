@@ -76,7 +76,7 @@ jobs:
           echo "Matches: ${{ steps.website.outputs.has_matches }}"
 
       - name: Notify about website changes
-        if: ${{ steps.website.outputs.matches }}
+        if: ${{ steps.website.outputs.has_matches }}
         uses: chrisdleech-pol/github-action-notify-teams@v1.0.0
         with: 
           TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
