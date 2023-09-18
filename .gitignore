@@ -3,4 +3,3 @@ env
 __pycache__
 website.db
 geckodriver.log
-hashes
