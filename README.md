@@ -54,3 +54,13 @@ In Teams kann in einem Kanal ein neuer Connector "Incoming Webhook" hinzugefügt
 
 
 Die generierte URL muss dann auf GitHub als [Secret](https://github.com/metaodi/website-keyword-monitor/settings/secrets/actions) mit dem Namen `MS_TEAMS_WEBHOOK_URL` gespeichert werden.
+
+
+## GitHub Actions
+
+GitHub Actions steuert die ganze Ausführung des Workflows.
+
+Die Actions brauchen **Schreibberechtigungen** um Commits erstellen zu können:
+
+![Schreibberechtigungen für Actions](https://github.com/metaodi/website-keyword-monitor/assets/538415/bc0ff7d4-d5b1-4bbd-a97b-ea3145216d9b)
+
