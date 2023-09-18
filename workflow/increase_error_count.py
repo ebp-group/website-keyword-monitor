@@ -3,7 +3,7 @@
 """Update website error count
 
 Usage:
-  increase_error_count.py --db <path-to-db-file> --hash <hash> [--verbose]
+  increase_error_count.py --db <path-to-db-file> --slug <slug> [--verbose]
   increase_error_count.py (-h | --help)
   increase_error_count.py --version
 
@@ -11,14 +11,12 @@ Options:
   -h, --help                  Show this screen.
   --version                   Show version.
   -d, --db <path-to-db-file>  Path to the SQLite DB.
-  -e, --hash <hash>           Hash of the watched selector.
+  -s, --slug <slug>           Slug of website.
   --verbose                   Option to enable more verbose output.
 """
 
 
-import os
 import sys
-import time
 import logging
 import sqlite3
 import traceback
@@ -27,7 +25,7 @@ from dotenv import load_dotenv, find_dotenv
 
 
 load_dotenv(find_dotenv())
-arguments = docopt(__doc__, version='Update website hashes 1.0')
+arguments = docopt(__doc__, version='Increase website error count 1.0')
 
 loglevel = logging.INFO
 if arguments['--verbose']:
@@ -46,13 +44,13 @@ try:
     conn = sqlite3.connect(arguments['--db'])
     conn.row_factory = sqlite3.Row
     
-    html_hash = arguments['--hash']
-    log.debug(f"Increase error_count for hash '{{html_hash}}'")
+    slug = arguments['--slug']
+    log.debug(f"Increase error_count for slug '{{slug}}'")
     cur = conn.cursor()
     try:
-        update_sql = ('UPDATE website set error_count = error_count + 1 WHERE hash = ?')
-        cur.execute(update_sql, [html_hash])
-    except Exception as e:
+        update_sql = ('UPDATE website set error_count = error_count + 1 WHERE slug = ?')
+        cur.execute(update_sql, [slug])
+    except Exception:
         conn.rollback()
         raise
     finally:

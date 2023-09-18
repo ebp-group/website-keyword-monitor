@@ -1,2 +1,2 @@
-label,active,error_count,url,selector,type,hash
-"Municipality of Aubonne, News",yes,0,https://www.aubonne.ch/accueil,div.article,static,aaabbbccc123
+label,active,slug,error_count,url,selector,type
+"Municipality of Aubonne, News",yes,aubonne_news,0,https://www.aubonne.ch/accueil,div.article,static

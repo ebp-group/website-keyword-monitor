@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Update website hash
+"""Update website count
 
 Usage:
-  update_hash.py --db <path-to-db-file> --old <old-hash> --new <new-hash> [--verbose]
+  update_hash.py --db <path-to-db-file> --slug <slug> [--verbose]
   update_hash.py (-h | --help)
   update_hash.py --version
 
@@ -11,15 +11,12 @@ Options:
   -h, --help                    Show this screen.
   --version                     Show version.
   -d, --db <path-to-db-file>    Path to the SQLite DB.
-  -n, --new <new-hash>          New hash of the watched selector.
-  -o, --old <old-hash>          Old hash of the watched selector.
+  -s, --slug <slug>             aWebsite slug
   --verbose                     Option to enable more verbose output.
 """
 
 
-import os
 import sys
-import time
 import logging
 import sqlite3
 import traceback
@@ -28,7 +25,7 @@ from dotenv import load_dotenv, find_dotenv
 
 
 load_dotenv(find_dotenv())
-arguments = docopt(__doc__, version='Update website hashes 1.0')
+arguments = docopt(__doc__, version='Update website count 1.0')
 
 loglevel = logging.INFO
 if arguments['--verbose']:
@@ -47,13 +44,12 @@ try:
     conn = sqlite3.connect(arguments['--db'])
     conn.row_factory = sqlite3.Row
     
-    new_hash = arguments['--new']
-    old_hash = arguments['--old']
+    slug = arguments['--slug']
 
     cur = conn.cursor()
     try:
-        update_sql = ('UPDATE website set hash = ?, error_count = 0 WHERE hash = ?')
-        cur.execute(update_sql, [new_hash, old_hash])
+        update_sql = ('UPDATE website set error_count = 0 WHERE slug = ?')
+        cur.execute(update_sql, [slug])
     except Exception:
         conn.rollback()
         raise

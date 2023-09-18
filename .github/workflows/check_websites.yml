@@ -67,22 +67,18 @@ jobs:
       - name: Check website
         id: website
         run: |
-          echo "Old hash: ${{ matrix.hash }}"
           echo "URL: ${{ matrix.url }}, selector: ${{ matrix.selector }}"
           mkdir text
-          mkdir hashes
-          new_hash=$(./lib/website_hash.py -u "${{ matrix.url }}" -s "${{ matrix.selector }}" -t "${{ matrix.type }}" -o text/${{ matrix.hash }}.txt --verbose)
-          echo $new_hash
-          echo $new_hash > hashes/${{ matrix.hash }}.txt
-          echo "new_hash=$new_hash" >> $GITHUB_OUTPUT
+          matches=$(./lib/website_hash.py -u "${{ matrix.url }}" -f "hashes/${{ matrix.slug }}.txt" -s "${{ matrix.selector }}" -t "${{ matrix.type }}" -o text/${{ matrix.slug }}.txt --verbose)
+          echo $matches
+          echo "matches=$matches" >> $GITHUB_OUTPUT
           
-      - name: Has the hash changed?
+      - name: Were there any matches?
         run: |
-          echo "Old hash: ${{ matrix.hash }}"
-          echo "New hash: ${{ steps.website.outputs.new_hash }}"
+          echo "Matches: ${{ steps.website.outputs.matches }}"
 
       - name: Notify telegram about website changes
-        if: steps.website.outputs.new_hash != matrix.hash
+        if: steps.website.outputs.matches != ''
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -90,12 +86,13 @@ jobs:
           format: markdown
           message: |
             🟢 Website hat Änderungen: [${{matrix.label }}](${{ matrix.url }})
+            ${{ steps.website.outputs.matches }}
 
       - name: Note error for later
         if: ${{ failure() }}
         run: |
           mkdir error_counts
-          touch error_counts/${{ matrix.hash }}.txt
+          touch error_counts/${{ matrix.slug }}.txt
       
       - name: Notify telegram failure
         if: ${{ failure()  && matrix.error_count > 3 }}
@@ -113,7 +110,6 @@ jobs:
         with:
           name: hashes
           path: |
-            hashes
             text
             error_counts
   
