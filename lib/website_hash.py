@@ -149,7 +149,7 @@ if __name__ == "__main__":
     matches = match_texts(texts, keywords, old_hashes)
 
     if matches:
-        match_str = "  \\ \n".join(matches)
+        match_str = "\n\n".join(matches)
         log.info(f"Matches: {match_str}")
         print(match_str)
 
