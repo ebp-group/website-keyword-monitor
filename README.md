@@ -4,7 +4,7 @@
 
 Website Monitoring mit Schlüsselwörtern, implementiert in Python und GitHub Actions.
 
-## Schlüsselwöter 
+## Schlüsselwörter 
 
 Für alle Webseiten werden dieselben Schlüsselwörter verwendet.
 Die Schlüsselwörter (`keyswords`) sind in der Datei [`keywords.txt`](https://github.com/metaodi/website-keyword-monitor/blob/main/keywords.txt) definiert, jeweils ein Schlüsselwort pro Zeile:
