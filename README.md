@@ -1,8 +1,6 @@
 # website-keyword-monitor
 
-Website Monitoring mit Schlüsselwörtern.
-Sobald ein Eintrag auf einer Webseite mit einem der definierten Schlüsselwörter gefunden wird, wird in MS Teams (im [Team CH_P_222110_00 - Standortmonitoring IKEA](https://teams.microsoft.com/l/team/19%3a8yZRxwfaWuzsCdy3K0yPujteVZFYCGsXUlqAZgKNAyM1%40thread.tacv2/conversations?groupId=3a7a934f-46fe-4807-b8a6-066dee8bdd60&tenantId=b2e3a768-93a5-4171-8310-d2fda9465328) im privaten Kanal "Webseiten-Benachrichtigungen") eine entsprechende Benachrichtigung geschickt.
-
+Website Monitoring mit Schlüsselwörtern, implementiert in Python und GitHub Actions.
 
 ## Schlüsselwöter 
 
@@ -40,3 +38,17 @@ Beispiel:
 
 
 Webseiten werden im CSV [`all.csv`](https://github.com/metaodi/website-keyword-monitor/blob/main/csv/all.csv) definiert.
+
+## Benachrichtigungen in MS Teams
+
+Sobald ein Eintrag auf einer Webseite mit einem der definierten Schlüsselwörter gefunden wird, wird in MS Teams (im [Team CH_P_222110_00 - Standortmonitoring IKEA](https://teams.microsoft.com/l/team/19%3a8yZRxwfaWuzsCdy3K0yPujteVZFYCGsXUlqAZgKNAyM1%40thread.tacv2/conversations?groupId=3a7a934f-46fe-4807-b8a6-066dee8bdd60&tenantId=b2e3a768-93a5-4171-8310-d2fda9465328) im privaten Kanal "Webseiten-Benachrichtigungen") eine entsprechende Benachrichtigung geschickt.
+
+Der MS Teams Kanal wird über einen sogenannten "Incoming Webhook" angesprochen.
+In Teams kann in einem Kanal ein neuer Connector "Incoming Webhook" hinzugefügt werden.
+
+![Connector in Teams](https://github.com/metaodi/website-keyword-monitor/assets/538415/5d5727d4-0c43-432d-9acf-3ed63d08f013)
+
+![Incomeing Webhook Connector](https://github.com/metaodi/website-keyword-monitor/assets/538415/272e0b9f-808e-4c6b-b1a5-ea1305879d92)
+
+
+Die generierte URL muss dann auf GitHub als [Secret](https://github.com/metaodi/website-keyword-monitor/settings/secrets/actions) mit dem Namen `MS_TEAMS_WEBHOOK_URL` gespeichert werden.
