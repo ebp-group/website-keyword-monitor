@@ -1,6 +1,6 @@
 label,active,slug,error_count,url,selector,type
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
-"Municipality of Allaman, Actualités",yes,allaman_actualites,1,https://www.allaman.ch/aktuellesinformationen,"#informationList_wrapper td",dynamic
+"Municipality of Allaman, Actualités",yes,allaman_actualites,0,https://www.allaman.ch/aktuellesinformationen,"#informationList_wrapper td",dynamic
 "Municipality of Allaman, Avis d'enquête",yes,allaman_avisdenquetes,0,https://www.allaman.ch/avisdenquetes,"div.content-container *",static
 "Municipality of Allaman, INFORMATIONS UTILES",yes,allaman_information_utiles,0,https://www.allaman.ch/informationsdiverses,"div.content-container *",static
 "Municipality of Aubonne, News",yes,aubonne_news,0,https://www.aubonne.ch/accueil,div.article,static
