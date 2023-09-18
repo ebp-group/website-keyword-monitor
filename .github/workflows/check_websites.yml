@@ -140,14 +140,14 @@ jobs:
            CSV_PATH: ${{ inputs.csv-path }}
         run: ./workflow/populate_database.sh $CSV_PATH
 
-      - name: Download hashes
+      - name: Download output
         uses: actions/download-artifact@v3
         with:
           name: output
           path: output
       
       - name: Copy hash files
-        run: cp output/hashes/*.txt hashes
+        run: cp output/hashes/*.txt hashes/
 
       - name: Update hashes and error counts
         run: ./workflow/update_from_artifacts.sh
