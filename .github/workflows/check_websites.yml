@@ -111,6 +111,7 @@ jobs:
         with:
           name: output
           path: |
+            hashes
             text
             error_counts
   
@@ -142,6 +143,9 @@ jobs:
         with:
           name: output
           path: output
+      
+      - name: Copy hash files
+        run: cp output/hashes/*.txt hashes
 
       - name: Update hashes and error counts
         run: ./workflow/update_from_artifacts.sh
