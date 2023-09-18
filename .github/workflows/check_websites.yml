@@ -82,12 +82,13 @@ jobs:
 
       - name: Notify about website changes
         if: ${{ steps.website.outputs.has_matches }}
-        uses: chrisdleech-pol/github-action-notify-teams@v1.0.0
-        with: 
-          TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
-          TEAMS_MSG_TITLE: "🟢 Webseite «${{matrix.label }}» hat Änderungen"
-          TEAMS_MSG_SUMMARY: "[${{matrix.label }}](${{ matrix.url }}): ${{ steps.website.outputs.matches }}"
-          TEAMS_MSG_TYPE: "success"
+        uses: aliencube/microsoft-teams-actions@v0.8.0
+        with:
+          webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
+          title: "🟢 Webseite «${{matrix.label }}» hat Änderungen"
+          text: "[${{matrix.label }}](${{ matrix.url }}): ${{ steps.website.outputs.matches }}"
+          theme_color: 3AB660
+          actions: '[{ "@type": "OpenUri", "name": "Webseite anschauen", "targets": [{ "os": "default", "uri": "${{ matrix.url }}" }] }, { "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
             
       - name: Note error for later
         if: ${{ failure() }}
@@ -97,12 +98,13 @@ jobs:
       
       - name: Notify about failure
         if: ${{ failure()  && matrix.error_count > 3 }}
-        uses: chrisdleech-pol/github-action-notify-teams@v1.0.0
-        with: 
-          TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
-          TEAMS_MSG_TITLE: "🔴 [Website-Check für «${{ matrix.label }}» fehlgeschlagen](https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true)"
-          TEAMS_MSG_SUMMARY: GitHub Action fehlgeschlagen
-          TEAMS_MSG_TYPE: "failure"
+        uses: aliencube/microsoft-teams-actions@v0.8.0
+        with:
+          webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
+          title: "🔴 Website-Check für «${{ matrix.label }}» fehlgeschlagen"
+          summary: GitHub Action fehlgeschlagen
+          theme_color: CC0000
+          actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
             
       
       - name: Upload hash as artifact
@@ -181,10 +183,10 @@ jobs:
 
       - name: Notify about failure
         if: ${{ failure()  || cancelled() }}
-        uses: chrisdleech-pol/github-action-notify-teams@v1.0.0
-        with: 
-          TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
-          TEAMS_MSG_TITLE: "🔴 Website Checker Job fehlgeschlagen"
-          TEAMS_MSG_SUMMARY: GitHub Action fehlgeschlagen.
-          TEAMS_MSG_TYPE: "failure"
-            
+        uses: aliencube/microsoft-teams-actions@v0.8.0
+        with:
+          webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
+          title: "🔴 Website Checker Job fehlgeschlagen"
+          summary: GitHub Action fehlgeschlagen.
+          theme_color: CC0000
+          actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
