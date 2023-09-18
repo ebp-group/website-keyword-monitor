@@ -67,14 +67,16 @@ jobs:
           mkdir text
           matches=$(./lib/website_hash.py -u "${{ matrix.url }}" -f "hashes/${{ matrix.slug }}.txt" -s "${{ matrix.selector }}" -t "${{ matrix.type }}" -o text/${{ matrix.slug }}.txt --verbose)
           echo $matches
-          echo "matches=$matches" >> $GITHUB_OUTPUT
+          if [[ -n "$matches" ]]; then
+            echo "has_matches=1" >> $GITHUB_OUTPUT
+          fi
           
       - name: Were there any matches?
         run: |
-          echo "Matches: ${{ steps.website.outputs.matches }}"
+          echo "Matches: ${{ steps.website.outputs.has_matches }}"
 
       - name: Notify about website changes
-        if: steps.website.outputs.matches != ''
+        if: {{ steps.website.outputs.matches }}
         uses: chrisdleech-pol/github-action-notify-teams@v1.0.0
         with: 
           TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
