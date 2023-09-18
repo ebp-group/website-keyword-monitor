@@ -135,7 +135,7 @@ if __name__ == "__main__":
 
     texts = get_texts_from_selector(url, selector, verify, dl_type)
 
-    source_text = " ".join(texts)
+    source_text = "\n\n".join(texts)
     if output:
         with open(output, "w") as f:
             f.write(source_text)
