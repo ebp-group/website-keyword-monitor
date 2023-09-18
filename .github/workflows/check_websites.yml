@@ -75,10 +75,10 @@ jobs:
 
       - name: Notify telegram about website changes
         if: steps.website.outputs.matches != ''
-        uses: chrisdleech-pol/github-action-notify-teams@@v1.0.0
+        uses: chrisdleech-pol/github-action-notify-teams@v1.0.0
         with: 
           TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
-          TEAMS_MSG_TITLE: 🟢 Website hat Änderungen: [${{matrix.label }}](${{ matrix.url }})
+          TEAMS_MSG_TITLE: "🟢 Website hat Änderungen: [${{matrix.label }}](${{ matrix.url }})"
           TEAMS_MSG_SUMMARY: ${{ steps.website.outputs.matches }}
           TEAMS_MSG_TYPE: "success"
             
@@ -93,7 +93,7 @@ jobs:
         uses: chrisdleech-pol/github-action-notify-teams@v1.0.0
         with: 
           TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
-          TEAMS_MSG_TITLE: 🔴 [Website-Check für «${{ matrix.label }}» fehlgeschlagen](https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true)
+          TEAMS_MSG_TITLE: "🔴 [Website-Check für «${{ matrix.label }}» fehlgeschlagen](https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true)"
           TEAMS_MSG_SUMMARY: 
           TEAMS_MSG_TYPE: "failure"
             
@@ -173,7 +173,7 @@ jobs:
         uses: chrisdleech-pol/github-action-notify-teams@v1.0.0
         with: 
           TEAMS_URI: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
-          TEAMS_MSG_TITLE: 🔴 [Website Checker Job fehlgeschlagen](https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true)
+          TEAMS_MSG_TITLE: "🔴 [Website Checker Job fehlgeschlagen](https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true)"
           TEAMS_MSG_SUMMARY: 
           TEAMS_MSG_TYPE: "failure"
             
