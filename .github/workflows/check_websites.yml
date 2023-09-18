@@ -135,8 +135,8 @@ jobs:
       - name: Download hashes
         uses: actions/download-artifact@v3
         with:
-          name: hashes
-          path: hashes
+          name: output
+          path: output
 
       - name: Update hashes and error counts
         run: ./workflow/update_from_artifacts.sh
