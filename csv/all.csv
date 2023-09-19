@@ -1,6 +1,6 @@
 label,active,slug,error_count,url,selector,type
 "Association régionale ARCAM, Actualités",yes,arcam_actualites,0,https://arcam-vd.ch/actualites/,article.post,static
-"Association régionale ARCAM, Publications",yes,arcam_publications,3,https://arcam-vd.ch/publications/,div.fwpl-result,static
+"Association régionale ARCAM, Publications",yes,arcam_publications,0,https://arcam-vd.ch/publications/,div.fwpl-result,static
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
 "Municipality of Allaman, Actualités",yes,allaman_actualites,0,https://www.allaman.ch/aktuellesinformationen,"#informationList_wrapper td",dynamic
 "Municipality of Allaman, Avis d'enquête",yes,allaman_avisdenquetes,0,https://www.allaman.ch/avisdenquetes,"div.content-container *",static
