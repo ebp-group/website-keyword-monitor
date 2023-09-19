@@ -86,6 +86,7 @@ jobs:
         with:
           webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
           title: "🟢 Webseite «${{matrix.label }}» hat Änderungen"
+          summary: "Webseite «${{matrix.label }}» hat Änderungen"
           text: "[${{matrix.label }}](${{ matrix.url }}): ${{ steps.website.outputs.matches }}"
           theme_color: 3AB660
           actions: '[{ "@type": "OpenUri", "name": "Webseite anschauen", "targets": [{ "os": "default", "uri": "${{ matrix.url }}" }] }, { "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
@@ -102,7 +103,7 @@ jobs:
         with:
           webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
           title: "🔴 Website-Check für «${{ matrix.label }}» fehlgeschlagen"
-          summary: GitHub Action fehlgeschlagen
+          summary: GitHub Action fehlgeschlagen für «${{ matrix.label }}»
           theme_color: CC0000
           actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
             
