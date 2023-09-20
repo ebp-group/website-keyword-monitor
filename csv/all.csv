@@ -10,4 +10,4 @@ label,active,slug,error_count,url,selector,type
 "Official gazette Canton of Vaud (building requests)",yes,faovd_building_requests,0,https://www.faovd.ch/permis-de-construire/district/morges/,div.annonce-camac,static
 "Official gazette Canton of Vaud (municipalities)",yes,faovd_municipalities,0,https://www.faovd.ch/rubrique/communes,div.annonce-content,static
 "Municipality of Spreitenbach, News",yes,spreitenbach_news,0,https://www.spreitenbach.ch/aktuelles/aktuelles/,div.article,static
-"Amtliche Nachrichten Spreichenbach",yes,spreitenbach_amtlich,0,https://www.amtliche-nachrichten.ch/kanton-aargau?sort=PUBLISHED_DESC&limit=10&offset=0&cities=City%3A4040,"table.publication-list tr.cp-table-row",dynamic
+"Amtliche Nachrichten Spreitenbach",yes,spreitenbach_amtlich,0,https://www.amtliche-nachrichten.ch/kanton-aargau?sort=PUBLISHED_DESC&limit=10&offset=0&cities=City%3A4040,"table.publication-list tr.cp-table-row",dynamic
