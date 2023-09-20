@@ -22,6 +22,7 @@ Revision
 Leitbild
 Entwicklung
 Bauprojekt
+Baubewilligung
 Wettbewerb
 Studienauftrag
 Sperrung
@@ -67,6 +68,7 @@ Plan des zones
 Plan localisé de quartier
 Plan d’affectation spéciale
 Plan localisé de quartier
+permis de construire
 Enquête publique
 participation
 Opposition
@@ -122,6 +124,7 @@ Piano d[’']utilizzazione cantonale
 Piano particolareggiato
 Piano di quartiere
 Piano cantonale con autorizzazione a costruire
+autorizzazione a costruire
 pubblicazione
 partecipazione
 Opposizione
