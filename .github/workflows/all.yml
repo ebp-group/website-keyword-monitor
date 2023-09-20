@@ -10,13 +10,19 @@ on:
           required: true
           default: true
           type: boolean
+      commit:
+          description: 'True to commit hashes'
+          required: true
+          default: true
+          type: boolean
 
 jobs:
   check_all_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       csv-path: csv/all.csv
-      send-notifications: ${{ inputs.notifications }} 
+      send-notifications: ${{ inputs.notifications }}
+      commit-hashes: ${{ inputs.commit }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
