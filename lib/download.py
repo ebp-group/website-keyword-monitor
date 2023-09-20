@@ -25,7 +25,7 @@ def _download_request(url, verify=True):
     http = requests.Session()
     http.mount("https://", adapter)
     http.mount("http://", adapter)
-    headers = {'user-agent': 'Mozilla Firefox Mozilla/5.0; metaodi website-monitor at github'}
+    headers = {'user-agent': 'Mozilla Firefox Mozilla/5.0; ebp-group website-keyword-monitor at github'}
     r = http.get(url, headers=headers, timeout=20, verify=verify)
     r.raise_for_status()
     return r

@@ -1,4 +1,4 @@
-[![Check all websites](https://github.com/metaodi/website-keyword-monitor/actions/workflows/all.yml/badge.svg)](https://github.com/metaodi/website-keyword-monitor/actions/workflows/all.yml)
+[![Check all websites](https://github.com/ebp-group/website-keyword-monitor/actions/workflows/all.yml/badge.svg)](https://github.com/ebp-group/website-keyword-monitor/actions/workflows/all.yml)
 
 # website-keyword-monitor
 
@@ -7,7 +7,7 @@ Website Monitoring mit Schlüsselwörtern, implementiert in Python und GitHub Ac
 ## Schlüsselwörter 
 
 Für alle Webseiten werden dieselben Schlüsselwörter verwendet.
-Die Schlüsselwörter (`keyswords`) sind in der Datei [`keywords.txt`](https://github.com/metaodi/website-keyword-monitor/blob/main/keywords.txt) definiert, jeweils ein Schlüsselwort pro Zeile:
+Die Schlüsselwörter (`keyswords`) sind in der Datei [`keywords.txt`](https://github.com/ebp-group/website-keyword-monitor/blob/main/keywords.txt) definiert, jeweils ein Schlüsselwort pro Zeile:
 
 ```
 rue
@@ -39,7 +39,7 @@ Beispiel:
 | "Thalwil informiert" | yes      | thalwil_news  | 0             | https://www.thalwil.ch/aktuellesinformationen | #informationList | static |
 
 
-Webseiten werden im CSV [`all.csv`](https://github.com/metaodi/website-keyword-monitor/blob/main/csv/all.csv) definiert.
+Webseiten werden im CSV [`all.csv`](https://github.com/ebp-group/website-keyword-monitor/blob/main/csv/all.csv) definiert.
 
 ## Benachrichtigungen in MS Teams
 
@@ -53,7 +53,7 @@ In Teams kann in einem Kanal ein neuer Connector "Incoming Webhook" hinzugefügt
 ![Incomeing Webhook Connector](https://github.com/metaodi/website-keyword-monitor/assets/538415/272e0b9f-808e-4c6b-b1a5-ea1305879d92)
 
 
-Die generierte URL muss dann auf GitHub als [Secret](https://github.com/metaodi/website-keyword-monitor/settings/secrets/actions) mit dem Namen `MS_TEAMS_WEBHOOK_URL` gespeichert werden.
+Die generierte URL muss dann auf GitHub als [Secret](https://github.com/ebp-group/website-keyword-monitor/settings/secrets/actions) mit dem Namen `MS_TEAMS_WEBHOOK_URL` gespeichert werden.
 
 
 ## GitHub Actions

@@ -95,7 +95,7 @@ jobs:
           summary: "Webseite «${{matrix.label }}» hat Änderungen"
           text: "[${{matrix.label }}](${{ matrix.url }}): ${{ steps.website.outputs.matches }}"
           theme_color: 3AB660
-          actions: '[{ "@type": "OpenUri", "name": "Webseite anschauen", "targets": [{ "os": "default", "uri": "${{ matrix.url }}" }] }, { "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
+          actions: '[{ "@type": "OpenUri", "name": "Webseite anschauen", "targets": [{ "os": "default", "uri": "${{ matrix.url }}" }] }, { "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
             
       - name: Note error for later
         if: ${{ failure() }}
@@ -111,7 +111,7 @@ jobs:
           title: "🔴 Website-Check für «${{ matrix.label }}» fehlgeschlagen"
           summary: GitHub Action fehlgeschlagen für «${{ matrix.label }}»
           theme_color: CC0000
-          actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
+          actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
             
       
       - name: Upload hash as artifact
@@ -184,7 +184,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: ${{ github.ref_name }}
           name: GitHub Action Bot
-          email: website-keyword-monitor@metaodi.ch
+          email: website-keyword-monitor@users.noreply.github.com
           commit-message: Update hashes and counts
           rebase: 'true'
 
@@ -196,4 +196,4 @@ jobs:
           title: "🔴 Website Checker Job fehlgeschlagen"
           summary: GitHub Action fehlgeschlagen.
           theme_color: CC0000
-          actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/metaodi/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
+          actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
