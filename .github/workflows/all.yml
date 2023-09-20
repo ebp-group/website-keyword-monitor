@@ -2,7 +2,7 @@ name: Check all websites
 
 on:
   schedule:
-    - cron:  '5 3/12 * * *' # runs twice a day, at 03:05 and 15:05 UTC
+    - cron:  '5 2/12 * * *' # runs twice a day, at 02:05 and 14:05 UTC
   workflow_dispatch:
     inputs:
       notifications:
