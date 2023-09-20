@@ -71,7 +71,8 @@ jobs:
         run: |
           echo "URL: ${{ matrix.url }}, selector: ${{ matrix.selector }}"
           mkdir text
-          matches=$(./lib/website_hash.py -u "${{ matrix.url }}" -f "hashes/${{ matrix.slug }}.txt" -s "${{ matrix.selector }}" -t "${{ matrix.type }}" -o text/${{ matrix.slug }}.txt --verbose)
+          mkdir new_hashes
+          matches=$(./lib/website_hash.py -u "${{ matrix.url }}" -f "hashes/${{ matrix.slug }}.txt" -n "new_hashes/${{ matrix.slug }}.txt" -s "${{ matrix.selector }}" -t "${{ matrix.type }}" -o text/${{ matrix.slug }}.txt --verbose)
           echo $matches
           {
             echo 'matches<<EOF'
@@ -120,7 +121,7 @@ jobs:
         with:
           name: output
           path: |
-            hashes
+            new_hashes
             text
             error_counts
   
@@ -154,7 +155,7 @@ jobs:
           path: output
       
       - name: Copy hash files
-        run: cp output/hashes/*.txt hashes/
+        run: cp output/new_hashes/*.txt hashes/
 
       - name: Update hashes and error counts
         run: ./workflow/update_from_artifacts.sh
