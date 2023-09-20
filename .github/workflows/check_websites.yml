@@ -12,6 +12,11 @@ on:
         default: true
         required: false
         type: boolean
+      commit-hashes:
+        description: 'Commit updated hashes'
+        default: true
+        required: false
+        type: boolean
     secrets:
       MS_TEAMS_WEBHOOK_URL:
         required: true
@@ -179,7 +184,7 @@ jobs:
         id: changes
          
       - name: Commit and push to repo
-        if: steps.changes.outputs.changed == 1 # only try to commit if there are actually changes and this is run on main
+        if: ${{ steps.changes.outputs.changed == 1 && inputs.commit-hashes }}
         uses: github-actions-x/commit@v2.9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
