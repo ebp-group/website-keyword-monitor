@@ -4,8 +4,14 @@ on:
   workflow_call:
     inputs:
       csv-path:
+        description: 'Path to a CSV containing the URLs'
         required: true
         type: string
+      send-notifications:
+        description: 'Run this workflow with notifications'
+        default: true
+        required: false
+        type: boolean
     secrets:
       MS_TEAMS_WEBHOOK_URL:
         required: true
@@ -81,7 +87,7 @@ jobs:
           echo "Matches: ${{ steps.website.outputs.has_matches }}"
 
       - name: Notify about website changes
-        if: ${{ steps.website.outputs.has_matches }}
+        if: ${{ steps.website.outputs.has_matches && inputs.send-notifications }}
         uses: aliencube/microsoft-teams-actions@v0.8.0
         with:
           webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
@@ -98,7 +104,7 @@ jobs:
           touch error_counts/${{ matrix.slug }}.txt
       
       - name: Notify about failure
-        if: ${{ failure()  && matrix.error_count > 1 }}
+        if: ${{ failure()  && matrix.error_count > 1 && inputs.send-notifications }}
         uses: aliencube/microsoft-teams-actions@v0.8.0
         with:
           webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
@@ -183,7 +189,7 @@ jobs:
           rebase: 'true'
 
       - name: Notify about failure
-        if: ${{ failure()  || cancelled() }}
+        if: ${{ failure() && inputs.send-notifications }}
         uses: aliencube/microsoft-teams-actions@v0.8.0
         with:
           webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
