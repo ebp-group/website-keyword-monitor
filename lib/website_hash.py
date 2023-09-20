@@ -91,13 +91,15 @@ def match_texts(texts, keywords, old_hashes):
             continue
 
         log.debug(f"Found a match in the following text: \n {text}")
-        for k in matched_keywords:
-            text = k.sub(r"\1**\2**\3", text)
        
         text_hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
         log.debug(f"Check against hash list to see if it's new: {text_hash}")
         if text_hash not in old_hashes:
             log.debug("New match found!")
+
+            # add highlights to text
+            for k in matched_keywords:
+                text = k.sub(r"\1**\2**\3", text)
             matched.append(text)
         else:
             log.debug("Text already known, no new match.")
