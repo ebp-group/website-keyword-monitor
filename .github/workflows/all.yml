@@ -13,7 +13,7 @@ on:
 
 jobs:
   check_all_websites:
-    uses: metaodi/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       csv-path: csv/all.csv
       send-notifications: ${{ inputs.notifications }} 
