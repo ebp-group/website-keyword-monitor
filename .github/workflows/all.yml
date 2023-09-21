@@ -21,8 +21,8 @@ jobs:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       csv-path: csv/all.csv
-      send-notifications: ${{ inputs.notifications || true }}
-      commit-hashes: ${{ inputs.commit || true }} 
+      send-notifications: ${{ !contains(inputs.notifications, 'false') }}
+      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
