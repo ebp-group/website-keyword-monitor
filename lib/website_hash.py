@@ -154,6 +154,8 @@ if __name__ == "__main__":
 
     log.info("Write new hash file...")
     hashes = get_text_hashes(texts)
+    hashes.extend(old_hashes)
+    hashes = list(set(hashes))
     hashes_str = "\n".join(hashes)
     with open(new_path, "w") as f:
         f.write(hashes_str)
