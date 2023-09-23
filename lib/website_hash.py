@@ -156,6 +156,7 @@ if __name__ == "__main__":
     hashes = get_text_hashes(texts)
     hashes.extend(old_hashes)
     hashes = list(set(hashes))
+    hashes.sort()
     hashes_str = "\n".join(hashes)
     with open(new_path, "w") as f:
         f.write(hashes_str)
