@@ -1,7 +1,7 @@
 label,active,slug,error_count,url,selector,type
-"Agglomération Grand Genève",yes,ge_projets,0,https://www.grand-geneve.org/projets/,div.swat-projects-container,static
+"Agglomération Grand Genève",yes,ge_projets,0,https://www.grand-geneve.org/projets/,div.swat-projects-container .project,static
 "Amtliche Nachrichten Spreitenbach",yes,spreitenbach_amtlich,0,https://www.amtliche-nachrichten.ch/kanton-aargau?sort=PUBLISHED_DESC&limit=10&offset=0&cities=City%3A4040,"table.publication-list tr.cp-table-row",dynamic
-"Amtsblatt, Public consultations",yes,baselland_vernehmlassungen,0,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,div.sl-column,static
+"Amtsblatt, Public consultations",yes,baselland_vernehmlassungen,0,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,div.sl-block-content,static
 "Amtsblatt, Publications",yes,pratteln_publications,0,https://www.amtsblatt.bl.ch/#!/search/publications?keyword=pratteln,div.list-entry,dynamic
 "Association régionale ARCAM, Actualités",yes,arcam_actualites,0,https://arcam-vd.ch/actualites/,article.post,static
 "Association régionale ARCAM, Mylittoralparc",yes,arcam_mylittoralparc,0,https://www.mylittoralparc.ch/,div.publication_small,static
