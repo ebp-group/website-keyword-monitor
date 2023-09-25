@@ -42,7 +42,7 @@ label,active,slug,error_count,url,selector,type
 "Municiplaity of Pratteln, Auflagen / Mitwirkung",yes,mach_mit_pratteln,0,https://mach-mit.pratteln.ch/,div.views-row,dynamic
 "Municipality of Pratteln, Aktuelle Planungen",yes,pratteln_atuelleplanungen,0,https://www.pratteln.ch/aktuelleplanungen,div#maincontent,static
 "Municipality of Rothenburg, Aktuelle Projekte",yes,rothenburg_gebietsentwicklung,0,https://www.rothenburg.ch/gebietsentwicklungrothenburgstationbhf,div.icms-wysiwyg,static
-"Municipality of Rothenburg, Amtsmitteilungen",yes,rothenburg_amtsmitteilungen,0,https://www.rothenburg.ch/amtsmitteilungen,div.col-sm-12,static
+"Municipality of Rothenburg, Amtsmitteilungen",yes,rothenburg_amtsmitteilungen,0,https://www.rothenburg.ch/amtsmitteilungen,div#informationList_wrapper tr,static
 "Municipality of Rothenburg, Local planning revision",yes,rothenburg_ortsplanung,0,https://zukunft-rothenburg.ch/de/gesamtrevision-ortsplanung/participant/survey-document-groups-informational/2360,div.container,static
 "Municipality of Rüdtlingen Alchenflüh, News",yes,ruedtlingen_alchenflueh_aktuelles,0,https://www.rual.ch/de/aktuelles/index.php,div.listEntryInner,static
 "Municipality of Spreitenbach, Amtsblatt",yes,spreitenbach_amtliche_publikationen,0,https://www.spreitenbach.ch/aktuelles/amtliche-publikationen/,div.wrap-content,static
