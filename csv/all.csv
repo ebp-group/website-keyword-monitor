@@ -1,13 +1,20 @@
 label,active,slug,error_count,url,selector,type
 "Amtliche Nachrichten Spreitenbach",yes,spreitenbach_amtlich,0,https://www.amtliche-nachrichten.ch/kanton-aargau?sort=PUBLISHED_DESC&limit=10&offset=0&cities=City%3A4040,"table.publication-list tr.cp-table-row",dynamic
+"Amtsblatt, Publications",yes,pratteln_publications,0,https://www.amtsblatt.bl.ch/#!/search/publications?keyword=pratteln,div.list-entry,static
+"Amtsblatt, Public consultations",yes,baselland_vernehmlassungen,0,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,div.sl-column,static
 "Association régionale ARCAM, Actualités",yes,arcam_actualites,0,https://arcam-vd.ch/actualites/,article.post,static
 "Association régionale ARCAM, Publications",yes,arcam_publications,0,https://arcam-vd.ch/publications/,div.fwpl-result,static
 "Association régionale ARCAM, Mylittoralparc",yes,arcam_mylittoralparc,0,https://www.mylittoralparc.ch/,div.publication_small,static
-"Canton Argovia, Amtsblatt",yes,argovia_publikationen,https://amtsblatt.ag.ch/publikationen/,div.publication-list,static
-"Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,div.richtext,static
-"Canton Argovia, Spatial development",yes,aargau_raumentwicklung,https://www.ag.ch/de/verwaltung/bvu/raumentwicklung,div.teaser__content,static
-"Canton Bern, Departement for planning and mobility",yes,canton_bern_start,https://www.bvd.be.ch/de/start.html,div.css-1xttnnv,static
-"Canton Bern, Departement for planning and mobility",yes,canton_bern_medienmitteilungen,https://www.bvd.be.ch/de/start/ueber-uns/medienmitteilungen.html,div.css-1xttnnv,static
+"Canton Argovia, Amtsblatt",yes,argovia_publikationen,0,https://amtsblatt.ag.ch/publikationen/,div.publication-list,static
+"Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,0,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,div.richtext,static
+"Canton Argovia, Spatial development",yes,aargau_raumentwicklung,0,https://www.ag.ch/de/verwaltung/bvu/raumentwicklung,div.teaser__content,static
+"Canton Basel-Country, Baugesuche",yes,baugesuche_bl,0,https://bgauflage.bl.ch/index.html,div.col-12,static
+"Canton Basel-Country, Vernehmlassungen",yes,vernehmlassungen_bl,0,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,div.sl-column,static
+"Canton Basel-Country, Planauflagen",yes,planauflagen_bl,0,https://www.amtsblatt.bl.ch/#!/gazette,div.list,static
+"Canton Basel-Country, News concerning planning and environment",yes,news_listing_bl,0,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/ftw-news-newslistingblock/news_listing,div#content-core,static
+"Canton Basel-Country, News concerning spatial development",yes,raumplanung_bl,0,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/raumplanung,div.sl-block-content,static
+"Canton Bern, Departement for planning and mobility",yes,canton_bern_start,0,https://www.bvd.be.ch/de/start.html,div.css-1xttnnv,static
+"Canton Bern, Departement for planning and mobility",yes,canton_bern_medienmitteilungen,0,https://www.bvd.be.ch/de/start/ueber-uns/medienmitteilungen.html,div.css-1xttnnv,static
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
 "Kanton Aargau, Amtliche Publikationen",yes,kanton_aargau,0,https://www.amtliche-nachrichten.ch/kanton-aargau,div.publications-overview,static
 "Municipality of Allaman, Actualités",yes,allaman_actualites,0,https://www.allaman.ch/aktuellesinformationen,"#informationList_wrapper td",dynamic
@@ -15,15 +22,22 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Allaman, INFORMATIONS UTILES",yes,allaman_information_utiles,0,https://www.allaman.ch/informationsdiverses,"div.content-container *",static
 "Municipality of Aubonne, News",yes,aubonne_news,0,https://www.aubonne.ch/accueil,div.article,static
 "Municipality of Aubonne, Pilier public",yes,aubonne_pilier_public,0,https://www.aubonne.ch/administration/pilier-public,div.article,static
-"Municipality of Kilchberg, News",yes,kilchberg_PlanenBauen,https://www.kirchberg-be.ch/PlanenBauen/51941,div.col-sm-12,static
-"Municipality of Kilchberg, Building publications",yes,kilchberg_baupublikationen,https://www.kirchberg-be.ch/baupublikationen,div.col-sm-12,static
-"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,https://secure.i-web.ch/gemweb/lyssach/de/verwaltung/publikationen/,div.dynaTable,static
-"Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,div.col-center,static
+"Municipality of Itingen, News",yes,itingen_aktuellesinformationen,0,https://www.itingen.ch/de/aktuelles/aktuellesinformationen/,div.contentboxsub,static
+"Municipality of Itingen, Publikationen",yes,itingen_publikationen,0,https://www.itingen.ch/de/verwaltung/publikationen/,div#ol-publikation_wrapper,static
+"Municipality of Kilchberg, News",yes,kilchberg_PlanenBauen,0https://www.kirchberg-be.ch/PlanenBauen/51941,div.col-sm-12,static
+"Municipality of Kilchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,div.col-sm-12,static
+"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,0,https://secure.i-web.ch/gemweb/lyssach/de/verwaltung/publikationen/,div.dynaTable,static
+"Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,0,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,div.col-center,static
+"Municipality of Pratteln, News",yes,pratteln_aktuellesinformationen,0,https://www.pratteln.ch/aktuellesinformationen,div.col-sm-12,static
+"Municiplaity of Pratteln, Auflagen / Mitwirkung",yes,mach_mit_pratteln,0,https://mach-mit.pratteln.ch/,div.views-row,static
+"Municipality of Pratteln, Aktuelle Planungen",yes,pratteln_atuelleplanungen,0,https://www.pratteln.ch/aktuelleplanungen,div#maincontent,static
 "Municipality of Rüdtlingen Alchenflüh, News",yes,ruedtlingen_alchenflueh_aktuelles,https://www.rual.ch/de/aktuelles/index.php,div.listEntryInner,static
 "Municipality of Spreitenbach, Amtsblatt",yes,spreitenbach_amtliche_publikationen,https://www.spreitenbach.ch/aktuelles/amtliche-publikationen/,div.wrap-content,static
 "Municipality of Spreitenbach, News",yes,spreitenbach_news,0,https://www.spreitenbach.ch/aktuelles/aktuelles/,div.article,static
 "Official gazette Canton Bern",yes,canton_bern_publikationen,https://amtsblatt.be.ch/#!/search/publications?keyword=lyssach,publication.list,static
 "Official gazette Canton of Vaud (building requests)",yes,faovd_building_requests,0,https://www.faovd.ch/permis-de-construire/district/morges/,div.annonce-camac,static
 "Official gazette Canton of Vaud (municipalities)",yes,faovd_municipalities,0,https://www.faovd.ch/rubrique/communes,div.annonce-content,static
+"Entwicklungsstrategie 2020, Aktuelles und News",yes,regbas_news,0,https://www.regbas.ch/de/aktuell/news/,div.news,static
+"Entwicklungsstrategie 2020, News",yes,regbas_raum,0,https://www.regbas.ch/de/unsere-themen/raum/,div#publication-page,static
 "Website Regionalkonferenz Emmental",yes,region_emmental,https://www.region-emmental.ch/,div.elementor-widget-container,static
 "Website Regionalkonferenz Emmental, Alle News",yes,region_emmental_alle_news,https://www.region-emmental.ch/alle-news/,div.elementor-element,static
