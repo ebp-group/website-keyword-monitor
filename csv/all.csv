@@ -51,7 +51,7 @@ label,active,slug,error_count,url,selector,type
 "Municipality of St.Gallen, Amtliche Publikationen",yes,stgallen_amtliche_publikationen,0,https://publikationen.sg.ch/amtliche-publikationen/?filter%5Bauthority%5D%5B0%5D=10%2Ci81%2Ci84&filter%5Btype%5D%5B0%5D=tx_ekab_publication_domain_model_publication&timerange%5Btype%5D=4,div.publication-list__item,static
 "Municipality of Vernier, News",yes,vernier_actualites,0,https://www.vernier.ch/actualites,div.articles-listing,static
 "Municipality of Vernier, Plandirecteur",yes,vernier_plandirecteur,0,https://www.vernier.ch/fr/territoire/plandirecteur/,article.auto-rows-min,static
-"Official gazette Canton Bern",yes,canton_bern_publikationen,0,https://amtsblatt.be.ch/#!/search/publications?keyword=lyssach,publication.list,dynamic
+"Official gazette Canton Bern",yes,canton_bern_publikationen,0,https://amtsblatt.be.ch/#!/search/publications?keyword=lyssach,div.list-entry,dynamic
 "Official gazette Canton of Geneva, Publications",yes,ge_publication,0,https://www.ge.ch/publication,ul.list-group,static
 "Official gazette Canton of Vaud (building requests)",yes,faovd_building_requests,0,https://www.faovd.ch/permis-de-construire/district/morges/,div.annonce-camac,static
 "Official gazette Canton of Vaud (municipalities)",yes,faovd_municipalities,0,https://www.faovd.ch/rubrique/communes,div.annonce-content,static
