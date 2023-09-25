@@ -32,7 +32,7 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Dietlikon, Bauausschreibungen",yes,dietlikon_bauausschreibungen,0,https://www.dietlikon.ch/gewerbe-infrastruktur/arbeit/bauen/bauausschreibungen.html/314,div.mod-wrapper.mod-news,static
 "Municipality of Dietlikon, General communications",yes,dietlikon_allgemeine_mitteilungen,0,https://www.dietlikon.ch/politik-verwaltung/verwaltung/aktuelle-meldungen/allgemeine-mitteilungen.html/211,ul.mod-lst.mod-news-lst,static
 "Municipality of Dietlikon, Amtliche Publikationen",yes,dietlikon_publikationen,0,https://www.dietlikon.ch/politik-verwaltung/verwaltung/publikationen/amtliches-publikationsorgan.html/312,main#main.main,static
-"Municipality of Itingen, News",yes,itingen_aktuellesinformationen,0,https://www.itingen.ch/de/aktuelles/aktuellesinformationen/,div.contentboxsub,dynamic
+"Municipality of Itingen, News",yes,itingen_aktuellesinformationen,0,https://www.itingen.ch/de/aktuelles/aktuellesinformationen/,div#contentboxsub tr,dynamic
 "Municipality of Itingen, Publikationen",yes,itingen_publikationen,0,https://www.itingen.ch/de/verwaltung/publikationen/,div#ol-publikation_wrapper,dynamic
 "Municipality of Kirchberg, News",yes,kilchberg_PlanenBauen,0,https://www.kirchberg-be.ch/PlanenBauen/51941,div.col-sm-12,dynamic
 "Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,div.col-sm-12,dynamic
