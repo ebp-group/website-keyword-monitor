@@ -20,7 +20,7 @@ label,active,slug,error_count,url,selector,type
 "Canton of Geneva, Spatial departement",yes,departement_du_territoire,0,https://www.ge.ch/organisation/departement-du-territoire-dt,div.row.actualites-listing,static
 "Canton of Geneva, Publication All",yes,ge_publication_all,0,https://www.ge.ch/publication?type=1045&dossier=All&organisation=All,div.publications-listing,static
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
-"Canton Zurich, Amtsblatt",yes,zurich_amtsblatt,0,https://www.amtsblatt.zh.ch/#!/gazette,div.list-entry,static
+"Canton Zurich, Amtsblatt",yes,zurich_amtsblatt,0,https://www.amtsblatt.zh.ch/#!/gazette,div.list-entry,dynamic
 "Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,0,https://www.amtsblatt.zh.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,div.app-content-center div.list-entry,dynamic
 "City of St.Gallen, Press releases",yes,stgallen_medienmitteilungen,0,https://www.stadt.sg.ch/home/verwaltung-politik/newsroom-medienmitteilungen/medienmitteilungen.html,div.col-xs-12,static
 "Kanton Aargau, Amtliche Publikationen",yes,kanton_aargau,0,https://www.amtliche-nachrichten.ch/kanton-aargau,div.publications-overview,static
