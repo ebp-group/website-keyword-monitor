@@ -16,6 +16,7 @@ label,active,slug,error_count,url,selector,type
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_start,0,https://www.bvd.be.ch/de/start.html,div.css-1xttnnv,static
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_medienmitteilungen,0,https://www.bvd.be.ch/de/start/ueber-uns/medienmitteilungen.html,div.css-1xttnnv,static
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
+"City of St.Gallen, Press releases",yes,stgallen_medienmitteilungen,0,https://www.stadt.sg.ch/home/verwaltung-politik/newsroom-medienmitteilungen/medienmitteilungen.html,div.col-xs-12,static
 "Kanton Aargau, Amtliche Publikationen",yes,kanton_aargau,0,https://www.amtliche-nachrichten.ch/kanton-aargau,div.publications-overview,static
 "Municipality of Allaman, Actualités",yes,allaman_actualites,0,https://www.allaman.ch/aktuellesinformationen,"#informationList_wrapper td",dynamic
 "Municipality of Allaman, Avis d'enquête",yes,allaman_avisdenquetes,0,https://www.allaman.ch/avisdenquetes,"div.content-container *",static
@@ -34,6 +35,9 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Rüdtlingen Alchenflüh, News",yes,ruedtlingen_alchenflueh_aktuelles,0,https://www.rual.ch/de/aktuelles/index.php,div.listEntryInner,static
 "Municipality of Spreitenbach, Amtsblatt",yes,spreitenbach_amtliche_publikationen,0,https://www.spreitenbach.ch/aktuelles/amtliche-publikationen/,div.wrap-content,static
 "Municipality of Spreitenbach, News",yes,spreitenbach_news,0,https://www.spreitenbach.ch/aktuelles/aktuelles/,div.article,static
+"Municipality of St.Gallen, städtische Projekte",yes,stgallen_staedtische_projekte,0,https://www.stadt.sg.ch/home/raum-umwelt/staedtische-projekte.html,div.container-wide,static
+"Municipality of St.Gallen, Stadtplanung",yes,stgallen_stadtplanung,0,https://www.stadt.sg.ch/home/raum-umwelt/stadtplanung.html,div.row.paragraph.id-news,static
+"Municipality of St.Gallen, Amtliche Publikationen",yes,stgallen_amtliche_publikationen,0,https://publikationen.sg.ch/amtliche-publikationen/?filter%5Bauthority%5D%5B0%5D=10%2Ci81%2Ci84&filter%5Btype%5D%5B0%5D=tx_ekab_publication_domain_model_publication&timerange%5Btype%5D=4,div.publication-list__item,static
 "Official gazette Canton Bern",yes,canton_bern_publikationen,0,https://amtsblatt.be.ch/#!/search/publications?keyword=lyssach,publication.list,static
 "Official gazette Canton of Vaud (building requests)",yes,faovd_building_requests,0,https://www.faovd.ch/permis-de-construire/district/morges/,div.annonce-camac,static
 "Official gazette Canton of Vaud (municipalities)",yes,faovd_municipalities,0,https://www.faovd.ch/rubrique/communes,div.annonce-content,static
