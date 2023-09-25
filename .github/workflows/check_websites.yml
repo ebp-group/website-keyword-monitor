@@ -81,7 +81,7 @@ jobs:
           echo $matches
           {
             echo 'matches<<EOF'
-            echo $matches
+            echo $matches | cut -c 1-2000
             echo EOF
           } >> "$GITHUB_OUTPUT"
           if [[ -n "$matches" ]] ; then
