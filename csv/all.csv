@@ -20,7 +20,7 @@ label,active,slug,error_count,url,selector,type
 "Canton of Geneva, Publication All",yes,ge_publication_all,0,https://www.ge.ch/publication?type=1045&dossier=All&organisation=All,div.publications-listing,static
 "Canton of Geneva, Spatial departement",yes,departement_du_territoire,0,https://www.ge.ch/organisation/departement-du-territoire-dt,div.row.actualites-listing,static
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
-"Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,3,https://www.amtsblatt.zh.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,.list-entry,dynamic
+"Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,4,https://www.amtsblatt.zh.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,.list-entry,dynamic
 "City of St.Gallen, Press releases",yes,stgallen_medienmitteilungen,0,https://www.stadt.sg.ch/home/verwaltung-politik/newsroom-medienmitteilungen/medienmitteilungen.html,div.news-item,static
 "Entwicklungsstrategie 2020, Aktuelles und News",yes,regbas_news,0,https://www.regbas.ch/de/aktuell/news/,div.news,static
 "Entwicklungsstrategie 2020, News",yes,regbas_raum,0,https://www.regbas.ch/de/unsere-themen/raum/,div#publication-page,static
