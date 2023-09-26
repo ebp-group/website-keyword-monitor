@@ -7,7 +7,7 @@ label,active,slug,error_count,url,selector,type
 "Association régionale ARCAM, Mylittoralparc",yes,arcam_mylittoralparc,0,https://www.mylittoralparc.ch/,div.publication_small,static
 "Association régionale ARCAM, Publications",yes,arcam_publications,0,https://arcam-vd.ch/publications/,div.fwpl-result,static
 "Canton Argovia, Amtsblatt",yes,argovia_publikationen,0,https://amtsblatt.ag.ch/publikationen/,div.publication-list__item,static
-"Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,0,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,div.richtext,static
+"Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,0,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,.accordion__button,static
 "Canton Argovia, Spatial development",yes,aargau_raumentwicklung,0,https://www.ag.ch/de/verwaltung/bvu/raumentwicklung,div.teaser__content,static
 "Canton Basel-Country, Baugesuche",yes,baugesuche_bl,0,https://bgauflage.bl.ch/index.html,div.col-12,static
 "Canton Basel-Country, News concerning planning and environment",yes,news_listing_bl,0,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/ftw-news-newslistingblock/news_listing,div#content-core,static
@@ -21,8 +21,8 @@ label,active,slug,error_count,url,selector,type
 "Canton of Geneva, Spatial departement",yes,departement_du_territoire,0,https://www.ge.ch/organisation/departement-du-territoire-dt,div.row.actualites-listing,static
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
 "Canton Zurich, Amtsblatt",yes,zurich_amtsblatt,1,https://www.amtsblatt.zh.ch/#!/gazette,div.list-entry,dynamic
-"Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,1,https://www.amtsblatt.zh.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,"div.app-content-center div.list-entry",dynamic
-"City of St.Gallen, Press releases",yes,stgallen_medienmitteilungen,0,https://www.stadt.sg.ch/home/verwaltung-politik/newsroom-medienmitteilungen/medienmitteilungen.html,div.col-xs-12,static
+"Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,1,https://www.amtsblatt.zh.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,"div.list-entry",dynamic
+"City of St.Gallen, Press releases",yes,stgallen_medienmitteilungen,0,https://www.stadt.sg.ch/home/verwaltung-politik/newsroom-medienmitteilungen/medienmitteilungen.html,div.news-item,static
 "Entwicklungsstrategie 2020, Aktuelles und News",yes,regbas_news,0,https://www.regbas.ch/de/aktuell/news/,div.news,static
 "Entwicklungsstrategie 2020, News",yes,regbas_raum,0,https://www.regbas.ch/de/unsere-themen/raum/,div#publication-page,static
 "Kanton Aargau, Amtliche Publikationen",yes,kanton_aargau,0,https://www.amtliche-nachrichten.ch/kanton-aargau,div.publications-overview,static
@@ -51,7 +51,7 @@ label,active,slug,error_count,url,selector,type
 "Municipality of St.Gallen, Amtliche Publikationen",yes,stgallen_amtliche_publikationen,0,https://publikationen.sg.ch/amtliche-publikationen/?filter%5Bauthority%5D%5B0%5D=10%2Ci81%2Ci84&filter%5Btype%5D%5B0%5D=tx_ekab_publication_domain_model_publication&timerange%5Btype%5D=4,div.publication-list__item,static
 "Municipality of St.Gallen, Stadtplanung",yes,stgallen_stadtplanung,0,https://www.stadt.sg.ch/home/raum-umwelt/stadtplanung.html,div.row.paragraph.id-news,static
 "Municipality of St.Gallen, städtische Projekte",yes,stgallen_staedtische_projekte,0,https://www.stadt.sg.ch/home/raum-umwelt/staedtische-projekte.html,div.container-wide,static
-"Municipality of Vernier, News",yes,vernier_actualites,1,https://www.vernier.ch/actualites,div.articles-listing,static
+"Municipality of Vernier, News",yes,vernier_actualites,1,https://www.vernier.ch/actualites,div#articles-collection a.relative,static
 "Municipality of Vernier, Plandirecteur",yes,vernier_plandirecteur,0,https://www.vernier.ch/fr/territoire/plandirecteur/,article.auto-rows-min,static
 "Municiplaity of Pratteln, Auflagen / Mitwirkung",yes,mach_mit_pratteln,0,https://mach-mit.pratteln.ch/,div.views-row,dynamic
 "Official gazette Canton Bern",yes,canton_bern_publikationen,0,https://amtsblatt.be.ch/#!/search/publications?keyword=lyssach,div.list-entry,dynamic
