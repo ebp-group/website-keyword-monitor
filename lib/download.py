@@ -7,6 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 
@@ -62,6 +63,9 @@ def download_with_selenium(url, selector):
     driver.implicitly_wait(20)
 
     driver.get(url)
+    
+    html = driver.find_element(By.TAG_NAME, 'html')
+    html.send_keys(Keys.END)
     try:
         wait = WebDriverWait(driver, 60)
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
