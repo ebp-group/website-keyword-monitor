@@ -201,7 +201,7 @@ jobs:
           webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
           title: "🟢 Website-Check abgeschlossen"
           summary: GitHub Action erfolgreich abgeschlossen.
-          theme_color: CC0000
+          theme_color: 3AB660
           actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
 
       - name: Notify about failure
