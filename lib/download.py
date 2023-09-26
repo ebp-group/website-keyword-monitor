@@ -69,6 +69,7 @@ def download_with_selenium(url, selector):
     except TimeoutException:
         # if the selector was not found return a static string
         log.info(f"selector '{selector}' not found!")
+        log.info(f"Website source: {driver.page_source}")
         content = f"selector '{selector}' not found"
     finally:
         driver.quit()
