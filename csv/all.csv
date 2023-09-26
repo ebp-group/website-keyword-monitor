@@ -7,7 +7,7 @@ label,active,slug,error_count,url,selector,type
 "Association régionale ARCAM, Mylittoralparc",yes,arcam_mylittoralparc,1,https://www.mylittoralparc.ch/,div.publication_small,static
 "Association régionale ARCAM, Publications",yes,arcam_publications,0,https://arcam-vd.ch/publications/,div.fwpl-result,static
 "Canton Argovia, Amtsblatt",yes,argovia_publikationen,0,https://amtsblatt.ag.ch/publikationen/,div.publication-list__item,static
-"Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,1,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,.accordion__button,static
+"Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,0,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,.accordion__button,dynamic
 "Canton Argovia, Spatial development",yes,aargau_raumentwicklung,0,https://www.ag.ch/de/verwaltung/bvu/raumentwicklung,div.teaser__content,static
 "Canton Basel-Country, Baugesuche",yes,baugesuche_bl,0,https://bgauflage.bl.ch/index.html,"div.col-12 tr:has(td)",static
 "Canton Basel-Country, News concerning planning and environment",yes,news_listing_bl,0,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/ftw-news-newslistingblock/news_listing,.news-item,static
@@ -20,8 +20,7 @@ label,active,slug,error_count,url,selector,type
 "Canton of Geneva, Publication All",yes,ge_publication_all,0,https://www.ge.ch/publication?type=1045&dossier=All&organisation=All,div.publications-listing,static
 "Canton of Geneva, Spatial departement",yes,departement_du_territoire,0,https://www.ge.ch/organisation/departement-du-territoire-dt,div.row.actualites-listing,static
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
-"Canton Zurich, Amtsblatt",yes,zurich_amtsblatt,2,https://www.amtsblatt.zh.ch/#!/gazette,div.list-entry,dynamic
-"Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,2,https://www.amtsblatt.zh.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,div.list-entry,dynamic
+"Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,1,https://www.amtsblatt.zh.ch/#!/search/publications?keyword=Dietlikon,"div.list-entry",dynamic
 "City of St.Gallen, Press releases",yes,stgallen_medienmitteilungen,0,https://www.stadt.sg.ch/home/verwaltung-politik/newsroom-medienmitteilungen/medienmitteilungen.html,div.news-item,static
 "Entwicklungsstrategie 2020, Aktuelles und News",yes,regbas_news,0,https://www.regbas.ch/de/aktuell/news/,div.news,static
 "Entwicklungsstrategie 2020, News",yes,regbas_raum,0,https://www.regbas.ch/de/unsere-themen/raum/,div#publication-page,static
