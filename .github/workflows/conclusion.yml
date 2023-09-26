@@ -11,7 +11,6 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Notify about success
-        if: ${{ github.event.workflow_run.inputs.send-notifications }}
         uses: aliencube/microsoft-teams-actions@v0.8.0
         with:
           webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
@@ -25,11 +24,10 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
       - name: Notify about failure
-        if: ${{ github.event.workflow_run.inputs.send-notifications }}
         uses: aliencube/microsoft-teams-actions@v0.8.0
         with:
           webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
           title: "🔴 Website Checker Job mit Fehler abgeschlossen"
-          summary: GitHub Action fehlgeschlagen.
+          summary: GitHub Action (teilweise) fehlgeschlagen.
           theme_color: CC0000
           actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.event.workflow_run.id }}?check_suite_focus=true" }] }]'
