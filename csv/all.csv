@@ -38,14 +38,14 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,div.col-sm-12,dynamic
 "Municipality of Kirchberg, News",yes,kilchberg_PlanenBauen,0,https://www.kirchberg-be.ch/PlanenBauen/51941,div.col-sm-12,dynamic
 "Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,0,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,div.col-center,static
-"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,1,https://secure.i-web.ch/gemweb/lyssach/de/verwaltung/publikationen/,"div#ol-publikation_wrapper tr:has(td)",static
-"Municipality of Pratteln, Aktuelle Planungen",yes,pratteln_atuelleplanungen,0,https://www.pratteln.ch/aktuelleplanungen,"div#maincontent div.icms-content-col-a div.icms-block-container",static
-"Municipality of Pratteln, News",yes,pratteln_aktuellesinformationen,0,https://www.pratteln.ch/aktuellesinformationen,"div#informationList_wrapper tr:has(td)",dynamic
+"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,0,https://secure.i-web.ch/gemweb/lyssach/de/verwaltung/publikationen/,"div#ol-publikation_wrapper tr:has(td)",dynamic
+"Municipality of Pratteln, Aktuelle Planungen",yes,pratteln_atuelleplanungen,0,https://www.pratteln.ch/aktuelleplanungen,div#maincontent div.icms-content-col-a div.icms-block-container,static
+"Municipality of Pratteln, News",yes,pratteln_aktuellesinformationen,0,https://www.pratteln.ch/aktuellesinformationen,div#informationList_wrapper tr:has(td),dynamic
 "Municipality of Rothenburg, Aktuelle Projekte",yes,rothenburg_gebietsentwicklung,0,https://www.rothenburg.ch/projektethemen,div.icms-wysiwyg,static
 "Municipality of Rothenburg, Amtsmitteilungen",yes,rothenburg_amtsmitteilungen,0,https://www.rothenburg.ch/amtsmitteilungen,"div#informationList_wrapper tr",dynamic
 "Municipality of Rothenburg, Local planning revision",yes,rothenburg_ortsplanung,0,https://zukunft-rothenburg.ch/de/gesamtrevision-ortsplanung/participant/survey-document-groups-informational/2360,div.cms-content,dynamic
-"Municipality of Rüdtlingen Alchenflüh, News",yes,ruedtlingen_alchenflueh_aktuelles,1,https://www.rual.ch/de/aktuelles/index.php,"#blockContentFullRight div.listEntryInner",static
-"Municipality of Spreitenbach, Amtsblatt",yes,spreitenbach_amtliche_publikationen,0,https://www.spreitenbach.ch/aktuelles/amtliche-publikationen/,"#content-area li",static
+"Municipality of Rüdtlingen Alchenflüh, News",yes,ruedtlingen_alchenflueh_aktuelles,0,https://www.rual.ch/de/aktuelles/index.php,"#blockContentFullRight div.listEntryInner",dynamic
+"Municipality of Spreitenbach, Amtsblatt",yes,spreitenbach_amtliche_publikationen,0,https://www.spreitenbach.ch/aktuelles/amtliche-publikationen/,#content-area li,static
 "Municipality of Spreitenbach, News",yes,spreitenbach_news,0,https://www.spreitenbach.ch/aktuelles/aktuelles/,div.article,static
 "Municipality of St.Gallen, Amtliche Publikationen",yes,stgallen_amtliche_publikationen,0,https://publikationen.sg.ch/amtliche-publikationen/?filter%5Bauthority%5D%5B0%5D=10%2Ci81%2Ci84&filter%5Btype%5D%5B0%5D=tx_ekab_publication_domain_model_publication&timerange%5Btype%5D=4,div.publication-list__item,static
 "Municipality of St.Gallen, Stadtplanung",yes,stgallen_stadtplanung,0,https://www.stadt.sg.ch/home/raum-umwelt/stadtplanung.html,div.row.paragraph.id-news,static
