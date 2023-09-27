@@ -22,7 +22,7 @@ label,active,slug,error_count,url,selector,type
 "Canton Ticino, Communications",yes,ticino_communications,1,https://foglioufficiale.ti.ch/#!/search/publications/detail/b3913202-962a-4f90-82a8-8ff0207dbb89,div.field-value,static
 "Canton Ticino, Publications",yes,ticino_publications,1,https://foglioufficiale.ti.ch/#!/search/publications,div.list-entry.list-entry-tenant,static
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
-"Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,5,https://www.amtsblatt.zh.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,.list-entry,dynamic
+"Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,0,https://epublikation.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,.list-entry,dynamic
 "City of St.Gallen, Press releases",yes,stgallen_medienmitteilungen,0,https://www.stadt.sg.ch/home/verwaltung-politik/newsroom-medienmitteilungen/medienmitteilungen.html,div.news-item,static
 "Entwicklungsstrategie 2020, Aktuelles und News",yes,regbas_news,0,https://www.regbas.ch/de/aktuell/news/,div.news,static
 "Entwicklungsstrategie 2020, News",yes,regbas_raum,0,https://www.regbas.ch/de/unsere-themen/raum/,div#publication-page,static
@@ -34,7 +34,7 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Aubonne, Pilier public",yes,aubonne_pilier_public,0,https://www.aubonne.ch/administration/pilier-public,div.article,static
 "Municipality of Collina D'Oro, Collinanews",yes,collina,1,https://www.collinadoro.swiss/index.php?node=394&lng=1&rif=178eb2fb38,td.ListPraticheTdAperto,static
 "Municipality of Collina D'Oro, Collinanews Comunicati",yes,collina_comunicati,0,https://www.collinadoro.swiss/index.php?node=412&lng=1&rif=8533a52a61,div.OggPraticheDoc,static
-"Municipality of Collina D'Oro, Messagi municipali",yes,collina_messagi,1,"https://www.collinadoro.swiss/index.php?node=413&lng=1&rif=c7cdb729f4	div.ListNewsBtApri",static,
+"Municipality of Collina D'Oro, Messagi municipali",yes,collina_messagi,1,https://www.collinadoro.swiss/index.php?node=413&lng=1&rif=c7cdb729f4,"div.ListNewsBtApri",static
 "Municipality of Collina D'Oro, News",yes,collina_news,0,https://www.collinadoro.swiss/index.php?node=433&lng=1&rif=5d8523cc99,div.ListNewsBtApri,static
 "Municipality of Collina D'Oro, Zoning Plan",yes,collina_zoning_plan,0,https://www.collinadoro.swiss/index.php?node=514&lng=1&rif=9a1531f8cd,div.OggPraticheDoc,static
 "Municipality of Dietlikon, Amtliche Publikationen",yes,dietlikon_publikationen,0,https://www.dietlikon.ch/politik-verwaltung/verwaltung/publikationen/amtliches-publikationsorgan.html/312,main#main.main,static
