@@ -69,7 +69,7 @@ def load_keywords():
     with open(os.path.join(__location__, '..', 'keywords.txt')) as f:
         keywords = [line.strip() for line in f]
     
-    regex_keywords = [re.compile(rf'(.*)({k})(.*)', re.IGNORECASE) for k in keywords]
+    regex_keywords = [re.compile(rf'(.*)\b({k})(.*)', re.IGNORECASE) for k in keywords]
     return regex_keywords
 
 
