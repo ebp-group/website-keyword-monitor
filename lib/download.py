@@ -59,13 +59,11 @@ def download_file(url, path, verify=True):
 def download_with_selenium(url, selector):
     chrome_options = Options()
     chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--lang=de-CH")
     driver = webdriver.Chrome(options=chrome_options)
     driver.implicitly_wait(20)
 
     driver.get(url)
-    
-    html = driver.find_element(By.TAG_NAME, 'html')
-    html.send_keys(Keys.END)
     try:
         wait = WebDriverWait(driver, 60)
         wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
