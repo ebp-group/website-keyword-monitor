@@ -17,8 +17,10 @@ label,active,slug,error_count,url,selector,type
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_start,0,https://www.bvd.be.ch/de/start.html,div.css-1xttnnv,static
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_medienmitteilungen,0,https://www.bvd.be.ch/de/start/ueber-uns/medienmitteilungen.html,div.css-1xttnnv,dynamic
 "Canton Lucerne, Bekanntmachungen",yes,luzern_bekanntmachungen,0,https://www.lu.ch/verwaltung/BUWD/buwd_bekanntmachungen_planauflagen,table.footable,static
-"Canton of Geneva, Publication All",yes,ge_publication_all,0,https://www.ge.ch/publication?type=1045&dossier=All&organisation=All,div.publications-listing,static
+"Canton of Geneva, Publication All",yes,ge_publication_all,1,https://www.ge.ch/publication?type=1045&dossier=All&organisation=All,div.publications-listing,static
 "Canton of Geneva, Spatial departement",yes,departement_du_territoire,0,https://www.ge.ch/organisation/departement-du-territoire-dt,div.row.actualites-listing,static
+"Canton Ticino, Communications",yes,ticino_communications,1,https://foglioufficiale.ti.ch/#!/search/publications/detail/b3913202-962a-4f90-82a8-8ff0207dbb89,div.field-value,dynamic
+"Canton Ticino, Publications",yes,ticino_publications,1,https://foglioufficiale.ti.ch/#!/search/publications,div.list-entry,dynamic
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
 "Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,0,https://epublikation.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,.list-entry,dynamic
 "City of St.Gallen, Press releases",yes,stgallen_medienmitteilungen,0,https://www.stadt.sg.ch/home/verwaltung-politik/newsroom-medienmitteilungen/medienmitteilungen.html,div.news-item,static
@@ -30,9 +32,15 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Allaman, INFORMATIONS UTILES",yes,allaman_information_utiles,0,https://www.allaman.ch/informationsdiverses,"div.content-container *",static
 "Municipality of Aubonne, News",yes,aubonne_news,0,https://www.aubonne.ch/accueil,div.article,static
 "Municipality of Aubonne, Pilier public",yes,aubonne_pilier_public,0,https://www.aubonne.ch/administration/pilier-public,div.article,static
+"Municipality of Collina D'Oro, Collinanews",yes,collina,1,https://www.collinadoro.swiss/index.php?node=394&lng=1&rif=178eb2fb38,.ListPraticaTab,static
+"Municipality of Collina D'Oro, Collinanews Comunicati",yes,collina_comunicati,0,https://www.collinadoro.swiss/index.php?node=412&lng=1&rif=8533a52a61,div.OggPraticheDoc,static
+"Municipality of Collina D'Oro, Messagi municipali",yes,collina_messagi,1,https://www.collinadoro.swiss/index.php?node=413&lng=1&rif=c7cdb729f4,"div.ListNewsBtApri",static
+"Municipality of Collina D'Oro, News",yes,collina_news,0,https://www.collinadoro.swiss/index.php?node=433&lng=1&rif=5d8523cc99,div.ListNewsBtApri,static
+"Municipality of Collina D'Oro, Zoning Plan",yes,collina_zoning_plan,0,https://www.collinadoro.swiss/index.php?node=514&lng=1&rif=9a1531f8cd,div.OggPraticheDoc,static
 "Municipality of Dietlikon, Amtliche Publikationen",yes,dietlikon_publikationen,0,https://www.dietlikon.ch/politik-verwaltung/verwaltung/publikationen/amtliches-publikationsorgan.html/312,main#main.main,static
 "Municipality of Dietlikon, Bauausschreibungen",yes,dietlikon_bauausschreibungen,0,https://www.dietlikon.ch/gewerbe-infrastruktur/arbeit/bauen/bauausschreibungen.html/314,div.mod-wrapper.mod-news,static
 "Municipality of Dietlikon, General communications",yes,dietlikon_allgemeine_mitteilungen,0,https://www.dietlikon.ch/politik-verwaltung/verwaltung/aktuelle-meldungen/allgemeine-mitteilungen.html/211,ul.mod-lst.mod-news-lst,static
+"Municipality of Grancia, News",yes,grancia_commune,0,https://www.grancia.ch/,div.lsvr-post-list-widget__item-content,static
 "Municipality of Itingen, News",yes,itingen_aktuellesinformationen,0,https://www.itingen.ch/de/aktuelles/aktuellesinformationen/,"div#contentboxsub tr",dynamic
 "Municipality of Itingen, Publikationen",yes,itingen_publikationen,0,https://www.itingen.ch/de/verwaltung/publikationen/,div#ol-publikation_wrapper,dynamic
 "Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,div.col-sm-12,dynamic
@@ -41,10 +49,12 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,0,https://secure.i-web.ch/gemweb/lyssach/de/verwaltung/publikationen/,"div#ol-publikation_wrapper tr:has(td)",dynamic
 "Municipality of Pratteln, Aktuelle Planungen",yes,pratteln_atuelleplanungen,0,https://www.pratteln.ch/aktuelleplanungen,"div#maincontent div.icms-content-col-a div.icms-block-container",static
 "Municipality of Pratteln, News",yes,pratteln_aktuellesinformationen,0,https://www.pratteln.ch/aktuellesinformationen,"div#informationList_wrapper tr:has(td)",dynamic
+"Municipality of Riddes, News",yes,riddes_news,0,https://www.riddes.ch/commune/news-161.html,table.listTableItem,static
 "Municipality of Rothenburg, Aktuelle Projekte",yes,rothenburg_gebietsentwicklung,0,https://www.rothenburg.ch/projektethemen,div.icms-wysiwyg,static
 "Municipality of Rothenburg, Amtsmitteilungen",yes,rothenburg_amtsmitteilungen,0,https://www.rothenburg.ch/amtsmitteilungen,"div#informationList_wrapper tr",dynamic
 "Municipality of Rothenburg, Local planning revision",yes,rothenburg_ortsplanung,0,https://zukunft-rothenburg.ch/de/gesamtrevision-ortsplanung/participant/survey-document-groups-informational/2360,div.cms-content,dynamic
 "Municipality of Rüdtlingen Alchenflüh, News",yes,ruedtlingen_alchenflueh_aktuelles,0,https://www.rual.ch/de/aktuelles/index.php,"#blockContentFullRight div.listEntryInner",dynamic
+"Municipality of Saxon, News",yes,saxon_actualites,0,https://www.saxon.ch/actualites/,div.col-sm-12,static
 "Municipality of Spreitenbach, Amtsblatt",yes,spreitenbach_amtliche_publikationen,0,https://www.spreitenbach.ch/aktuelles/amtliche-publikationen/,"#content-area li",static
 "Municipality of Spreitenbach, News",yes,spreitenbach_news,0,https://www.spreitenbach.ch/aktuelles/aktuelles/,div.article,static
 "Municipality of St.Gallen, Amtliche Publikationen",yes,stgallen_amtliche_publikationen,0,https://publikationen.sg.ch/amtliche-publikationen/?filter%5Bauthority%5D%5B0%5D=10%2Ci81%2Ci84&filter%5Btype%5D%5B0%5D=tx_ekab_publication_domain_model_publication&timerange%5Btype%5D=4,div.publication-list__item,static
@@ -58,5 +68,9 @@ label,active,slug,error_count,url,selector,type
 "Official gazette Canton of Geneva, Publications",yes,ge_publication,0,https://www.ge.ch/publication,"#block-gech-content .list-group-item",static
 "Official gazette Canton of Vaud (building requests)",yes,faovd_building_requests,0,https://www.faovd.ch/permis-de-construire/district/morges/,div.annonce-camac,static
 "Official gazette Canton of Vaud (municipalities)",yes,faovd_municipalities,0,https://www.faovd.ch/rubrique/communes,div.annonce-content,static
+"Official gazette municipality of Riddes",yes,riddes_pilier_public,0,https://www.riddes.ch/commune/pilier-public-130.html,table.listTableItem,static
+"Official gazette municipality of Saxon",yes,saxon_publications,0,https://www.saxon.ch/publications/,div.col-sm-12,static
+"Website Agglomération Coude du Rhône",yes,agglo_coude_rhone,0,https://agglo-coude-rhone.ch/,div.mesures-content-box,static
+"Website Antenne Valais Romand, Informations about spatial design projects",yes,region_valais_romand,0,https://www.regionvalaisromand.ch/fr/projets-dossiers-426.html?projetsearchdistrict=4&projetsearchcommune=43&projetsearchthematique=1&projetsearchetat=1,a.listElement.masonelement,static
 "Website Regionalkonferenz Emmental",yes,region_emmental,0,https://www.region-emmental.ch/,div.elementor-widget-container,static
 "Website Regionalkonferenz Emmental, Alle News",yes,region_emmental_alle_news,0,https://www.region-emmental.ch/alle-news/,.ue_post_grid_item,static
