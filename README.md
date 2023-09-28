@@ -43,7 +43,7 @@ Webseiten werden im CSV [`all.csv`](https://github.com/ebp-group/website-keyword
 
 ## Benachrichtigungen in MS Teams
 
-Sobald ein Eintrag auf einer Webseite mit einem der definierten Schlüsselwörter gefunden wird, wird in MS Teams (im [Team CH_P_222110_00 - Standortmonitoring IKEA](https://teams.microsoft.com/l/team/19%3a8yZRxwfaWuzsCdy3K0yPujteVZFYCGsXUlqAZgKNAyM1%40thread.tacv2/conversations?groupId=3a7a934f-46fe-4807-b8a6-066dee8bdd60&tenantId=b2e3a768-93a5-4171-8310-d2fda9465328) im privaten Kanal "Webseiten-Benachrichtigungen") eine entsprechende Benachrichtigung geschickt.
+Sobald ein Eintrag auf einer Webseite mit einem der definierten Schlüsselwörter gefunden wird, wird in MS Teams (im [Team CH_P_222110_00 - Standortmonitoring](https://teams.microsoft.com/l/team/19%3a8yZRxwfaWuzsCdy3K0yPujteVZFYCGsXUlqAZgKNAyM1%40thread.tacv2/conversations?groupId=3a7a934f-46fe-4807-b8a6-066dee8bdd60&tenantId=b2e3a768-93a5-4171-8310-d2fda9465328) im privaten Kanal "Webseiten-Benachrichtigungen") eine entsprechende Benachrichtigung geschickt.
 
 Der MS Teams Kanal wird über einen sogenannten "Incoming Webhook" angesprochen.
 In Teams kann in einem Kanal ein neuer Connector "Incoming Webhook" hinzugefügt werden.
