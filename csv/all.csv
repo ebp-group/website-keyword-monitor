@@ -17,8 +17,8 @@ label,active,slug,error_count,url,selector,type
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_start,0,https://www.bvd.be.ch/de/start.html,div.css-1xttnnv,static
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_medienmitteilungen,0,https://www.bvd.be.ch/de/start/ueber-uns/medienmitteilungen.html,div.css-1xttnnv,dynamic
 "Canton Lucerne, Bekanntmachungen",yes,luzern_bekanntmachungen,0,https://www.lu.ch/verwaltung/BUWD/buwd_bekanntmachungen_planauflagen,table.footable,static
-"Canton of Geneva, Publication All",yes,ge_publication_all,0,https://www.ge.ch/publication?type=1045&dossier=All&organisation=All,div.publications-listing article,static
-"Canton of Geneva, Spatial departement",yes,departement_du_territoire,0,https://www.ge.ch/organisation/departement-du-territoire-dt,div.actualites-listing article,static
+"Canton of Geneva, Publication All",yes,ge_publication_all,0,https://www.ge.ch/publication?type=1045&dossier=All&organisation=All,"div.publications-listing article",static
+"Canton of Geneva, Spatial departement",yes,departement_du_territoire,0,https://www.ge.ch/organisation/departement-du-territoire-dt,"div.actualites-listing article",static
 "Canton Ticino, Communications",yes,ticino_communications,0,https://foglioufficiale.ti.ch/#!/search/publications/detail/b3913202-962a-4f90-82a8-8ff0207dbb89,div.field-value,dynamic
 "Canton Ticino, Publications",yes,ticino_publications,0,https://foglioufficiale.ti.ch/#!/search/publications,div.list-entry,dynamic
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
@@ -26,7 +26,7 @@ label,active,slug,error_count,url,selector,type
 "City of St.Gallen, Press releases",yes,stgallen_medienmitteilungen,0,https://www.stadt.sg.ch/home/verwaltung-politik/newsroom-medienmitteilungen/medienmitteilungen.html,div.news-item,static
 "Entwicklungsstrategie 2020, Aktuelles und News",yes,regbas_news,0,https://www.regbas.ch/de/aktuell/news/,div.news,static
 "Entwicklungsstrategie 2020, News",yes,regbas_raum,0,https://www.regbas.ch/de/unsere-themen/raum/,div#publication-page,static
-"Kanton Aargau, Amtliche Publikationen",yes,kanton_aargau,0,https://www.amtliche-nachrichten.ch/kanton-aargau,div.publications-overview tr.cp-table-row,static
+"Kanton Aargau, Amtliche Publikationen",yes,kanton_aargau,0,https://www.amtliche-nachrichten.ch/kanton-aargau,"div.publications-overview tr.cp-table-row",static
 "Municipality of Allaman, Actualités",yes,allaman_actualites,0,https://www.allaman.ch/aktuellesinformationen,"#informationList_wrapper td",dynamic
 "Municipality of Allaman, Avis d'enquête",yes,allaman_avisdenquetes,0,https://www.allaman.ch/avisdenquetes,"div.content-container *",static
 "Municipality of Allaman, INFORMATIONS UTILES",yes,allaman_information_utiles,0,https://www.allaman.ch/informationsdiverses,"div.content-container *",static
