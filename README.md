@@ -48,7 +48,7 @@ Sobald ein Eintrag auf einer Webseite mit einem der definierten Schlüsselwörte
 Der MS Teams Kanal wird über einen sogenannten "Incoming Webhook" angesprochen.
 In Teams kann in einem Kanal ein neuer Connector "Incoming Webhook" hinzugefügt werden.
 
-![Connector in Teams](https://github.com/ebp-group/website-keyword-monitor/assets/538415/e5e1a0f8-b9ee-4065-83a2-844387db4e8f)
+![Connector in Teams](https://github.com/ebp-group/website-keyword-monitor/assets/538415/b3be5355-00d5-4d12-aad3-8cf2aa3df8ec)
 
 ![Incomeing Webhook Connector](https://github.com/metaodi/website-keyword-monitor/assets/538415/272e0b9f-808e-4c6b-b1a5-ea1305879d92)
 
