@@ -7,7 +7,7 @@ Website Monitoring mit Schlüsselwörtern, implementiert in Python und GitHub Ac
 ## Schlüsselwörter 
 
 Für alle Webseiten werden dieselben Schlüsselwörter verwendet.
-Die Schlüsselwörter (`keyswords`) sind in der Datei [`keywords.txt`](https://github.com/ebp-group/website-keyword-monitor/blob/main/keywords.txt) definiert, jeweils ein Schlüsselwort pro Zeile:
+Die Schlüsselwörter (`keywords`) sind in der Datei [`keywords.txt`](https://github.com/ebp-group/website-keyword-monitor/blob/main/keywords.txt) definiert, jeweils ein Schlüsselwort pro Zeile:
 
 ```
 rue
