@@ -45,7 +45,7 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Itingen, Publikationen",yes,itingen_publikationen,0,https://www.itingen.ch/de/verwaltung/publikationen/,div#ol-publikation_wrapper,dynamic
 "Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,div.col-sm-12,dynamic
 "Municipality of Kirchberg, News",yes,kilchberg_PlanenBauen,0,https://www.kirchberg-be.ch/PlanenBauen/51941,div.col-sm-12,dynamic
-"Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,0,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,div.col-center,static
+"Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,0,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,div.col-center tr:has(td),static
 "Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,0,https://secure.i-web.ch/gemweb/lyssach/de/verwaltung/publikationen/,"div#ol-publikation_wrapper tr:has(td)",dynamic
 "Municipality of Pratteln, Aktuelle Planungen",yes,pratteln_atuelleplanungen,0,https://www.pratteln.ch/aktuelleplanungen,"div#maincontent div.icms-content-col-a div.icms-block-container",static
 "Municipality of Pratteln, News",yes,pratteln_aktuellesinformationen,0,https://www.pratteln.ch/aktuellesinformationen,"div#informationList_wrapper tr:has(td)",dynamic
