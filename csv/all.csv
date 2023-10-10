@@ -16,7 +16,7 @@ label,active,slug,error_count,url,selector,type
 "Canton Basel-Country, Vernehmlassungen",no,vernehmlassungen_bl,7,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,div.sl-column,static
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_start,0,https://www.bvd.be.ch/de/start.html,div.css-1xttnnv,static
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_medienmitteilungen,0,https://www.bvd.be.ch/de/start/ueber-uns/medienmitteilungen.html,div.css-1xttnnv,dynamic
-"Canton Lucerne, Bekanntmachungen",yes,luzern_bekanntmachungen,0,https://www.lu.ch/verwaltung/BUWD/buwd_bekanntmachungen_planauflagen,table.footable,static
+"Canton Lucerne, Bekanntmachungen",yes,luzern_bekanntmachungen,0,https://www.lu.ch/verwaltung/BUWD/buwd_bekanntmachungen_planauflagen,"table.footable tbody>tr",static
 "Canton of Geneva, Publication All",yes,ge_publication_all,0,https://www.ge.ch/publication?type=1045&dossier=All&organisation=All,"div.publications-listing article",static
 "Canton of Geneva, Spatial departement",yes,departement_du_territoire,0,https://www.ge.ch/organisation/departement-du-territoire-dt,"div.actualites-listing article",static
 "Canton Ticino, Communications",yes,ticino_communications,0,https://foglioufficiale.ti.ch/#!/search/publications/detail/b3913202-962a-4f90-82a8-8ff0207dbb89,div.field-value,dynamic
