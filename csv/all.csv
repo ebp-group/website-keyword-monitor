@@ -63,7 +63,7 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Vernier, News",yes,vernier_actualites,0,https://www.vernier.ch/actualites,"div#articles-collection a.relative",static
 "Municipality of Vernier, Plandirecteur",yes,vernier_plandirecteur,0,https://www.vernier.ch/fr/territoire/plandirecteur/,article.auto-rows-min,static
 "Municipality of Vernier, Plandirecteur Publication",yes,vernier_plandirecteur_pub,0,https://www.vernier.ch/administration-et-autorites/publications/plan-directeur-communal,article.auto-rows-min,static
-"Municiplaity of Pratteln, Auflagen / Mitwirkung",yes,mach_mit_pratteln,1,https://mach-mit.pratteln.ch/,div.views-row,dynamic
+"Municiplaity of Pratteln, Auflagen / Mitwirkung",yes,mach_mit_pratteln,0,https://mach-mit.pratteln.ch/,div.views-row,dynamic
 "Official gazette Canton Bern",yes,canton_bern_publikationen,0,https://amtsblatt.be.ch/#!/search/publications?keyword=lyssach,div.list-entry,dynamic
 "Official gazette Canton of Geneva, Publications",yes,ge_publication,0,https://www.ge.ch/publication,"#block-gech-content .list-group-item",static
 "Official gazette Canton of Vaud (building requests)",yes,faovd_building_requests,0,https://www.faovd.ch/permis-de-construire/district/morges/,div.annonce-camac,static
