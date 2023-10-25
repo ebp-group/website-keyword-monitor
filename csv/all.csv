@@ -6,7 +6,7 @@ label,active,slug,error_count,url,selector,type
 "Association régionale ARCAM, Actualités",yes,arcam_actualites,0,https://arcam-vd.ch/actualites/,article.post,static
 "Association régionale ARCAM, Mylittoralparc",yes,arcam_mylittoralparc,0,https://www.mylittoralparc.ch/,div.publication_small,static
 "Association régionale ARCAM, Publications",yes,arcam_publications,0,https://arcam-vd.ch/publications/,div.fwpl-result,static
-"Canton Argovia, Amtsblatt",yes,argovia_publikationen,0,https://amtsblatt.ag.ch/publikationen/,div.publication-list__item,static
+"Canton Argovia, Amtsblatt",yes,argovia_publikationen,1,https://amtsblatt.ag.ch/publikationen/,div.publication-list__item,static
 "Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,0,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,.accordion__button,dynamic
 "Canton Argovia, Spatial development",yes,aargau_raumentwicklung,0,https://www.ag.ch/de/verwaltung/bvu/raumentwicklung,div.teaser__content,static
 "Canton Basel-Country, Baugesuche",yes,baugesuche_bl,0,https://bgauflage.bl.ch/index.html,"div.col-12 tr:has(td)",static
@@ -45,8 +45,8 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Itingen, Publikationen",yes,itingen_publikationen,0,https://www.itingen.ch/de/verwaltung/publikationen/,div#ol-publikation_wrapper,dynamic
 "Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,div.col-sm-12,dynamic
 "Municipality of Kirchberg, News",yes,kilchberg_PlanenBauen,0,https://www.kirchberg-be.ch/PlanenBauen/51941,div.col-sm-12,dynamic
-"Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,0,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,"div.col-center tr:has(td)",static
-"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,0,https://secure.i-web.ch/gemweb/lyssach/de/verwaltung/publikationen/,"div#ol-publikation_wrapper tr:has(td)",dynamic
+"Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,1,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,"div.col-center tr:has(td)",static
+"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,1,https://secure.i-web.ch/gemweb/lyssach/de/verwaltung/publikationen/,"div#ol-publikation_wrapper tr:has(td)",dynamic
 "Municipality of Pratteln, Aktuelle Planungen",yes,pratteln_atuelleplanungen,0,https://www.pratteln.ch/aktuelleplanungen,"div#maincontent div.icms-content-col-a div.icms-block-container",static
 "Municipality of Pratteln, News",yes,pratteln_aktuellesinformationen,0,https://www.pratteln.ch/aktuellesinformationen,"div#informationList_wrapper tr:has(td)",dynamic
 "Municipality of Riddes, News",yes,riddes_news,0,https://www.riddes.ch/commune/news-161.html,table.listTableItem,static
