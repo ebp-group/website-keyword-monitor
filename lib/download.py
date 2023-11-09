@@ -11,6 +11,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium_stealth import stealth
+from pyvirtualdisplay import Display
 
 
 log = logging.getLogger(__name__)
@@ -58,25 +59,29 @@ def download_file(url, path, verify=True):
 
 
 def download_with_selenium(url, selector):
+    display = Display(visible=0, size=(1200, 1200))  
+    display.start()
+
     chrome_options = Options()
     chrome_options.add_argument("start-maximized")
-    chrome_options.add_argument("--headless")
+    #chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--window-size=1200,1200")
     chrome_options.add_argument("--lang=de-CH")
-    chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    chrome_options.add_experimental_option('useAutomationExtension', False)
+    #chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    #chrome_options.add_experimental_option('useAutomationExtension', False)
     driver = webdriver.Chrome(options=chrome_options)
     driver.implicitly_wait(20)
 
     # Use stealth to not trigger Cloudflare etc. bot detection
-    stealth(
-        driver,
-        languages=["en-US", "en"],
-        vendor="Google Inc.",
-        platform="Win32",
-        webgl_vendor="Intel Inc.",
-        renderer="Intel Iris OpenGL Engine",
-        fix_hairline=True,
-    )
+    #stealth(
+    #    driver,
+    #    languages=["en-US", "en"],
+    #    vendor="Google Inc.",
+    #    platform="Win32",
+    #    webgl_vendor="Intel Inc.",
+    #    renderer="Intel Iris OpenGL Engine",
+    #    fix_hairline=True,
+    #)
 
     driver.get(url)
     try:
