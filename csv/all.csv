@@ -42,7 +42,7 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Dietlikon, General communications",yes,dietlikon_allgemeine_mitteilungen,0,https://www.dietlikon.ch/politik-verwaltung/verwaltung/aktuelle-meldungen/allgemeine-mitteilungen.html/211,ul.mod-lst.mod-news-lst,static
 "Municipality of Grancia, News",yes,grancia_commune,0,https://www.grancia.ch/,div.lsvr-post-list-widget__item-content,static
 "Municipality of Itingen, News",yes,itingen_aktuellesinformationen,1,https://www.itingen.ch/de/aktuelles/aktuellesinformationen/,"#informationList tr:has(td)",dynamic
-"Municipality of Itingen, Publikationen",yes,itingen_publikationen,1,https://www.itingen.ch/de/verwaltung/publikationen/,div#ol-publikation_wrapper,dynamic
+"Municipality of Itingen, Publikationen",yes,itingen_publikationen,1,https://www.itingen.ch/de/verwaltung/publikationen/,"#publikation tr:has(td)",dynamic
 "Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,div.col-sm-12,dynamic
 "Municipality of Kirchberg, News",yes,kilchberg_PlanenBauen,0,https://www.kirchberg-be.ch/PlanenBauen/51941,div.col-sm-12,dynamic
 "Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,3,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,"#informationList tr:has(td)",static
