@@ -1,7 +1,7 @@
 label,active,slug,error_count,url,selector,type
 "Agglomération Grand Genève",yes,ge_projets,0,https://www.grand-geneve.org/projets/,"div.swat-projects-container .project",static
 "Amtliche Nachrichten Spreitenbach",yes,spreitenbach_amtlich,0,https://www.amtliche-nachrichten.ch/kanton-aargau?sort=PUBLISHED_DESC&limit=10&offset=0&cities=City%3A4040,"table.publication-list tr.cp-table-row",dynamic
-"Amtsblatt, Public consultations",no,baselland_vernehmlassungen,7,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,div.sl-block-content,dynamic
+"Amtsblatt, Public consultations",yes,baselland_vernehmlassungen,7,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,div.sl-block-content,dynamic
 "Amtsblatt, Publications",yes,pratteln_publications,0,https://www.amtsblatt.bl.ch/#!/search/publications?keyword=pratteln,div.list-entry,dynamic
 "Association régionale ARCAM, Actualités",yes,arcam_actualites,0,https://arcam-vd.ch/actualites/,article.post,static
 "Association régionale ARCAM, Mylittoralparc",yes,arcam_mylittoralparc,0,https://www.mylittoralparc.ch/,div.publication_small,static
@@ -10,10 +10,10 @@ label,active,slug,error_count,url,selector,type
 "Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,0,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,.accordion__button,dynamic
 "Canton Argovia, Spatial development",yes,aargau_raumentwicklung,0,https://www.ag.ch/de/verwaltung/bvu/raumentwicklung,div.teaser__content,static
 "Canton Basel-Country, Baugesuche",yes,baugesuche_bl,0,https://bgauflage.bl.ch/index.html,"div.col-12 tr:has(td)",static
-"Canton Basel-Country, News concerning planning and environment",no,news_listing_bl,7,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/ftw-news-newslistingblock/news_listing,.news-item,dynamic
-"Canton Basel-Country, News concerning spatial development",no,raumplanung_bl,7,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/raumplanung,"#block-3 + div p",dynamic
+"Canton Basel-Country, News concerning planning and environment",yes,news_listing_bl,7,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/ftw-news-newslistingblock/news_listing,.news-item,dynamic
+"Canton Basel-Country, News concerning spatial development",yes,raumplanung_bl,7,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/raumplanung,"#block-3 + div p",dynamic
 "Canton Basel-Country, Planauflagen",yes,planauflagen_bl,0,https://www.amtsblatt.bl.ch/#!/search/publications?keyword=pratteln,div.list-entry,dynamic
-"Canton Basel-Country, Vernehmlassungen",no,vernehmlassungen_bl,7,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,div.sl-column,dynamic
+"Canton Basel-Country, Vernehmlassungen",yes,vernehmlassungen_bl,7,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,div.sl-column,dynamic
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_start,0,https://www.bvd.be.ch/de/start.html,div.css-1xttnnv,static
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_medienmitteilungen,0,https://www.bvd.be.ch/de/start/ueber-uns/medienmitteilungen.html,div.css-1xttnnv,dynamic
 "Canton Lucerne, Bekanntmachungen",yes,luzern_bekanntmachungen,0,https://www.lu.ch/verwaltung/BUWD/buwd_bekanntmachungen_planauflagen,"table.footable tbody>tr",static

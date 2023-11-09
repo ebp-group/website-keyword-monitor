@@ -4,3 +4,4 @@ docopts
 python-dotenv
 selenium
 Selenium-Screenshot
+selenium-stealth
