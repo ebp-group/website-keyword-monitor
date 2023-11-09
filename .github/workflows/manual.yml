@@ -6,12 +6,12 @@ on:
       notifications:
           description: 'True to send notifications'
           required: true
-          default: true
+          default: false
           type: boolean
       commit:
           description: 'True to commit hashes'
           required: true
-          default: true
+          default: false
           type: boolean
 
 jobs:
