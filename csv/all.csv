@@ -4,7 +4,7 @@ label,active,slug,error_count,url,selector,type
 "Amtsblatt, Publications",yes,pratteln_publications,0,https://www.amtsblatt.bl.ch/#!/search/publications?keyword=pratteln,div.list-entry,dynamic
 "Association régionale ARCAM, Actualités",yes,arcam_actualites,0,https://arcam-vd.ch/actualites/,article.post,static
 "Association régionale ARCAM, Mylittoralparc",yes,arcam_mylittoralparc,0,https://www.mylittoralparc.ch/,div.publication_small,static
-"Association régionale ARCAM, Publications",yes,arcam_publications,1,https://arcam-vd.ch/thematique/organisation/,article.publications,static
+"Association régionale ARCAM, Publications",yes,arcam_publications,0,https://arcam-vd.ch/thematique/organisation/,article.publications,static
 "Canton Argovia, Amtsblatt",yes,argovia_publikationen,0,https://amtsblatt.ag.ch/publikationen/,div.publication-list__item,static
 "Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,0,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,.accordion__button,dynamic
 "Canton Argovia, Spatial development",yes,aargau_raumentwicklung,0,https://www.ag.ch/de/verwaltung/bvu/raumentwicklung,div.teaser__content,static
@@ -17,7 +17,7 @@ label,active,slug,error_count,url,selector,type
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_medienmitteilungen,0,https://www.bvd.be.ch/de/start/ueber-uns/medienmitteilungen.html,div.css-1xttnnv,dynamic
 "Canton Lucerne, Bekanntmachungen",yes,luzern_bekanntmachungen,0,https://www.lu.ch/verwaltung/BUWD/buwd_bekanntmachungen_planauflagen,"table.footable tbody>tr",static
 "Canton of Geneva, Publication All",yes,ge_publication_all,0,https://www.ge.ch/publication?type=1045&dossier=All&organisation=All,"div.publications-listing article",static
-"Canton of Geneva, Spatial departement",yes,departement_du_territoire,1,https://www.ge.ch/organisation/departement-du-territoire-dt,"div.actualites-listing article",static
+"Canton of Geneva, Spatial departement",yes,departement_du_territoire,0,https://www.ge.ch/organisation/departement-du-territoire-dt,"div.actualites-listing article",static
 "Canton Ticino, Publications",yes,ticino_publications,0,https://foglioufficiale.ti.ch/#!/search/publications,div.list-entry,dynamic
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
 "Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,0,https://epublikation.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,.list-entry,dynamic
@@ -39,12 +39,12 @@ label,active,slug,error_count,url,selector,type
 "Municipality of Dietlikon, Bauausschreibungen",yes,dietlikon_bauausschreibungen,0,https://www.dietlikon.ch/gewerbe-infrastruktur/arbeit/bauen/bauausschreibungen.html/314,div.mod-wrapper.mod-news,static
 "Municipality of Dietlikon, General communications",yes,dietlikon_allgemeine_mitteilungen,0,https://www.dietlikon.ch/politik-verwaltung/verwaltung/aktuelle-meldungen/allgemeine-mitteilungen.html/211,ul.mod-lst.mod-news-lst,static
 "Municipality of Grancia, News",yes,grancia_commune,0,https://www.grancia.ch/,div.lsvr-post-list-widget__item-content,static
-"Municipality of Itingen, News",yes,itingen_aktuellesinformationen,1,https://www.itingen.ch/de/aktuelles/aktuellesinformationen/,"#informationList tr:has(td)",dynamic
-"Municipality of Itingen, Publikationen",yes,itingen_publikationen,1,https://www.itingen.ch/de/verwaltung/publikationen/,"#publikation tr:has(td)",dynamic
+"Municipality of Itingen, News",yes,itingen_aktuellesinformationen,0,https://www.itingen.ch/de/aktuelles/aktuellesinformationen/,"#informationList tr:has(td)",dynamic
+"Municipality of Itingen, Publikationen",yes,itingen_publikationen,0,https://www.itingen.ch/de/verwaltung/publikationen/,"#publikation tr:has(td)",dynamic
 "Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,div.col-sm-12,dynamic
 "Municipality of Kirchberg, News",yes,kilchberg_PlanenBauen,0,https://www.kirchberg-be.ch/PlanenBauen/51941,div.col-sm-12,dynamic
-"Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,3,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,"#informationList tr:has(td)",dynamic
-"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,3,https://www.lyssach.ch/publikationen,"#publikation tr:has(td)",dynamic
+"Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,0,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,"#informationList tr:has(td)",dynamic
+"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,0,https://www.lyssach.ch/publikationen,"#publikation tr:has(td)",dynamic
 "Municipality of Pratteln, Aktuelle Planungen",yes,pratteln_atuelleplanungen,0,https://www.pratteln.ch/aktuelleplanungen,"div#maincontent div.icms-content-col-a div.icms-block-container",static
 "Municipality of Pratteln, News",yes,pratteln_aktuellesinformationen,0,https://www.pratteln.ch/aktuellesinformationen,"div#informationList_wrapper tr:has(td)",dynamic
 "Municipality of Riddes, News",yes,riddes_news,0,https://www.riddes.ch/commune/news-161.html,table.listTableItem,static
