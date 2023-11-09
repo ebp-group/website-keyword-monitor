@@ -5,7 +5,7 @@ label,active,slug,error_count,url,selector,type
 "Amtsblatt, Publications",yes,pratteln_publications,0,https://www.amtsblatt.bl.ch/#!/search/publications?keyword=pratteln,div.list-entry,dynamic
 "Association régionale ARCAM, Actualités",yes,arcam_actualites,0,https://arcam-vd.ch/actualites/,article.post,static
 "Association régionale ARCAM, Mylittoralparc",yes,arcam_mylittoralparc,0,https://www.mylittoralparc.ch/,div.publication_small,static
-"Association régionale ARCAM, Publications",yes,arcam_publications,1,https://arcam-vd.ch/thematique/organisation/,div.fwpl-result,static
+"Association régionale ARCAM, Publications",yes,arcam_publications,1,https://arcam-vd.ch/thematique/organisation/,article.publications,static
 "Canton Argovia, Amtsblatt",yes,argovia_publikationen,0,https://amtsblatt.ag.ch/publikationen/,div.publication-list__item,static
 "Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,0,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,.accordion__button,dynamic
 "Canton Argovia, Spatial development",yes,aargau_raumentwicklung,0,https://www.ag.ch/de/verwaltung/bvu/raumentwicklung,div.teaser__content,static
