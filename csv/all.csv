@@ -18,7 +18,6 @@ label,active,slug,error_count,url,selector,type
 "Canton Lucerne, Bekanntmachungen",yes,luzern_bekanntmachungen,0,https://www.lu.ch/verwaltung/BUWD/buwd_bekanntmachungen_planauflagen,"table.footable tbody>tr",static
 "Canton of Geneva, Publication All",yes,ge_publication_all,0,https://www.ge.ch/publication?type=1045&dossier=All&organisation=All,"div.publications-listing article",static
 "Canton of Geneva, Spatial departement",yes,departement_du_territoire,1,https://www.ge.ch/organisation/departement-du-territoire-dt,"div.actualites-listing article",static
-"Canton Ticino, Communications",yes,ticino_communications,1,https://foglioufficiale.ti.ch/#!/search/publications/detail/b3913202-962a-4f90-82a8-8ff0207dbb89,div.field-value,dynamic
 "Canton Ticino, Publications",yes,ticino_publications,0,https://foglioufficiale.ti.ch/#!/search/publications,div.list-entry,dynamic
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,article,static
 "Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,0,https://epublikation.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,.list-entry,dynamic
