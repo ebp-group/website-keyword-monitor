@@ -7,6 +7,10 @@ on:
         description: 'Path to a CSV containing the URLs'
         required: true
         type: string
+      keywords-path:
+        description: 'Path to a TXT containing the keywords'
+        required: true
+        type: string
       send-notifications:
         description: 'Run this workflow with notifications'
         default: true
@@ -77,7 +81,7 @@ jobs:
           echo "URL: ${{ matrix.url }}, selector: ${{ matrix.selector }}"
           mkdir text
           mkdir new_hashes
-          matches=$(./lib/website_hash.py -u "${{ matrix.url }}" -f "hashes/${{ matrix.slug }}.txt" -n "new_hashes/${{ matrix.slug }}.txt" -s "${{ matrix.selector }}" -t "${{ matrix.type }}" -o text/${{ matrix.slug }}.txt --verbose)
+          matches=$(./lib/website_hash.py -u "${{ matrix.url }}" -f "hashes/${{ matrix.slug }}.txt" -k "${{ inputs.keywords-path }}" -n "new_hashes/${{ matrix.slug }}.txt" -s "${{ matrix.selector }}" -t "${{ matrix.type }}" -o text/${{ matrix.slug }}.txt --verbose)
           echo $matches
           {
             echo 'matches<<EOF'
