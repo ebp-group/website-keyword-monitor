@@ -3,7 +3,7 @@
 """Hashes of a website selector
 
 Usage:
-  website_hash.py --url <url-of-website> --file <path> --new <path> [--selector <css-selector>] [--output <path>] [--type <type>] [--verbose] [--no-verify]
+  website_hash.py --url <url-of-website> --file <path> --keywords <path> --new <path> [--selector <css-selector>] [--output <path>] [--type <type>] [--verbose] [--no-verify]
   website_hash.py (-h | --help)
   website_hash.py --version
 
@@ -12,6 +12,7 @@ Options:
   --version                     Show version.
   -u, --url <url-of-website>    URL of the website to monitor.
   -f, --file <path>             Load the hashes of the selector output from file.
+  -k, --keywords <path>         Load the keywords from file.
   -n, --new <path>              Save the new hashes of the selector output in file.
   -s, --selector <css-selector> CSS selector to check for changes [default: body].
   -t, --type <type>             Type of website, one [default: static].
