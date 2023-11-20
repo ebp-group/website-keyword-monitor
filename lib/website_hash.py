@@ -65,9 +65,9 @@ def get_texts_from_selector(url, selector, verify, dl_type='static'):
     return unique_source_list
 
 
-def load_keywords():
+def load_keywords(path):
     keywords = []
-    with open(os.path.join(__location__, '..', 'keywords.txt')) as f:
+    with open(path) as f:
         keywords = [line.strip() for line in f]
     
     regex_keywords = [re.compile(rf'(.*)\b({k})(.*)', re.IGNORECASE) for k in keywords]
@@ -134,6 +134,7 @@ if __name__ == "__main__":
 
     url = arguments["--url"]
     file_path = arguments["--file"]
+    keywords_path = arguments["--keywords"]
     new_path = arguments["--new"]
     selector = arguments["--selector"]
     dl_type = arguments["--type"]
@@ -150,7 +151,7 @@ if __name__ == "__main__":
         with open(output, "w") as f:
             f.write(source_text)
 
-    keywords = load_keywords()
+    keywords = load_keywords(keywords_path)
     old_hashes = load_old_hashes(file_path)
 
     log.info("Write new hash file...")
