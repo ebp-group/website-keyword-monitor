@@ -6,8 +6,7 @@ Website Monitoring mit Schlüsselwörtern, implementiert in Python und GitHub Ac
 
 ## Schlüsselwörter 
 
-Für alle Webseiten werden dieselben Schlüsselwörter verwendet.
-Die Schlüsselwörter (`keywords`) sind in der Datei [`keywords.txt`](https://github.com/ebp-group/website-keyword-monitor/blob/main/keywords.txt) definiert, jeweils ein Schlüsselwort pro Zeile:
+Die Schlüsselwörter (`keywords`) sind in Textdateien im Ordner [`keywords`](https://github.com/ebp-group/website-keyword-monitor/tree/main/keywords) definiert, jeweils ein Schlüsselwort pro Zeile:
 
 ```
 rue
@@ -39,7 +38,7 @@ Beispiel:
 | "Thalwil informiert" | yes      | thalwil_news  | 0             | https://www.thalwil.ch/aktuellesinformationen | #informationList | static |
 
 
-Webseiten werden im CSV [`all.csv`](https://github.com/ebp-group/website-keyword-monitor/blob/main/csv/all.csv) definiert.
+Webseiten werden im Ordner [`csv`](https://github.com/ebp-group/website-keyword-monitor/blob/main/csv) definiert.
 
 ## Benachrichtigungen in MS Teams
 
