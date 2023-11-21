@@ -23,7 +23,7 @@ jobs:
       csv-path: csv/aubonne.csv
       keywords-path: keywords/aubonne.txt
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
-      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
       
@@ -33,7 +33,7 @@ jobs:
       csv-path: csv/dietlikon.csv
       keywords-path: keywords/dietlikon.txt
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
-      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
       
@@ -43,7 +43,7 @@ jobs:
       csv-path: csv/grancia.csv
       keywords-path: keywords/grancia.txt
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
-      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
       
@@ -53,7 +53,7 @@ jobs:
       csv-path: csv/itingen.csv
       keywords-path: keywords/itingen.txt
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
-      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
       
@@ -63,7 +63,7 @@ jobs:
       csv-path: csv/lyssach.csv
       keywords-path: keywords/lyssach.txt
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
-      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -73,7 +73,7 @@ jobs:
       csv-path: csv/pratteln.csv
       keywords-path: keywords/pratteln.txt
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
-      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -83,7 +83,7 @@ jobs:
       csv-path: csv/riddes.csv
       keywords-path: keywords/riddes.txt
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
-      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -93,7 +93,7 @@ jobs:
       csv-path: csv/rothenburg.csv
       keywords-path: keywords/rothenburg.txt
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
-      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -103,7 +103,7 @@ jobs:
       csv-path: csv/spreitenbach.csv
       keywords-path: keywords/spreitenbach.txt
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
-      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -113,7 +113,7 @@ jobs:
       csv-path: csv/st_gallen.csv
       keywords-path: keywords/st_gallen.txt
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
-      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -123,11 +123,11 @@ jobs:
       csv-path: csv/vernier.csv
       keywords-path: keywords/vernier.txt
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
-      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
-  update_files:
+  update_hashes:
     needs:
       - check_aubonne_websites
       - check_dietlikon_websites
@@ -140,7 +140,7 @@ jobs:
       - check_spreitenbach_websites
       - check_st_gallen_websites
       - check_vernier_websites
-    uses: ebp-group/website-keyword-monitor/.github/workflows/update_files.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/update_hashes.yml@main
     with:
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
       commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
