@@ -191,7 +191,7 @@ jobs:
           push-branch: ${{ github.ref_name }}
           name: GitHub Action Bot
           email: website-keyword-monitor@users.noreply.github.com
-          commit-message: Update hashes and counts
+          commit-message: Update counts
           rebase: 'true'
 
       - name: Notify about failure
