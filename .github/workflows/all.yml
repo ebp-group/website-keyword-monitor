@@ -128,6 +128,18 @@ jobs:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
   update_files:
+    needs:
+      - check_aubonne_websites
+      - check_dietlikon_websites
+      - check_grancia_websites
+      - check_itingen_websites
+      - check_lyssach_websites
+      - check_pratteln_websites
+      - check_riddes_websites
+      - check_rothenburg_websites
+      - check_spreitenbach_websites
+      - check_st_gallen_websites
+      - check_vernier_websites
     uses: ebp-group/website-keyword-monitor/.github/workflows/update_files.yml@main
     with:
       send-notifications: ${{ !contains(inputs.notifications, 'false') }}
