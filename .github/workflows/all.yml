@@ -127,3 +127,11 @@ jobs:
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
+  update_files:
+    uses: ebp-group/website-keyword-monitor/.github/workflows/update_files.yml@main
+    with:
+      send-notifications: ${{ !contains(inputs.notifications, 'false') }}
+      commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
+    secrets:
+      MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
+
