@@ -1,12 +1,8 @@
-name: Update files in repo
+name: Update hashes in repo
 
 on:
   workflow_call:
     inputs:
-      csv-path:
-        description: 'Path to a CSV containing the URLs'
-        required: true
-        type: string
       send-notifications:
         description: 'Run this workflow with notifications'
         default: true
@@ -38,11 +34,6 @@ jobs:
           pip install -r requirements.txt
           sudo apt-get install sqlite3
 
-      - name: Populate database
-        env:
-           CSV_PATH: ${{ inputs.csv-path }}
-        run: ./workflow/populate_database.sh $CSV_PATH
-
       - name: Download output
         uses: actions/download-artifact@v3
         with:
@@ -51,14 +42,6 @@ jobs:
       
       - name: Copy hash files
         run: cp output/new_hashes/*.txt hashes/
-
-      - name: Update hashes and error counts
-        run: ./workflow/update_from_artifacts.sh
-      
-      - name: Export database
-        env:
-           CSV_PATH: ${{ inputs.csv-path }}
-        run: ./workflow/export_database_to_csv.sh $CSV_PATH
           
       - name: Check if there are changes in the repo
         run: |
@@ -81,7 +64,7 @@ jobs:
           push-branch: ${{ github.ref_name }}
           name: GitHub Action Bot
           email: website-keyword-monitor@users.noreply.github.com
-          commit-message: Update hashes and counts
+          commit-message: Update hashes
           rebase: 'true'
           
       - name: Notify about failure
