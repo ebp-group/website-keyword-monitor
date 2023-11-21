@@ -21,7 +21,7 @@ jobs:
       csv-path: csv/aubonne.csv
       keywords-path: keywords/aubonne.txt
       send-notifications: ${{ inputs.notifications }}
-      commit-hashes: ${{ inputs.commit }}
+      commit-error-count: ${{ inputs.commit }}
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
       
