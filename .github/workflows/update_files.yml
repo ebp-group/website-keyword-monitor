@@ -1,0 +1,95 @@
+name: Update files in repo
+
+on:
+  workflow_call:
+    inputs:
+      csv-path:
+        description: 'Path to a CSV containing the URLs'
+        required: true
+        type: string
+      send-notifications:
+        description: 'Run this workflow with notifications'
+        default: true
+        required: false
+        type: boolean
+      commit-hashes:
+        description: 'Commit updated hashes'
+        default: true
+        required: false
+        type: boolean
+    secrets:
+      MS_TEAMS_WEBHOOK_URL:
+        required: true
+
+jobs:
+  update_hashes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          sudo apt-get install sqlite3
+
+      - name: Populate database
+        env:
+           CSV_PATH: ${{ inputs.csv-path }}
+        run: ./workflow/populate_database.sh $CSV_PATH
+
+      - name: Download output
+        uses: actions/download-artifact@v3
+        with:
+          name: output
+          path: output
+      
+      - name: Copy hash files
+        run: cp output/new_hashes/*.txt hashes/
+
+      - name: Update hashes and error counts
+        run: ./workflow/update_from_artifacts.sh
+      
+      - name: Export database
+        env:
+           CSV_PATH: ${{ inputs.csv-path }}
+        run: ./workflow/export_database_to_csv.sh $CSV_PATH
+          
+      - name: Check if there are changes in the repo
+        run: |
+            git status --porcelain
+            if [[ -z $(git status --porcelain) ]];
+            then
+              echo "Repo is clean"
+              echo "changed=0" >> $GITHUB_OUTPUT
+            else
+              echo "Repo is dirty"
+              echo "changed=1" >> $GITHUB_OUTPUT
+            fi
+        id: changes
+         
+      - name: Commit and push to repo
+        if: ${{ steps.changes.outputs.changed == 1 && inputs.commit-hashes }}
+        uses: github-actions-x/commit@v2.9
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          push-branch: ${{ github.ref_name }}
+          name: GitHub Action Bot
+          email: website-keyword-monitor@users.noreply.github.com
+          commit-message: Update hashes and counts
+          rebase: 'true'
+          
+      - name: Notify about failure
+        if: ${{ failure() && inputs.send-notifications }}
+        uses: aliencube/microsoft-teams-actions@v0.8.0
+        with:
+          webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
+          title: "🔴 GitHub Commit fehlgeschlagen."
+          summary: GitHub Action fehlgeschlagen.
+          theme_color: CC0000
+          actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
