@@ -31,7 +31,7 @@ jobs:
       csv-path: csv/dietlikon.csv
       keywords-path: keywords/dietlikon.txt
       send-notifications: ${{ inputs.notifications }}
-      commit-hashes: ${{ inputs.commit }}
+      commit-error-count: ${{ inputs.commit }}
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
       
@@ -41,7 +41,7 @@ jobs:
       csv-path: csv/grancia.csv
       keywords-path: keywords/grancia.txt
       send-notifications: ${{ inputs.notifications }}
-      commit-hashes: ${{ inputs.commit }}
+      commit-error-count: ${{ inputs.commit }}
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
       
@@ -51,7 +51,7 @@ jobs:
       csv-path: csv/itingen.csv
       keywords-path: keywords/itingen.txt
       send-notifications: ${{ inputs.notifications }}
-      commit-hashes: ${{ inputs.commit }}
+      commit-error-count: ${{ inputs.commit }}
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
       
@@ -61,7 +61,7 @@ jobs:
       csv-path: csv/lyssach.csv
       keywords-path: keywords/lyssach.txt
       send-notifications: ${{ inputs.notifications }}
-      commit-hashes: ${{ inputs.commit }}
+      commit-error-count: ${{ inputs.commit }}
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -71,7 +71,7 @@ jobs:
       csv-path: csv/pratteln.csv
       keywords-path: keywords/pratteln.txt
       send-notifications: ${{ inputs.notifications }}
-      commit-hashes: ${{ inputs.commit }}
+      commit-error-count: ${{ inputs.commit }}
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -81,7 +81,7 @@ jobs:
       csv-path: csv/riddes.csv
       keywords-path: keywords/riddes.txt
       send-notifications: ${{ inputs.notifications }}
-      commit-hashes: ${{ inputs.commit }}
+      commit-error-count: ${{ inputs.commit }}
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -91,7 +91,7 @@ jobs:
       csv-path: csv/rothenburg.csv
       keywords-path: keywords/rothenburg.txt
       send-notifications: ${{ inputs.notifications }}
-      commit-hashes: ${{ inputs.commit }}
+      commit-error-count: ${{ inputs.commit }}
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -101,7 +101,7 @@ jobs:
       csv-path: csv/spreitenbach.csv
       keywords-path: keywords/spreitenbach.txt
       send-notifications: ${{ inputs.notifications }}
-      commit-hashes: ${{ inputs.commit }}
+      commit-error-count: ${{ inputs.commit }}
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -111,7 +111,7 @@ jobs:
       csv-path: csv/st_gallen.csv
       keywords-path: keywords/st_gallen.txt
       send-notifications: ${{ inputs.notifications }}
-      commit-hashes: ${{ inputs.commit }}
+      commit-error-count: ${{ inputs.commit }}
     secrets:
       MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
 
@@ -120,6 +120,26 @@ jobs:
     with:
       csv-path: csv/vernier.csv
       keywords-path: keywords/vernier.txt
+      send-notifications: ${{ inputs.notifications }}
+      commit-error-count: ${{ inputs.commit }}
+    secrets:
+      MS_TEAMS_WEBHOOK_URL: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
+      
+  update_hashes:
+    needs:
+      - check_aubonne_websites
+      - check_dietlikon_websites
+      - check_grancia_websites
+      - check_itingen_websites
+      - check_lyssach_websites
+      - check_pratteln_websites
+      - check_riddes_websites
+      - check_rothenburg_websites
+      - check_spreitenbach_websites
+      - check_st_gallen_websites
+      - check_vernier_websites
+    uses: ebp-group/website-keyword-monitor/.github/workflows/update_hashes.yml@main
+    with:
       send-notifications: ${{ inputs.notifications }}
       commit-hashes: ${{ inputs.commit }}
     secrets:
