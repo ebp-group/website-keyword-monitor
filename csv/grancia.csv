@@ -1,8 +1,8 @@
 label,active,slug,error_count,url,selector,type
-"Municipality of Grancia, News",yes,grancia_commune,0,https://www.grancia.ch/,div.lsvr-post-list-widget__item-content,static
+"Canton Ticino, Publications",yes,ticino_publications,0,https://foglioufficiale.ti.ch/#!/search/publications,div.list-entry,dynamic
 "Municipality of Collina D'Oro, Collinanews",no,collina,0,https://www.collinadoro.swiss/index.php?node=394&lng=1&rif=178eb2fb38,.ListPraticaTab,static
 "Municipality of Collina D'Oro, Collinanews Comunicati",yes,collina_comunicati,0,https://www.collinadoro.swiss/index.php?node=412&lng=1&rif=8533a52a61,div.OggPraticheDoc,static
 "Municipality of Collina D'Oro, Messagi municipali",yes,collina_messagi,0,https://www.collinadoro.swiss/index.php?node=413&lng=1&rif=c7cdb729f4,div.ListNewsBtApri,static
 "Municipality of Collina D'Oro, News",yes,collina_news,0,https://www.collinadoro.swiss/index.php?node=433&lng=1&rif=5d8523cc99,div.ListNewsBtApri,static
 "Municipality of Collina D'Oro, Zoning Plan",yes,collina_zoning_plan,0,https://www.collinadoro.swiss/index.php?node=514&lng=1&rif=9a1531f8cd,div.OggPraticheDoc,static
-"Canton Ticino, Publications",yes,ticino_publications,0,https://foglioufficiale.ti.ch/#!/search/publications,div.list-entry,dynamic
+"Municipality of Grancia, News",yes,grancia_commune,0,https://www.grancia.ch/,div.lsvr-post-list-widget__item-content,static
