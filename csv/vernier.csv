@@ -1,7 +1,7 @@
 label,active,slug,error_count,url,selector,type
 "Municipality of Riddes, News",yes,riddes_news,0,https://www.riddes.ch/commune/news-161.html,table.listTableItem,static
-"Official gazette municipality of Riddes",yes,riddes_pilier_public,0,https://www.riddes.ch/commune/pilier-public-130.html,table.listTableItem,static
 "Municipality of Saxon, News",yes,saxon_actualites,0,https://www.saxon.ch/actualites/,div.col-sm-12,static
+"Official gazette municipality of Riddes",yes,riddes_pilier_public,0,https://www.riddes.ch/commune/pilier-public-130.html,table.listTableItem,static
 "Official gazette municipality of Saxon",yes,saxon_publications,0,https://www.saxon.ch/publications/,div.col-sm-12,static
 "Website Agglomération Coude du Rhône",yes,agglo_coude_rhone,0,https://agglo-coude-rhone.ch/,div.mesures-content-box,static
 "Website Antenne Valais Romand, Informations about spatial design projects",yes,region_valais_romand,0,https://www.regionvalaisromand.ch/fr/projets-dossiers-426.html?projetsearchdistrict=4&projetsearchcommune=43&projetsearchthematique=1&projetsearchetat=1,a.listElement.masonelement,static
