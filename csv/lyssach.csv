@@ -1,11 +1,11 @@
 label,active,slug,error_count,url,selector,type
-"Municipality of Rüdtlingen Alchenflüh, News",yes,ruedtlingen_alchenflueh_aktuelles,0,https://www.rual.ch/de/aktuelles/index.php,"#blockContentFullRight div.listEntryInner",dynamic
-"Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,0,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,"#informationList tr:has(td)",dynamic
-"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,0,https://www.lyssach.ch/publikationen,"#publikation tr:has(td)",dynamic
-"Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,div.col-sm-12,dynamic
-"Municipality of Kirchberg, News",yes,kilchberg_PlanenBauen,0,https://www.kirchberg-be.ch/PlanenBauen/51941,div.col-sm-12,dynamic
-"Website Regionalkonferenz Emmental",yes,region_emmental,0,https://www.region-emmental.ch/,div.elementor-widget-container,static
-"Website Regionalkonferenz Emmental, Alle News",yes,region_emmental_alle_news,0,https://www.region-emmental.ch/alle-news/,.ue_post_grid_item,static
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_start,0,https://www.bvd.be.ch/de/start.html,div.css-1xttnnv,static
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_medienmitteilungen,0,https://www.bvd.be.ch/de/start/ueber-uns/medienmitteilungen.html,div.css-1xttnnv,dynamic
+"Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,div.col-sm-12,dynamic
+"Municipality of Kirchberg, News",yes,kilchberg_PlanenBauen,0,https://www.kirchberg-be.ch/PlanenBauen/51941,div.col-sm-12,dynamic
+"Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,0,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,"#informationList tr:has(td)",dynamic
+"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,0,https://www.lyssach.ch/publikationen,"#publikation tr:has(td)",dynamic
+"Municipality of Rüdtlingen Alchenflüh, News",yes,ruedtlingen_alchenflueh_aktuelles,0,https://www.rual.ch/de/aktuelles/index.php,"#blockContentFullRight div.listEntryInner",dynamic
 "Official gazette Canton Bern",yes,canton_bern_publikationen,0,https://amtsblatt.be.ch/#!/search/publications?keyword=lyssach,div.list-entry,dynamic
+"Website Regionalkonferenz Emmental",yes,region_emmental,0,https://www.region-emmental.ch/,div.elementor-widget-container,static
+"Website Regionalkonferenz Emmental, Alle News",yes,region_emmental_alle_news,0,https://www.region-emmental.ch/alle-news/,.ue_post_grid_item,static
