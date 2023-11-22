@@ -1,8 +1,8 @@
 label,active,slug,error_count,url,selector,type
-"Municipality of Itingen, News",yes,itingen_aktuellesinformationen,0,https://www.itingen.ch/de/aktuelles/aktuellesinformationen/,"#informationList tr:has(td)",dynamic
-"Municipality of Itingen, Publikationen",yes,itingen_publikationen,0,https://www.itingen.ch/de/verwaltung/publikationen/,"#publikation tr:has(td)",dynamic
 "Canton Basel-Country, Baugesuche",yes,baugesuche_bl,0,https://bgauflage.bl.ch/index.html,"div.col-12 tr:has(td)",static
 "Canton Basel-Country, News concerning planning and environment",no,news_listing_bl,7,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/ftw-news-newslistingblock/news_listing,.news-item,dynamic
 "Canton Basel-Country, News concerning spatial development",no,raumplanung_bl,7,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/raumplanung,"#block-3 + div p",dynamic
 "Canton Basel-Country, Planauflagen",yes,planauflagen_bl,0,https://www.amtsblatt.bl.ch/#!/search/publications?keyword=pratteln,div.list-entry,dynamic
 "Canton Basel-Country, Vernehmlassungen",no,vernehmlassungen_bl,7,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,div.sl-column,dynamic
+"Municipality of Itingen, News",yes,itingen_aktuellesinformationen,0,https://www.itingen.ch/de/aktuelles/aktuellesinformationen/,"#informationList tr:has(td)",dynamic
+"Municipality of Itingen, Publikationen",yes,itingen_publikationen,0,https://www.itingen.ch/de/verwaltung/publikationen/,"#publikation tr:has(td)",dynamic
