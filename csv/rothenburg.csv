@@ -1,5 +1,5 @@
 label,active,slug,error_count,url,selector,type
+"Canton Lucerne, Bekanntmachungen",yes,luzern_bekanntmachungen,0,https://www.lu.ch/verwaltung/BUWD/buwd_bekanntmachungen_planauflagen,"table.footable tbody>tr",static
 "Municipality of Rothenburg, Aktuelle Projekte",yes,rothenburg_gebietsentwicklung,0,https://www.rothenburg.ch/projektethemen,div.icms-wysiwyg,static
 "Municipality of Rothenburg, Amtsmitteilungen",yes,rothenburg_amtsmitteilungen,0,https://www.rothenburg.ch/amtsmitteilungen,"div#informationList_wrapper tr",dynamic
 "Municipality of Rothenburg, Local planning revision",yes,rothenburg_ortsplanung,0,https://zukunft-rothenburg.ch/de/gesamtrevision-ortsplanung/participant/survey-document-groups-informational/2360,div.cms-content,dynamic
-"Canton Lucerne, Bekanntmachungen",yes,luzern_bekanntmachungen,0,https://www.lu.ch/verwaltung/BUWD/buwd_bekanntmachungen_planauflagen,"table.footable tbody>tr",static
