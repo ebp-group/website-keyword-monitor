@@ -6,3 +6,4 @@ selenium
 Selenium-Screenshot
 selenium-stealth
 pyvirtualdisplay
+pymsteams

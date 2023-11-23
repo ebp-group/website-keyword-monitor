@@ -11,6 +11,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium_stealth import stealth
 from pyvirtualdisplay import Display
+import subprocess
 
 
 log = logging.getLogger(__name__)
@@ -96,3 +97,39 @@ def download_with_selenium(url, selector):
         driver.quit()
 
     return content
+
+
+def pdfdownload(url, encoding='utf-8', raw=False, layout=False, silent=False, page=None, rect=None, fixed=None):
+    """Download a PDF and convert it to text"""
+    pdf = download_content(url, silent=silent)
+    return pdftotext(
+        pdf,
+        encoding=encoding,
+        raw=raw,
+        layout=layout,
+        page=page,
+        rect=rect,
+        fixed=fixed
+    )
+
+
+def pdftotext(pdf, encoding='utf-8', raw=False, layout=False, page=None, rect=None, fixed=None):
+    pdf_command = ['pdftotext']
+    if raw:
+        pdf_command += ['-raw']
+    if layout:
+        pdf_command += ['-layout']
+    if page:
+        pdf_command += ['-f', str(page), '-l', str(page)]
+    if rect:
+        pdf_command += ['-x', str(rect[0]), '-y', str(rect[1]), '-W', str(rect[2]), '-H', str(rect[3])]
+    if fixed:
+        pdf_command += ['-fixed', str(fixed)]
+    pdf_command += ['-', '-']
+    p = subprocess.Popen(
+        pdf_command,
+        stdin=subprocess.PIPE,
+        stdout=subprocess.PIPE
+    )
+    out = p.communicate(input=pdf)[0]
+    return out.decode(encoding)
