@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Hashes of a website selector
+"""Match keywords against a website selector
 
 Usage:
-  website_hash.py --url <url-of-website> --file <path> --keywords <path> --new <path> [--selector <css-selector>] [--output <path>] [--type <type>] [--verbose] [--no-verify]
-  website_hash.py (-h | --help)
-  website_hash.py --version
+  website_matcher.py --url <url-of-website> --file <path> --keywords <path> --new <path> [--selector <css-selector>] [--output <path>] [--type <type>] [--verbose] [--no-verify]
+  website_matcher.py (-h | --help)
+  website_matcher.py --version
 
 Options:
   -h, --help                    Show this screen.
