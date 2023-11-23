@@ -1,0 +1,43 @@
+name: Single location check
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+      location:
+        description: 'Location slug'
+        required: true
+        default: all
+        type: string
+      notifications:
+          description: 'True to send notifications'
+          required: true
+          default: false
+          type: boolean
+      commit:
+          description: 'True to commit hashes'
+          required: true
+          default: false
+          type: boolean
+
+jobs:
+  check_single_location:
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    with:
+      environment: ${{ inputs.environment }}
+      csv-path: csv/${{ inputs.location }}.csv
+      keywords-path: keywords/${{ inputs.location }}.txt
+      send-notifications: ${{ inputs.notifications }}
+      commit-error-count: ${{ inputs.commit }}
+    secrets: inherit
+      
+  update_hashes:
+    needs: check_single_location
+    uses: ebp-group/website-keyword-monitor/.github/workflows/update_hashes.yml@main
+    with:
+      environment: ${{ inputs.environment }}
+      send-notifications: ${{ inputs.notifications }}
+      commit-hashes: ${{ inputs.commit }}
+    secrets: inherit
+
