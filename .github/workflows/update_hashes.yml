@@ -3,6 +3,10 @@ name: Update hashes in repo
 on:
   workflow_call:
     inputs:
+      environment:
+        description: 'The environment to run this job on'
+        required: true
+        type: string
       send-notifications:
         description: 'Run this workflow with notifications'
         default: true
@@ -20,6 +24,7 @@ on:
 jobs:
   update_hashes:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
 
     steps:
       - uses: actions/checkout@v3
