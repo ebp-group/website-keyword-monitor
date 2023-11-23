@@ -3,6 +3,10 @@ name: Check websites for changes
 on:
   workflow_call:
     inputs:
+      environment:
+        description: 'The environment to run this job on'
+        required: true
+        type: string
       csv-path:
         description: 'Path to a CSV containing the URLs'
         required: true
@@ -27,6 +31,7 @@ on:
 jobs:
   build-matrix:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     steps:
       - uses: actions/checkout@v3
       
@@ -53,6 +58,7 @@ jobs:
   notify:
     needs: build-matrix
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
     strategy:
       fail-fast: false
       max-parallel: 10
@@ -138,6 +144,7 @@ jobs:
     needs: notify
     if: always()
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
 
     steps:
       - uses: actions/checkout@v3
