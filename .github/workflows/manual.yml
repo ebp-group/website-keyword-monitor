@@ -3,6 +3,8 @@ name: Manual check of websites
 on:
   workflow_dispatch:
     inputs:
+      environment:
+        type: environment
       notifications:
           description: 'True to send notifications'
           required: true
