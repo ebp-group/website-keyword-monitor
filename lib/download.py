@@ -1,16 +1,12 @@
 # -*- coding: utf-8 -*-
 import logging
 import requests
+import time
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import TimeoutException
 from selenium_stealth import stealth
-from pyvirtualdisplay import Display
 import subprocess
 
 
@@ -28,7 +24,10 @@ def _download_request(url, verify=True):
     http = requests.Session()
     http.mount("https://", adapter)
     http.mount("http://", adapter)
-    headers = {'user-agent': 'Mozilla Firefox Mozilla/5.0; ebp-group website-keyword-monitor at github'}
+    headers = {
+        'user-agent': 'Mozilla Firefox Mozilla/5.0; ebp-group website-keyword-monitor at github',
+        'accept-language': 'de-CH',
+    }
     r = http.get(url, headers=headers, timeout=20, verify=verify)
     r.raise_for_status()
     return r
@@ -58,13 +57,17 @@ def download_file(url, path, verify=True):
             f.write(chunk)
 
 
-def download_with_selenium(url, selector):
-    display = Display(visible=0, size=(1200, 1200))  
-    display.start()
+def get_content_type(url, verify=True):
+    r = _download_request(url, verify=verify)
+    content_type = r.headers.get('content-type')
+    log.debug(f"Content-Type: {content_type}")
+    return content_type
 
+
+def download_with_selenium(url, timeout=3):
     chrome_options = Options()
     chrome_options.add_argument("start-maximized")
-    #chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=1200,1200")
     chrome_options.add_argument("--lang=de-CH")
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
@@ -75,7 +78,7 @@ def download_with_selenium(url, selector):
     # Use stealth to not trigger Cloudflare etc. bot detection
     stealth(
         driver,
-        languages=["en-US", "en"],
+        languages=["de-CH", "de"],
         vendor="Google Inc.",
         platform="Win32",
         webgl_vendor="Intel Inc.",
@@ -84,24 +87,18 @@ def download_with_selenium(url, selector):
     )
 
     driver.get(url)
-    try:
-        wait = WebDriverWait(driver, 60)
-        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, selector)))
-        content = driver.page_source
-    except TimeoutException:
-        # if the selector was not found return a static string
-        log.info(f"selector '{selector}' not found!")
-        content = f"selector '{selector}' not found"
-    finally:
-        log.debug(f"Website source: {driver.page_source}")
-        driver.quit()
+    # wait for the page to load
+    time.sleep(timeout)
+    content = driver.page_source
+    log.debug(f"Website source: {content}")
+    driver.quit()
 
     return content
 
 
 def pdfdownload(url, encoding='utf-8', raw=False, layout=False, silent=False, page=None, rect=None, fixed=None):
     """Download a PDF and convert it to text"""
-    pdf = download_content(url, silent=silent)
+    pdf = download_content(url)
     return pdftotext(
         pdf,
         encoding=encoding,

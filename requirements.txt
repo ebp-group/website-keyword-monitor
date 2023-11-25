@@ -8,3 +8,5 @@ Selenium-Screenshot
 selenium-stealth
 pyvirtualdisplay
 pymsteams
+ghapi
+jsonlines

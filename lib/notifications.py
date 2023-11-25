@@ -3,15 +3,14 @@
 """Send a notification message to Microsoft Teams
 
 Usage:
-  notifications.py --url <url-of-website> --label <label> --matches <matches-file> [--run-url <run-url>] [--verbose] [--no-verify]
+  notifications.py --location <location> --matches <matches-file> [--run-url <run-url>] [--verbose] [--no-verify]
   notifications.py (-h | --help)
   notifications.py --version
 
 Options:
   -h, --help                    Show this screen.
   --version                     Show version.
-  -u, --url <url-of-website>    URL of the website.
-  -l, --label <label>           Label of the website.
+  -l, --location <location>     Label of the location.
   -m, --matches <matches-file>  Path to the file containing the matches.
   -r, --run-url <run-url>       URL to the current GitHub run.
   --verbose                     Option to enable more verbose output.
@@ -19,8 +18,12 @@ Options:
 
 import os
 import logging
+import csv
+from datetime import datetime
 import pymsteams
 from docopt import docopt
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 
 arguments = docopt(__doc__, version="Send a notification message to Microsoft Teams 1.0")
@@ -38,8 +41,7 @@ logging.basicConfig(
 logging.captureWarnings(True)
 
 team_webhook_url = os.getenv('MS_TEAMS_WEBHOOK_URL')
-url = arguments['--url']
-label = arguments['--label']
+location = arguments['--location']
 matches_path = arguments['--matches']
 github_run_url = arguments['--run-url']
 
@@ -48,16 +50,22 @@ github_run_url = arguments['--run-url']
 teams_msg = pymsteams.connectorcard(team_webhook_url)
 
 # Set the content
+teams_msg.title(f"🟢 Standort «{location}» hat Änderungen")
+teams_msg.summary(f"🟢 Standort «{location}» hat Änderungen")
 
-teams_msg.title(f"🟢 Webseite «${label}» hat Änderungen")
-teams_msg.summary(f"🟢 Webseite «${label}» hat Änderungen")
 
-with open(matches_path) as f:
-    matches = f.read()
+# add sections
+match_section = pymsteams.cardsection()
 
-teams_msg.text(f"[${label}](${url}): ${matches}")
+teams_msg.addSection(match_section)
 
-teams_msg.addLinkButton("Webseite anschauen", url)
+with open(matches_path, encoding='utf-8', newline='') as f:
+    dr = csv.DictReader(f)
+    for r in dr:
+        print(r)
+        match_date = datetime.fromisoformat(r['date']).strftime('%d.%m.%Y')
+        match_section.addFact(f"Match vom {match_date}", f"[{r['label']}]({r['url']}): {r['match']}")
+
 if github_run_url:
     teams_msg.addLinkButton("Logs anschauen", github_run_url)
 
