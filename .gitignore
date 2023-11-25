@@ -5,3 +5,4 @@ website.db
 geckodriver.log
 output
 new_hashes
+matches
