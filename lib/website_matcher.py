@@ -178,9 +178,10 @@ def crawl_urls(url, label, timeout, level, dl_type, keywords, old_hashes, verify
     for link in soup.find_all('a'):
         try:
             # skip empty or anchor links
-            if not link['href'] or link['href'].startswith('#'):
+            href = link['href']
+            if not href or href.startswith('#') or href.startswith('mailto:'):
                 continue
-            absolute_url = urllib.parse.urljoin(url, link['href'])
+            absolute_url = urllib.parse.urljoin(url, href)
         except KeyError:
             log.debug(f"No href in link: {link}")
             continue
