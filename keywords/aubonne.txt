@@ -49,6 +49,7 @@ Traveaux de construction
 tuyau
 Zone à bâtir
 Allaman
+Buchillon
 Château
 Chem de Chasselas
 Chem de la Passerelle
