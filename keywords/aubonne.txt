@@ -102,7 +102,6 @@ Rle de la Croix
 Rle. de la Croix
 Rôle de la Croix
 Route d'Allaman
-Route d'Allaman
 Route d'Aubonne
 Route de la Gare
 Route de l'Etraz
@@ -110,13 +109,11 @@ Route du Signal
 Route Suisse
 Roveray
 Rte d'Allaman
-Rte d'Allaman
 Rte d'Aubonne
 Rte de la Gare
 Rte de l'Etraz
 Rte du Signal
 Rte Suisse
-Rte. d'Allaman
 Rte. d'Allaman
 Rte. d'Aubonne
 Rte. de la Gare
