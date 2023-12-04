@@ -91,6 +91,7 @@ Chemin des Sarments
 Chemin des Vignes
 E25
 E62
+Etoy
 Grand Rue
 Petite Rue
 Pl. de la Croix
