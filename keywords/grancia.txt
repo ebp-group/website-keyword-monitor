@@ -14,11 +14,9 @@ Dezonamento
 Gara
 Inizio dei lavori
 lavori
-legge
 Mandato di studio parallelo
 Norme tecniche di attuazione
 Opposizione
-partecipazione
 partecipazione
 Pianificazione locale
 Piano cantonale con autorizzazione a costruire
@@ -33,17 +31,13 @@ Progetto di massima
 Progetto edilizio
 Programma d[’']agglomerato
 pubblicazione
-pubblicazione
-pubblicazione
 regolamento
-revisione
 revisione
 ricorso
 rinnovo
 riqualificazione
 ristrutturazione
 Rotatoria
-Strada
 Studio
 Studio di fattibilità
 Studio preliminare
