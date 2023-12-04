@@ -169,13 +169,15 @@ def crawl_urls(url, label, timeout, level, dl_type, keywords, old_hashes, verify
 
     if matches:
         yield {
+            "date": 
             "type": "HTML",
             "url": url,
             "label": label,
             "matches": matches,
         }
 
-    for link in soup.find_all('a'):
+    # find all links with href attribute, limit to 500 results
+    for link in soup.find_all('a', href=True, limit=500):
         try:
             # skip empty or anchor links
             href = link['href']
