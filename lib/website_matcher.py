@@ -169,7 +169,6 @@ def crawl_urls(url, label, timeout, level, dl_type, keywords, old_hashes, verify
 
     if matches:
         yield {
-            "date": 
             "type": "HTML",
             "url": url,
             "label": label,
