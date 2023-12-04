@@ -217,7 +217,7 @@ if __name__ == "__main__":
     label = arguments["--label"]
     keywords_path = arguments["--keywords"]
     new_path = arguments["--new"]
-    timeout = arguments["--wait"]
+    timeout = int(arguments["--wait"])
     dl_type = arguments["--type"]
     verify = not arguments["--no-verify"]
     output = arguments["--output"]
