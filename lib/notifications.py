@@ -11,14 +11,14 @@ Options:
   -h, --help                    Show this screen.
   --version                     Show version.
   -l, --location <location>     Label of the location.
-  -m, --matches <matches-file>  Path to the file containing the matches.
+  -m, --matches <matches-file>  Path to the JSONL file containing the matches.
   -r, --run-url <run-url>       URL to the current GitHub run.
   --verbose                     Option to enable more verbose output.
 """
 
 import os
 import logging
-import csv
+import jsonlines
 from datetime import datetime
 import pymsteams
 from docopt import docopt
@@ -59,9 +59,8 @@ match_section = pymsteams.cardsection()
 
 teams_msg.addSection(match_section)
 
-with open(matches_path, encoding='utf-8', newline='') as f:
-    dr = csv.DictReader(f)
-    for r in dr:
+with jsonlines.open(matches_path) as reader:
+    for r in reader:
         print(r)
         match_date = datetime.fromisoformat(r['date']).strftime('%d.%m.%Y')
         match_section.addFact(f"Match vom {match_date}", f"[{r['label']}]({r['url']}): {r['match']}")
