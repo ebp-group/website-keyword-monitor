@@ -1,173 +1,116 @@
-Ortsplanung
-Nutzungsplan
-Baureglement
-Bauvorschriften
-BZO
-BNO
-Zonenplan
-Gestaltungsplan
-Sondernutzungsplan
-Bebauungsplan
-Quartierplan
-Öffentliche Auflage
-Mitwirkung
-Einsprache
-Partizipation
-Richtplan
-KRP
-Strasse
-Verkehr
-Leitung
-Revision
-Leitbild
-Entwicklung
-Bauprojekt
-Baubewilligung
-Wettbewerb
-Studienauftrag
-Sperrung
-Sanierung
-Baustart
-Planauflage
-Plangenehmigung
-Bauarbeiten
-Neugestaltung
-Publikation
-Reglement
-Gesetz
-Erneuerung
-Erweiterung
-Stadtentwicklung
-Gemeindeentwicklung
-Quartiersentwicklung
-Einzonung
-Umzonung
-Aufzonung
-Auszonung
-Testplanung
-Machbarkeitsstudie
-Vorstudie
-Vorprojekt
-Richtprojekt
-Umbau
-Neubau
-Aufwertung
-Kreisel
-Revision
-Planungszone
-Bauzone
 Agglomeration
 Agglomerationsprogramm
-Regionales Gesamtverkehrs- und Siedlungskonzept
+Aufwertung
+Aufzonung
+Auszonung
+Bauarbeiten
+Baubewilligung
+Bauprojekt
+Baureglement
+Baustart
+Bauvorschriften
+Bauzone
+Bebauungsplan
+BNO
+BZO
+Einsprache
+Einzonung
+Entwicklung
+Erneuerung
+Erweiterung
+Gemeindeentwicklung
 Gesamtverkehrskonzept
+Gestaltungsplan
+Kreisel
+KRP
+Leitbild
+Leitung
+Machbarkeitsstudie
+Mitwirkung
+Neubau
+Neugestaltung
+Nutzungsplan
+Öffentliche Auflage
+Ortsplanung
+Partizipation
+Planauflage
+Plangenehmigung
+Planungszone
+Publikation
+Quartierplan
+Quartiersentwicklung
+Regionales Gesamtverkehrs- und Siedlungskonzept
+Reglement
+Revision
+Richtplan
+Richtprojekt
+Sanierung
 Siedlungskonzept
-Plan d[’']aménagement local
-Plan d[’']affectation
-Réglement des constructions
-Plan des zones
-Plan localisé de quartier
-Plan d’affectation spéciale
-Plan localisé de quartier
-permis de construire
-Enquête publique
-participation
-Opposition
-Participation
-Plan directeur
-Route
-Trafic
-Canalisation
-tuyau
-conduite
-Révision
-Image directrice
-Projet de construction
-Concours
-Etude
-mandat d[’']étude parallèle
-Fermeture
-Rénovation
-Lancement de travail
-lancement des travaux
-début de la construction
-approbation
-Traveaux de construction
-Réaménagement
-Publication
-Règlement
-loi
-(?:Dévelopment)\s+(?:urbaine|de la ville|de la commune|du quartier)?
-Mise en zone à bâtir
-classement en zone à bâtir
-Changement de zone
-changement d[’']affectation
-Planification test
-Étude préliminaire
-Étude du projet
-Avant-projet
-transformation
-Nouvelle construction
-Amélioration
-Rond point
-giratoire
-Révision
-Zone à bâtir
-agglomération
-Projet d[’']agglomération
-Conceptions régionales des transports et de l[’']urbanisation
-Pianificazione locale
-Piano regolatore
-Piano particolareggiato
-Norme tecniche di attuazione
-Piano delle zone
-Piano d[’']utilizzazione cantonale
-Piano particolareggiato
-Piano di quartiere
-Piano cantonale con autorizzazione a costruire
-autorizzazione a costruire
-pubblicazione
-partecipazione
-Opposizione
-ricorso
-partecipazione
-Piano direttore
-Strada
-traffico
-Canalizzazione
-condotta
-revisione
-sviluppo
-Progetto edilizio
-Gara
-concorso
-Studio
-Mandato di studio parallelo
-chiusura
-ristrutturazione
-Inizio dei lavori
-pubblicazione
-approvazione
-lavori
-riqualificazione
-pubblicazione
-regolamento
-legge
-rinnovo
-ampliamento
-Sviluppo urbano
-Sviluppo comunale
-Sviluppo di quartiere
-azzonamento
-Cambiamento di destinazione
-Dezonamento
-Studio di fattibilità
-Studio preliminare
-Progetto di massima
-costruzione
-Rotatoria
-revisione
-Zone di pianificazione
-Decisione sospensiva
-Zona edificabile
-agglomerato
-Programma d[’']agglomerato
+Sondernutzungsplan
+Sperrung
+Stadtentwicklung
+Studienauftrag
+Testplanung
+Umbau
+Umzonung
+Verkehr
+Vorprojekt
+Vorstudie
+Wettbewerb
+Zonenplan
+Aegerstrasse
+Aegertweg
+Alpenstrasse
+Altbachstrasse
+Altbachweg
+Alte Dübendorferstrasse
+Altwiesenstrasse
+Arkadenweg
+Bachstrasse
+Bahnhofstrasse
+Bahnstrasse
+Birkenstrasse
+Birkenweg
+Brandbachstrasse
+Brunnenwiesenstrasse
+Brüttisellerstrasse
+Chriesmattweg
+Claridenstrasse
+Dietlikonstrasse
+Dübendorferstrasse
+Dübendorfstrasse
+E41
+E60
+Eglihölzliweg
+Eichelwiesenstrasse
+Erlenweg
+Fabrikweg
+Faisswiesen
+Flugsicherungsstrasse
+Im Aegert
+Im Trübacker
+Industriestrasse
+Kasernenstrasse
+Kriesbachstrasse
+Linth-Escherweg
+Moorstrasse
+Neue Winterthurerstrasse
+Pappelstrasse
+Platanenstrasse
+Riedwiesenstrasse
+Ringstrasse
+Röslenweg
+Rotbuchstrasse
+Stationsstrasse
+Stationsstrasse
+Stuckweg
+Turpenstrasse
+Wangenstrasse
+Weidenweg
+Weidstrasse
+Weiherstrasse
+Widenholzstrasse
+Zipfelwiesenstrasse
+Zürichstrasse
+Altbach
+Chriesbach
