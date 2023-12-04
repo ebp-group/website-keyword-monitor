@@ -88,7 +88,7 @@ jobs:
           echo "URL: ${{ matrix.url }}, selector: ${{ matrix.selector }}"
           mkdir matches
           mkdir new_hashes
-          python ./lib/website_matcher.py -u "${{ matrix.url }}" -l ${{ matrix.label }} -f "hashes/${{ matrix.slug }}.txt" -k "${{ inputs.keywords-path }}" -n "new_hashes/${{ matrix.slug }}.txt" -w "${{ matrix.timeout }}" -t "${{ matrix.type }}" -o matches/${{ matrix.slug }}.jsonl --verbose
+          python ./lib/website_matcher.py -u "${{ matrix.url }}" -l "${{ matrix.label }}" -f "hashes/${{ matrix.slug }}.txt" -k "${{ inputs.keywords-path }}" -n "new_hashes/${{ matrix.slug }}.txt" -w "${{ matrix.timeout }}" -t "${{ matrix.type }}" -o matches/${{ matrix.slug }}.jsonl --verbose
           
       - name: Note error for later
         if: ${{ failure() }}
