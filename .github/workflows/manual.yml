@@ -18,7 +18,7 @@ on:
 
 jobs:
   check_aubonne_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       csv-path: csv/aubonne.csv
@@ -28,7 +28,7 @@ jobs:
     secrets: inherit
       
   check_dietlikon_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       csv-path: csv/dietlikon.csv
@@ -38,7 +38,7 @@ jobs:
     secrets: inherit
       
   check_grancia_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       csv-path: csv/grancia.csv
@@ -48,7 +48,7 @@ jobs:
     secrets: inherit
       
   check_itingen_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       csv-path: csv/itingen.csv
@@ -58,7 +58,7 @@ jobs:
     secrets: inherit
       
   check_lyssach_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       csv-path: csv/lyssach.csv
@@ -68,7 +68,7 @@ jobs:
     secrets: inherit
 
   check_pratteln_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       csv-path: csv/pratteln.csv
@@ -78,7 +78,7 @@ jobs:
     secrets: inherit
 
   check_riddes_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       csv-path: csv/riddes.csv
@@ -88,7 +88,7 @@ jobs:
     secrets: inherit
 
   check_rothenburg_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       csv-path: csv/rothenburg.csv
@@ -98,7 +98,7 @@ jobs:
     secrets: inherit
 
   check_spreitenbach_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       csv-path: csv/spreitenbach.csv
@@ -108,7 +108,7 @@ jobs:
     secrets: inherit
 
   check_st_gallen_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       csv-path: csv/st_gallen.csv
@@ -118,7 +118,7 @@ jobs:
     secrets: inherit
 
   check_vernier_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       csv-path: csv/vernier.csv
@@ -140,7 +140,7 @@ jobs:
       - check_spreitenbach_websites
       - check_st_gallen_websites
       - check_vernier_websites
-    uses: ebp-group/website-keyword-monitor/.github/workflows/update_hashes.yml@main
+    uses: ebp-group/website-keyword-monitor/.github/workflows/update_hashes.yml@pdf-scraping
     with:
       environment: ${{ inputs.environment }}
       send-notifications: ${{ inputs.notifications }}
