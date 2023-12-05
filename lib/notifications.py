@@ -41,11 +41,13 @@ logging.basicConfig(
 )
 logging.captureWarnings(True)
 
-team_webhook_url = os.getenv('MS_TEAMS_WEBHOOK_URL')
-matches_path = arguments['--matches']
-github_run_url = arguments['--run-url']
-
 try:
+    matches_path = arguments['--matches']
+    github_run_url = arguments['--run-url']
+  
+    team_webhook_url = os.getenv('MS_TEAMS_WEBHOOK_URL')
+    assert team_webhook_url, "MS_TEAMS_WEBHOOK_URL is not set"
+  
     cards = {}
     # iterate over matches
     with jsonlines.open(matches_path) as reader:
