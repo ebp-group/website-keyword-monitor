@@ -3,9 +3,9 @@
 """Update website count
 
 Usage:
-  update_hash.py --db <path-to-db-file> --slug <slug> [--verbose]
-  update_hash.py (-h | --help)
-  update_hash.py --version
+  update_count.py --db <path-to-db-file> --slug <slug> [--verbose]
+  update_count.py (-h | --help)
+  update_count.py --version
 
 Options:
   -h, --help                    Show this screen.
