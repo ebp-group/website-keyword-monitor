@@ -158,3 +158,23 @@ jobs:
       commit-hashes: ${{ !contains(inputs.commit, 'false') }} 
     secrets: inherit
 
+  notify:
+    needs:
+      - check_aubonne_websites
+      - check_dietlikon_websites
+      - check_grancia_websites
+      - check_itingen_websites
+      - check_lyssach_websites
+      - check_pratteln_websites
+      - check_riddes_websites
+      - check_rothenburg_websites
+      - check_spreitenbach_websites
+      - check_st_gallen_websites
+      - check_vernier_websites
+    uses: ebp-group/website-keyword-monitor/.github/workflows/notifications.yml@main
+    with:
+      environment: production
+      send-notifications: ${{ !contains(inputs.notifications, 'false') }}
+    secrets: inherit
+  
+  

@@ -158,3 +158,21 @@ jobs:
       commit-hashes: ${{ inputs.commit }}
     secrets: inherit
 
+  notify:
+    needs:
+      - check_aubonne_websites
+      - check_dietlikon_websites
+      - check_grancia_websites
+      - check_itingen_websites
+      - check_lyssach_websites
+      - check_pratteln_websites
+      - check_riddes_websites
+      - check_rothenburg_websites
+      - check_spreitenbach_websites
+      - check_st_gallen_websites
+      - check_vernier_websites
+    uses: ebp-group/website-keyword-monitor/.github/workflows/notifications.yml@pdf-scraping
+    with:
+      environment: ${{ inputs.environment }}
+      send-notifications: ${{ inputs.notifications }}
+    secrets: inherit
