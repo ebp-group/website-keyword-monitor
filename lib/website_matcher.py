@@ -196,7 +196,6 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
             log.debug(f"No href in link: {link}")
             continue
 
-        log.info(f"Crawl URL {absolute_url}")
         yield from crawl_urls(
             absolute_url,
             link.string or label,
@@ -208,7 +207,7 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
             old_hashes,
             verify
         )
-  
+
 
 if __name__ == "__main__":
     arguments = docopt(__doc__, version="Match website 2.0")
