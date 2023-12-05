@@ -3,14 +3,13 @@
 """Send a notification message to Microsoft Teams
 
 Usage:
-  notifications.py --location <location> --matches <matches-file> [--run-url <run-url>] [--verbose] [--no-verify]
+  notifications.py --matches <matches-file> [--run-url <run-url>] [--verbose] [--no-verify]
   notifications.py (-h | --help)
   notifications.py --version
 
 Options:
   -h, --help                    Show this screen.
   --version                     Show version.
-  -l, --location <location>     Label of the location.
   -m, --matches <matches-file>  Path to the JSONL file containing the matches.
   -r, --run-url <run-url>       URL to the current GitHub run.
   --verbose                     Option to enable more verbose output.
@@ -45,29 +44,36 @@ location = arguments['--location']
 matches_path = arguments['--matches']
 github_run_url = arguments['--run-url']
 
-# Create the connector card
 
-teams_msg = pymsteams.connectorcard(team_webhook_url)
-
-# Set the content
-teams_msg.title(f"🟢 Standort «{location}» hat Änderungen")
-teams_msg.summary(f"🟢 Standort «{location}» hat Änderungen")
-
-
-# add sections
-match_section = pymsteams.cardsection()
-
-teams_msg.addSection(match_section)
-
+cards = {}
+# iterate over matches
 with jsonlines.open(matches_path) as reader:
     for r in reader:
+        group = r['group']
+        if group in cards:
+            card = cards[group]['card']
+            section = cards[group]['section']
+        else:
+            card = pymsteams.connectorcard(team_webhook_url)
+            card.title(f"🟢 Standort «{group}» hat Änderungen")
+            card.summary(f"🟢 Standort «{group}» hat Änderungen")
+
+            section = pymsteams.cardsection()
+            card.addSection(section)
+            card[group] = {
+                'card': card,
+                'section': section,
+            }
+
+
         match = r['matches'][0]
-        match_section.addFact(f"«{match['keyword']}»", f"[{r['label']}]({r['url']}) ({r['type']}): {match['texts'][0]}")
+        section.addFact(f"«{match['keyword']}»", f"[{r['label']}]({r['url']}) ({r['type']}): {match['texts'][0]}")
 
-if github_run_url:
-    teams_msg.addLinkButton("Logs anschauen", github_run_url)
+for group, msg in cards.items():
+    if github_run_url:
+        msg['card'].addLinkButton("Logs anschauen", github_run_url)
 
-teams_msg.color("3AB660")
+    msg['card'].color("3AB660")
 
-# Send the notification
-teams_msg.send()
+    # Send the notification
+    msg['card'].send()
