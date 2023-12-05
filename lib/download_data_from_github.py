@@ -28,6 +28,14 @@ arguments = docopt(__doc__, version='download_data_from_github.py 1.0')
 name = arguments['--name']
 
 log = logging.getLogger(__name__)
+loglevel = logging.INFO
+
+logging.basicConfig(
+    format="%(asctime)s %(levelname)-8s %(message)s",
+    level=loglevel,
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+logging.captureWarnings(True)
 
 
 def filter_artifacts(d):

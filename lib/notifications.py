@@ -16,6 +16,7 @@ Options:
 """
 
 import os
+import sys
 import logging
 import jsonlines
 from datetime import datetime

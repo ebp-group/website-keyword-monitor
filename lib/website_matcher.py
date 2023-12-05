@@ -29,7 +29,6 @@ import logging
 import re
 import sys
 import urllib.parse
-import traceback
 from pprint import pformat
 from bs4 import BeautifulSoup
 from docopt import docopt
@@ -82,7 +81,7 @@ def match_texts(texts, keywords, old_hashes):
                 hl_text = k['re'].sub(r"**\1**", short_text)
                 matches.append({
                     'keyword': k['keyword'],
-                    'texts': [hl_text],
+                    'texts': [f"…{hl_text}…"],
                     'hashes': [text_hash],
                 })
         else:
@@ -156,7 +155,7 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
                 m = kw_re['re'].search(text)
                 short_text = text[max(0, m.start()-70):m.end()+70]
                 hl_text = kw_re['re'].sub(r"**\1**", short_text)
-                source_list.append(hl_text)
+                source_list.append(f"…{hl_text}…")
                 source_hashes.append(text_hash)
             else:
                 log.info("Text already known, no new match.")
