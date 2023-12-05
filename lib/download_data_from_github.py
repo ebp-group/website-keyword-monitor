@@ -30,10 +30,14 @@ name = arguments['--name']
 github_token = os.environ['GITHUB_TOKEN']
 owner = os.getenv('GITHUB_REPO_OWNER', 'ebp-group')
 repo = os.getenv('GITHUB_REPO', 'website-keyword-monitor')
+branch = os.getenv('GITHUB_BRANCH', 'main')
 api = GhApi(owner=owner, repo=repo, token=github_token)
 artifacts = api.actions.list_artifacts_for_repo()['artifacts']
 
-latest_artificat = next(filter(lambda x: x['name'] == name, artifacts), {})
+def filter_artifacts(d):
+    return d['name'] == name and d['workflow_run']['head_branch'] == branch
+
+latest_artificat = next(filter(filter_artifacts, artifacts), {})
 if not latest_artificat:
     print(f"ERROR: could not find artifact with name '{name}'.", file=sys.stderr)
     sys.exit(1)
@@ -42,7 +46,3 @@ download = api.actions.download_artifact(artifact_id=latest_artificat['id'], arc
 
 with zipfile.ZipFile(io.BytesIO(download)) as zip_ref:
     zip_ref.extractall('.')
-
-#df = pd.read_pickle(f"data-{city}.pkl")
-#print(df[['name', 'wikidata', 'id', 'type']])
-
