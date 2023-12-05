@@ -10,7 +10,7 @@ Usage:
 Options:
   -h, --help                   Show this screen.
   --version                    Show version.
-  -n, --name <artifact-name>   Download artifact with this name [default: matches].
+  -n, --name <artifact-name>   Download artifact with this name [default: output].
 """
 
 import os
@@ -34,10 +34,13 @@ branch = os.getenv('GITHUB_BRANCH', 'main')
 api = GhApi(owner=owner, repo=repo, token=github_token)
 artifacts = api.actions.list_artifacts_for_repo()['artifacts']
 
+
 def filter_artifacts(d):
     return d['name'] == name and d['workflow_run']['head_branch'] == branch
 
+
 latest_artificat = next(filter(filter_artifacts, artifacts), {})
+
 if not latest_artificat:
     print(f"ERROR: could not find artifact with name '{name}'.", file=sys.stderr)
     sys.exit(1)

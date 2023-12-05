@@ -22,6 +22,7 @@ from datetime import datetime
 import pymsteams
 from docopt import docopt
 from dotenv import load_dotenv, find_dotenv
+import time
 load_dotenv(find_dotenv())
 
 
@@ -42,7 +43,6 @@ logging.captureWarnings(True)
 team_webhook_url = os.getenv('MS_TEAMS_WEBHOOK_URL')
 matches_path = arguments['--matches']
 github_run_url = arguments['--run-url']
-
 
 cards = {}
 # iterate over matches
@@ -65,13 +65,14 @@ with jsonlines.open(matches_path) as reader:
                 'section': section,
             }
 
-
         match = r['matches'][0]
-        section.addFact(f"«{match['keyword']}»", f"[{r['label']}]({r['url']}) ({r['type']}): {match['texts'][0]}")
-
-
-from pprint import pprint
-pprint(cards)
+        # stop after 50 facts
+        if len(section.dumpSection().get('facts', [])) < 50:
+            section.addFact(f"«{match['keyword']}»", f"[{r['label']}]({r['url']}) ({r['type']}): {match['texts'][0]}")
+        elif len(section.dumpSection().get('facts', [])) == 50:
+            section.addFact("...", "mehr als 50 Matches vorhanden...")
+        else:
+            log.info("Can't add more facts to section, skipping.")
 
 for group, msg in cards.items():
     if github_run_url:
@@ -81,3 +82,9 @@ for group, msg in cards.items():
 
     # Send the notification
     msg['card'].send()
+    log.info(f"Send notification for \"{group}\"")
+    time.sleep(10)
+
+
+# Finish
+card = pymsteams.connectorcard(team_webhook_url)
