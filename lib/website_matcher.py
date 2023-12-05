@@ -69,8 +69,6 @@ def match_texts(texts, keywords, old_hashes):
         if not matched_keywords:
             continue
 
-        log.debug(f"Found a match in the following text: \n {text}")
-
         text_hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
         log.debug(f"Check against hash list to see if it's new: {text_hash}")
         if text_hash not in old_hashes:
@@ -94,7 +92,7 @@ def match_texts(texts, keywords, old_hashes):
 
 def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes, verify=True):
     if level >= 2 or not url:
-        log.debug(f"Level: {level}, URL: {url}")
+        log.debug(f"Level: {level}, URL: {url}, skipping..")
         return
 
     global all_urls
@@ -108,7 +106,6 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
         content_type = dl.get_content_type(url, verify=verify)
         if 'application/pdf' in content_type:
             content = dl.pdfdownload(url)
-            log.debug(f"PDF text: {content}")
             split_text = content.split("\n\n")
             matches = match_texts(split_text, keywords, old_hashes)
             log.debug(f"Matches: {matches}")
@@ -142,8 +139,6 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
     for kw_re in keywords:
         log.info(f"Check keyword: {kw_re['keyword']}")
         texts = soup.find_all(string=kw_re['re'])
-        log.debug("texts:")
-        log.debug(pformat(texts))
 
         source_list = []
         source_hashes = []
