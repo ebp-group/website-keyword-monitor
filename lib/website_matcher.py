@@ -29,6 +29,7 @@ import logging
 import re
 import sys
 import urllib.parse
+import traceback
 from pprint import pformat
 from bs4 import BeautifulSoup
 from docopt import docopt
@@ -204,7 +205,7 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
         )
 
 
-if __name__ == "__main__":
+try:
     arguments = docopt(__doc__, version="Match website 2.0")
 
     loglevel = logging.INFO
@@ -257,3 +258,7 @@ if __name__ == "__main__":
 
     url_str = "\n".join(all_urls)
     log.info(f"All checked URLs: {url_str}")
+
+except Exception as e:
+    log.exception("Error in website_matcher.py")
+    sys.exit(1)

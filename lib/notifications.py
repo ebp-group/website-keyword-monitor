@@ -88,3 +88,6 @@ for group, msg in cards.items():
 
 # Finish
 card = pymsteams.connectorcard(team_webhook_url)
+except Exception as e:
+    log.exception("Error in notifications.py")
+    sys.exit(1)
