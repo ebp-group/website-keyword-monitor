@@ -20,6 +20,7 @@ jobs:
   check_aubonne_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
+      title: Aubonne
       environment: ${{ inputs.environment }}
       csv-path: csv/aubonne.csv
       keywords-path: keywords/aubonne.txt
@@ -30,6 +31,7 @@ jobs:
   check_dietlikon_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
+      title: Dietlikon
       environment: ${{ inputs.environment }}
       csv-path: csv/dietlikon.csv
       keywords-path: keywords/dietlikon.txt
@@ -40,6 +42,7 @@ jobs:
   check_grancia_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
+      title: Grancia
       environment: ${{ inputs.environment }}
       csv-path: csv/grancia.csv
       keywords-path: keywords/grancia.txt
@@ -50,6 +53,7 @@ jobs:
   check_itingen_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
+      title: Itingen
       environment: ${{ inputs.environment }}
       csv-path: csv/itingen.csv
       keywords-path: keywords/itingen.txt
@@ -60,6 +64,7 @@ jobs:
   check_lyssach_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
+      title: Lyssach
       environment: ${{ inputs.environment }}
       csv-path: csv/lyssach.csv
       keywords-path: keywords/lyssach.txt
@@ -70,6 +75,7 @@ jobs:
   check_pratteln_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
+      title: Pratteln
       environment: ${{ inputs.environment }}
       csv-path: csv/pratteln.csv
       keywords-path: keywords/pratteln.txt
@@ -80,6 +86,7 @@ jobs:
   check_riddes_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
+      title: Riddes/Saxon
       environment: ${{ inputs.environment }}
       csv-path: csv/riddes.csv
       keywords-path: keywords/riddes.txt
@@ -90,6 +97,7 @@ jobs:
   check_rothenburg_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
+      title: Rothenburg
       environment: ${{ inputs.environment }}
       csv-path: csv/rothenburg.csv
       keywords-path: keywords/rothenburg.txt
@@ -100,6 +108,7 @@ jobs:
   check_spreitenbach_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
+      title: Spreitenbach
       environment: ${{ inputs.environment }}
       csv-path: csv/spreitenbach.csv
       keywords-path: keywords/spreitenbach.txt
@@ -110,6 +119,7 @@ jobs:
   check_st_gallen_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
+      title: St. Gallen
       environment: ${{ inputs.environment }}
       csv-path: csv/st_gallen.csv
       keywords-path: keywords/st_gallen.txt
@@ -120,6 +130,7 @@ jobs:
   check_vernier_websites:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
     with:
+      title: Vernier
       environment: ${{ inputs.environment }}
       csv-path: csv/vernier.csv
       keywords-path: keywords/vernier.txt

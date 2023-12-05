@@ -61,9 +61,8 @@ teams_msg.addSection(match_section)
 
 with jsonlines.open(matches_path) as reader:
     for r in reader:
-        print(r)
-        match_date = datetime.fromisoformat(r['date']).strftime('%d.%m.%Y')
-        match_section.addFact(f"Match vom {match_date}", f"[{r['label']}]({r['url']}): {r['match']}")
+        match = r['matches'][0]
+        match_section.addFact(f"«{match['keyword']}»", f"[{r['label']}]({r['url']}) ({r['type']}): {match['texts'][0]}")
 
 if github_run_url:
     teams_msg.addLinkButton("Logs anschauen", github_run_url)

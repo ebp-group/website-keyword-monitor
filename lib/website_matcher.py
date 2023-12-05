@@ -3,7 +3,7 @@
 """Match keywords against a website content
 
 Usage:
-  website_matcher.py --url <url-of-website> --label <label> --file <path> --keywords <path> --new <path> [--wait <seconds>] [--output <path>] [--type <type>] [--verbose] [--no-verify]
+  website_matcher.py --url <url-of-website> --label <label> --group <group> --file <path> --keywords <path> --new <path> [--wait <seconds>] [--output <path>] [--type <type>] [--verbose] [--no-verify]
   website_matcher.py (-h | --help)
   website_matcher.py --version
 
@@ -12,6 +12,7 @@ Options:
   --version                     Show version.
   -u, --url <url-of-website>    URL of the website to monitor.
   -l, --label <label>           Label of the URL.
+  -g, --group <group>           Label of the group of URLs.
   -f, --file <path>             Load the hashes of the output from file.
   -k, --keywords <path>         Load the keywords from file.
   -n, --new <path>              Save the new hashes of the output in file.
@@ -46,7 +47,7 @@ def load_keywords(path):
     with open(path) as f:
         keywords = [line.strip() for line in f]
 
-    regex_keywords = [{"re": re.compile(rf'\b({k})', re.IGNORECASE), 'keyword': k} for k in keywords]
+    regex_keywords = [{"re": re.compile(rf'\b({k})\b', re.IGNORECASE), 'keyword': k} for k in keywords]
     return regex_keywords
 
 
@@ -77,10 +78,12 @@ def match_texts(texts, keywords, old_hashes):
 
             # add highlights to text
             for k in matched_keywords:
-                hl_text = k['re'].sub(r"**\1**", text)
+                m = k['re'].search(text)
+                short_text = text[max(0, m.start()-70):m.end()+70]
+                hl_text = k['re'].sub(r"**\1**", short_text)
                 matches.append({
                     'keyword': k['keyword'],
-                    'texts': [text],
+                    'texts': [hl_text],
                     'hashes': [text_hash],
                 })
         else:
@@ -89,7 +92,7 @@ def match_texts(texts, keywords, old_hashes):
     return matches
 
 
-def crawl_urls(url, label, timeout, level, dl_type, keywords, old_hashes, verify=True):
+def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes, verify=True):
     if level >= 2 or not url:
         log.debug(f"Level: {level}, URL: {url}")
         return
@@ -113,6 +116,7 @@ def crawl_urls(url, label, timeout, level, dl_type, keywords, old_hashes, verify
             if matches:
                 yield {
                     "type": "PDF",
+                    "group": group,
                     "url": url,
                     "label": label,
                     "matches": matches,
@@ -151,8 +155,10 @@ def crawl_urls(url, label, timeout, level, dl_type, keywords, old_hashes, verify
             if re.search(r"\w", text) and text_hash not in old_hashes:
                 log.info(f"New match found in {url}!")
                 # add highlights to text
-                text = kw_re['re'].sub(r"**\1**", text)
-                source_list.append(text)
+                m = kw_re['re'].search(text)
+                short_text = text[max(0, m.start()-70):m.end()+70]
+                hl_text = kw_re['re'].sub(r"**\1**", short_text)
+                source_list.append(hl_text)
                 source_hashes.append(text_hash)
             else:
                 log.info("Text already known, no new match.")
@@ -170,6 +176,7 @@ def crawl_urls(url, label, timeout, level, dl_type, keywords, old_hashes, verify
     if matches:
         yield {
             "type": "HTML",
+            "group": group,
             "url": url,
             "label": label,
             "matches": matches,
@@ -191,6 +198,7 @@ def crawl_urls(url, label, timeout, level, dl_type, keywords, old_hashes, verify
         yield from crawl_urls(
             absolute_url,
             link.string or label,
+            group,
             timeout,
             level + 1,
             dl_type,
@@ -217,6 +225,7 @@ if __name__ == "__main__":
     url = arguments["--url"]
     file_path = arguments["--file"]
     label = arguments["--label"]
+    group = arguments["--group"]
     keywords_path = arguments["--keywords"]
     new_path = arguments["--new"]
     timeout = int(arguments["--wait"])
@@ -233,7 +242,7 @@ if __name__ == "__main__":
     all_urls = []
 
     with jsonlines.open(output, mode='w') as writer:
-        for result in crawl_urls(url, label, timeout, 0, dl_type, keywords, hashes, verify):
+        for result in crawl_urls(url, label, group, timeout, 0, dl_type, keywords, hashes, verify):
             texts = []
             for match in result['matches']:
                 hashes.extend(match['hashes'])

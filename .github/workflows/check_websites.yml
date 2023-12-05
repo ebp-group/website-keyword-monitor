@@ -25,6 +25,11 @@ on:
         default: true
         required: false
         type: boolean
+      title:
+        description: Title of this group of websites
+        required: false
+        default: ''
+        type: string
     secrets:
       MS_TEAMS_WEBHOOK_URL:
         required: true
@@ -55,7 +60,7 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
 
-  notify:
+  crawl:
     needs: build-matrix
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
@@ -85,7 +90,7 @@ jobs:
       - name: Check website
         id: website
         run: |
-          echo "URL: ${{ matrix.url }}, selector: ${{ matrix.selector }}"
+          echo "URL: ${{ matrix.url }}, timeout: ${{ matrix.timeout }}"
           mkdir matches
           mkdir new_hashes
           python ./lib/website_matcher.py -u "${{ matrix.url }}" -l "${{ matrix.label }}" -f "hashes/${{ matrix.slug }}.txt" -k "${{ inputs.keywords-path }}" -n "new_hashes/${{ matrix.slug }}.txt" -w "${{ matrix.timeout }}" -t "${{ matrix.type }}" -o matches/${{ matrix.slug }}.jsonl --verbose
@@ -117,7 +122,7 @@ jobs:
             error_counts
 
   update_error_count:
-    needs: notify
+    needs: crawl
     if: always()
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
