@@ -122,13 +122,15 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
                     "matches": matches,
                 }
             return
+        elif 'text' not in content_type:
+            raise ValueError(f"Unsupported content type: {content_type}, skipping URL {url}")
         if dl_type == "static":
             content = dl.download_content(url, verify=verify)
         elif dl_type == "dynamic":
             content = dl.download_with_selenium(url, timeout)
         else:
             raise Exception(f"Invalid type: {dl_type}")
-    except (RequestException, WebDriverException) as e:
+    except (RequestException, WebDriverException, ValueError) as e:
         log.exception(f"Error when trying to request from URL: {url}")
         if level == 0:
             raise
