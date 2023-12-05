@@ -115,7 +115,7 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
                     "type": "PDF",
                     "group": group,
                     "url": url,
-                    "label": label,
+                    "label": label.strip(),
                     "matches": matches,
                 }
             return
@@ -175,7 +175,7 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
             "type": "HTML",
             "group": group,
             "url": url,
-            "label": label,
+            "label": label.strip(),
             "matches": matches,
         }
 
@@ -191,9 +191,10 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
             log.debug(f"No href in link: {link}")
             continue
 
+        link_text = link.string or label
         yield from crawl_urls(
             absolute_url,
-            link.string or label,
+            link_text.strip(),
             group,
             timeout,
             level + 1,
