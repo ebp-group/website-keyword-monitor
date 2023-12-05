@@ -25,7 +25,7 @@ from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
 
-arguments = docopt(__doc__, version="Send a notification message to Microsoft Teams 1.0")
+arguments = docopt(__doc__, version="Send a notification message to Microsoft Teams 2.0")
 
 log = logging.getLogger(__name__)
 loglevel = logging.INFO
@@ -40,7 +40,6 @@ logging.basicConfig(
 logging.captureWarnings(True)
 
 team_webhook_url = os.getenv('MS_TEAMS_WEBHOOK_URL')
-location = arguments['--location']
 matches_path = arguments['--matches']
 github_run_url = arguments['--run-url']
 
@@ -49,6 +48,7 @@ cards = {}
 # iterate over matches
 with jsonlines.open(matches_path) as reader:
     for r in reader:
+        print(r)
         group = r['group']
         if group in cards:
             card = cards[group]['card']
@@ -60,7 +60,7 @@ with jsonlines.open(matches_path) as reader:
 
             section = pymsteams.cardsection()
             card.addSection(section)
-            card[group] = {
+            cards[group] = {
                 'card': card,
                 'section': section,
             }
@@ -68,6 +68,10 @@ with jsonlines.open(matches_path) as reader:
 
         match = r['matches'][0]
         section.addFact(f"«{match['keyword']}»", f"[{r['label']}]({r['url']}) ({r['type']}): {match['texts'][0]}")
+
+
+from pprint import pprint
+pprint(cards)
 
 for group, msg in cards.items():
     if github_run_url:
