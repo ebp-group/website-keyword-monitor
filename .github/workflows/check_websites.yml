@@ -63,6 +63,7 @@ jobs:
   crawl:
     needs: build-matrix
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     environment: ${{ inputs.environment }}
     strategy:
       fail-fast: false
