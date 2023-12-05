@@ -44,6 +44,8 @@ jobs:
           GITHUB_REPO: website-keyword-monitor
 
       - name: Send notification
+        env:
+           MS_TEAMS_WEBHOOK_URL:  ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
         run: |
           cat matches/*.jsonl > all_matches.jsonl
           python ./lib/notifications.py --matches all_matches.jsonl --run-url "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" --verbose
