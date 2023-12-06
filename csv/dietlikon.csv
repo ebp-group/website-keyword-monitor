@@ -2,4 +2,4 @@ label,active,slug,error_count,url,selector,type
 "Canton Zurich, Amtsblatt Dietlikon",yes,zurich_amtsblatt_dietlikon,0,https://epublikation.ch/#!/search/publications?keyword=Dietlikon&searchPeriod=LAST7DAYS,.list-entry,dynamic
 "Municipality of Dietlikon, Amtliche Publikationen",yes,dietlikon_publikationen,0,https://www.dietlikon.ch/politik-verwaltung/verwaltung/publikationen/amtliches-publikationsorgan.html/312,main#main.main,static
 "Municipality of Dietlikon, Bauausschreibungen",yes,dietlikon_bauausschreibungen,0,https://www.dietlikon.ch/gewerbe-infrastruktur/arbeit/bauen/bauausschreibungen.html/314,div.mod-wrapper.mod-news,static
-"Municipality of Dietlikon, General communications",yes,dietlikon_allgemeine_mitteilungen,0,https://www.dietlikon.ch/politik-verwaltung/verwaltung/aktuelle-meldungen/allgemeine-mitteilungen.html/211,ul.mod-lst.mod-news-lst,static
+"Municipality of Dietlikon, General communications",yes,dietlikon_allgemeine_mitteilungen,1,https://www.dietlikon.ch/politik-verwaltung/verwaltung/aktuelle-meldungen/allgemeine-mitteilungen.html/211,ul.mod-lst.mod-news-lst,static
