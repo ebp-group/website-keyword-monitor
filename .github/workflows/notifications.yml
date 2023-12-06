@@ -35,19 +35,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Download latest artifact
-        run: python lib/download_data_from_github.py --name output
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          GITHUB_BRANCH: ${{ github.ref_name }}
-          GITHUB_REPO_OWNER: ebp-group
-          GITHUB_REPO: website-keyword-monitor
-
+      - name: Download output
+        uses: actions/download-artifact@v3
+        with:
+          name: output
+          path: output
+          
       - name: Send notification
         env:
            MS_TEAMS_WEBHOOK_URL:  ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
         run: |
-          cat matches/*.jsonl > all_matches.jsonl
+          cat output/matches/*.jsonl > all_matches.jsonl
           python ./lib/notifications.py --matches all_matches.jsonl --run-url "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" --verbose
           
       - name: Notify about failure
