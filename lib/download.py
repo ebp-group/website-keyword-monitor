@@ -61,6 +61,8 @@ def get_content_type(url, verify=True):
     r = _download_request(url, verify=verify)
     content_type = r.headers.get('content-type')
     log.debug(f"Content-Type: {content_type}")
+    if not content_type:
+        return ''
     return content_type
 
 
