@@ -25,6 +25,11 @@ on:
         default: true
         required: false
         type: boolean
+      title:
+        description: Title of this group of websites
+        required: false
+        default: ''
+        type: string
     secrets:
       MS_TEAMS_WEBHOOK_URL:
         required: true
@@ -55,9 +60,10 @@ jobs:
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
 
-  notify:
+  crawl:
     needs: build-matrix
     runs-on: ubuntu-latest
+    timeout-minutes: 90
     environment: ${{ inputs.environment }}
     strategy:
       fail-fast: false
@@ -76,6 +82,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           sudo apt-get install sqlite3
+          sudo apt-get install poppler-utils
           if [ "${{ matrix.type }}" = "dynamic" ] ; then
                 sudo apt-get update
                 sudo apt-get install chromium-browser
@@ -84,35 +91,11 @@ jobs:
       - name: Check website
         id: website
         run: |
-          echo "URL: ${{ matrix.url }}, selector: ${{ matrix.selector }}"
-          mkdir text
+          echo "URL: ${{ matrix.url }}, timeout: ${{ matrix.timeout }}"
+          mkdir matches
           mkdir new_hashes
-          matches=$(./lib/website_hash.py -u "${{ matrix.url }}" -f "hashes/${{ matrix.slug }}.txt" -k "${{ inputs.keywords-path }}" -n "new_hashes/${{ matrix.slug }}.txt" -s "${{ matrix.selector }}" -t "${{ matrix.type }}" -o text/${{ matrix.slug }}.txt --verbose)
-          echo $matches
-          {
-            echo 'matches<<EOF'
-            echo $matches | cut -c 1-2000
-            echo EOF
-          } >> "$GITHUB_OUTPUT"
-          if [[ -n "$matches" ]] ; then
-            echo "has_matches=1" >> $GITHUB_OUTPUT
-          fi
+          python ./lib/website_matcher.py -u "${{ matrix.url }}" -l "${{ matrix.label }}" -g "${{ inputs.title }}" -f "hashes/${{ matrix.slug }}.txt" -k "${{ inputs.keywords-path }}" -n "new_hashes/${{ matrix.slug }}.txt" -w "${{ matrix.timeout }}" -t "${{ matrix.type }}" -o matches/${{ matrix.slug }}.jsonl --verbose
           
-      - name: Were there any matches?
-        run: |
-          echo "Matches: ${{ steps.website.outputs.has_matches }}"
-
-      - name: Notify about website changes
-        if: ${{ steps.website.outputs.has_matches && inputs.send-notifications }}
-        uses: aliencube/microsoft-teams-actions@v0.8.0
-        with:
-          webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
-          title: "🟢 Webseite «${{matrix.label }}» hat Änderungen"
-          summary: "Webseite «${{matrix.label }}» hat Änderungen"
-          text: "[${{matrix.label }}](${{ matrix.url }}): ${{ steps.website.outputs.matches }}"
-          theme_color: 3AB660
-          actions: '[{ "@type": "OpenUri", "name": "Webseite anschauen", "targets": [{ "os": "default", "uri": "${{ matrix.url }}" }] }, { "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
-            
       - name: Note error for later
         if: ${{ failure() }}
         run: |
@@ -129,7 +112,6 @@ jobs:
           theme_color: CC0000
           actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
             
-      
       - name: Upload hash as artifact
         uses: actions/upload-artifact@v3
         if: ${{ always() }}
@@ -137,11 +119,11 @@ jobs:
           name: output
           path: |
             new_hashes
-            text
+            matches
             error_counts
 
   update_error_count:
-    needs: notify
+    needs: crawl
     if: always()
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}

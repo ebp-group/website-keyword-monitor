@@ -1,15 +1,27 @@
-name: Notification about new matches
+name: Send notifications to MS Teams
 
 on:
-  workflow_dispatch:
-  workflow_run:
-    workflows: [Check all websites]
-    types: [completed]
+  workflow_call:
+    inputs:
+      environment:
+        description: 'The environment to run this job on'
+        required: true
+        type: string
+      send-notifications:
+        description: 'Run this workflow with notifications'
+        default: true
+        required: false
+        type: boolean
+    secrets:
+      MS_TEAMS_WEBHOOK_URL:
+        required: true
 
 jobs:
-  on-success:
+  notify:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    environment: ${{ inputs.environment }}
+    if: ${{ inputs.send-notifications }}
+
     steps:
       - uses: actions/checkout@v3
       
@@ -32,12 +44,14 @@ jobs:
           GITHUB_REPO: website-keyword-monitor
 
       - name: Send notification
+        env:
+           MS_TEAMS_WEBHOOK_URL:  ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
         run: |
           cat matches/*.jsonl > all_matches.jsonl
           python ./lib/notifications.py --matches all_matches.jsonl --run-url "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" --verbose
           
       - name: Notify about failure
-        if: ${{ failure() }}
+        if: ${{ failure()  && inputs.send-notifications }}
         uses: aliencube/microsoft-teams-actions@v0.8.0
         with:
           webhook_uri: ${{ secrets.MS_TEAMS_WEBHOOK_URL }}
