@@ -78,6 +78,9 @@ try:
             else:
                 log.info("Can't add more facts to section, skipping.")
 
+    # Sort dict by key
+    cards = dict(sorted(cards.items(), key=lambda i: i[0]))
+
     for group, msg in cards.items():
         if github_run_url:
             msg['card'].addLinkButton("Logs anschauen", github_run_url)
