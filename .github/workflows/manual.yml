@@ -18,7 +18,7 @@ on:
 
 jobs:
   check_aubonne_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       title: Aubonne
       environment: ${{ inputs.environment }}
@@ -29,7 +29,7 @@ jobs:
     secrets: inherit
       
   check_dietlikon_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       title: Dietlikon
       environment: ${{ inputs.environment }}
@@ -40,7 +40,7 @@ jobs:
     secrets: inherit
       
   check_grancia_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       title: Grancia
       environment: ${{ inputs.environment }}
@@ -51,7 +51,7 @@ jobs:
     secrets: inherit
       
   check_itingen_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       title: Itingen
       environment: ${{ inputs.environment }}
@@ -62,7 +62,7 @@ jobs:
     secrets: inherit
       
   check_lyssach_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       title: Lyssach
       environment: ${{ inputs.environment }}
@@ -73,7 +73,7 @@ jobs:
     secrets: inherit
 
   check_pratteln_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       title: Pratteln
       environment: ${{ inputs.environment }}
@@ -84,7 +84,7 @@ jobs:
     secrets: inherit
 
   check_riddes_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       title: Riddes/Saxon
       environment: ${{ inputs.environment }}
@@ -95,7 +95,7 @@ jobs:
     secrets: inherit
 
   check_rothenburg_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       title: Rothenburg
       environment: ${{ inputs.environment }}
@@ -106,7 +106,7 @@ jobs:
     secrets: inherit
 
   check_spreitenbach_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       title: Spreitenbach
       environment: ${{ inputs.environment }}
@@ -117,7 +117,7 @@ jobs:
     secrets: inherit
 
   check_st_gallen_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       title: St. Gallen
       environment: ${{ inputs.environment }}
@@ -128,7 +128,7 @@ jobs:
     secrets: inherit
 
   check_vernier_websites:
-    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
       title: Vernier
       environment: ${{ inputs.environment }}
@@ -151,7 +151,7 @@ jobs:
       - check_spreitenbach_websites
       - check_st_gallen_websites
       - check_vernier_websites
-    uses: ebp-group/website-keyword-monitor/.github/workflows/update_hashes.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/update_hashes.yml@main
     with:
       environment: ${{ inputs.environment }}
       send-notifications: ${{ inputs.notifications }}
@@ -171,7 +171,7 @@ jobs:
       - check_spreitenbach_websites
       - check_st_gallen_websites
       - check_vernier_websites
-    uses: ebp-group/website-keyword-monitor/.github/workflows/notifications.yml@pdf-scraping
+    uses: ebp-group/website-keyword-monitor/.github/workflows/notifications.yml@main
     with:
       environment: ${{ inputs.environment }}
       send-notifications: ${{ inputs.notifications }}
