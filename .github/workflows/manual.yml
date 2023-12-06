@@ -139,6 +139,7 @@ jobs:
     secrets: inherit
 
   notify:
+    if: ${{ always() }}
     needs:
       - check_aubonne_websites
       - check_dietlikon_websites
