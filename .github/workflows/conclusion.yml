@@ -9,6 +9,7 @@ jobs:
   on-success:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    environment: production
     steps:
       - name: Notify about success
         uses: aliencube/microsoft-teams-actions@v0.8.0
@@ -22,6 +23,7 @@ jobs:
   on-failure:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    environment: production
     steps:
       - name: Notify about failure
         uses: aliencube/microsoft-teams-actions@v0.8.0
