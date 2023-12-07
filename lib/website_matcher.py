@@ -115,7 +115,7 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
                     "type": "PDF",
                     "group": group,
                     "url": url,
-                    "label": label.strip(),
+                    "label": label,
                     "matches": matches,
                 }
             return
@@ -134,7 +134,7 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
         return
 
     soup = BeautifulSoup(content, "html.parser")
-
+    
     matches = []
     for kw_re in keywords:
         log.info(f"Check keyword: {kw_re['keyword']}")
@@ -171,11 +171,15 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
             })
 
     if matches:
+        try:
+            title = soup.title.string.strip() or label
+        except AttributeError:
+            title = label
         yield {
             "type": "HTML",
             "group": group,
             "url": url,
-            "label": label.strip(),
+            "label": title,
             "matches": matches,
         }
 
@@ -210,7 +214,7 @@ try:
 
     loglevel = logging.INFO
     if arguments["--verbose"]:
-        loglevel = logging.DEBUG
+        log.setLevel(logging.DEBUG) 
 
     logging.basicConfig(
         format="%(asctime)s %(levelname)-8s %(message)s",
