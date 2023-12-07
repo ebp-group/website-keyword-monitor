@@ -82,16 +82,26 @@ try:
     # Sort dict by key
     cards = dict(sorted(cards.items(), key=lambda i: i[0]))
 
+    failed = False
     for group, msg in cards.items():
-        if github_run_url:
-            msg['card'].addLinkButton("Logs anschauen", github_run_url)
+        try:
+            if github_run_url:
+                msg['card'].addLinkButton("Logs anschauen", github_run_url)
+    
+            msg['card'].color("3AB660")
+    
+            # Send the notification
+            msg['card'].send()
+            log.info(f"Send notification for \"{group}\"")
+            time.sleep(10)
+        except pymsteams.TeamsWebhookException as e:
+            # catch this exception here, so that all valid messages will be sent, re-raise later
+            log.exception(f"Error when sending group {group}")
+            failed = True
+            continue
 
-        msg['card'].color("3AB660")
-
-        # Send the notification
-        msg['card'].send()
-        log.info(f"Send notification for \"{group}\"")
-        time.sleep(10)
+    if failed:
+        raise Exception("There was an error sending a teams message, see above")
 
 except Exception as e:
     log.exception("Error in notifications.py")
