@@ -171,7 +171,10 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
             })
 
     if matches:
-        title = soup.title.string.strip() or label
+        try:
+            title = soup.title.string.strip() or label
+        except AttributeError:
+            title = label
         yield {
             "type": "HTML",
             "group": group,
