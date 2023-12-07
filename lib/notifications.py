@@ -47,7 +47,8 @@ try:
   
     team_webhook_url = os.getenv('MS_TEAMS_WEBHOOK_URL')
     assert team_webhook_url, "MS_TEAMS_WEBHOOK_URL is not set"
-  
+
+    date_str = datetime.now().strftime('%d.%m.%Y')
     cards = {}
     # iterate over matches
     with jsonlines.open(matches_path) as reader:
@@ -59,8 +60,8 @@ try:
                 section = cards[group]['section']
             else:
                 card = pymsteams.connectorcard(team_webhook_url)
-                card.title(f"🟢 Standort «{group}» hat Änderungen")
-                card.summary(f"🟢 Standort «{group}» hat Änderungen")
+                card.title(f"🟢 Standort «{group}» hat Änderungen - {date_str}")
+                card.summary(f"🟢 Standort «{group}» hat Änderungen - {date_str}")
 
                 section = pymsteams.cardsection()
                 card.addSection(section)
