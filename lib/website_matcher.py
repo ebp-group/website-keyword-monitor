@@ -115,7 +115,7 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
                     "type": "PDF",
                     "group": group,
                     "url": url,
-                    "label": label.strip(),
+                    "label": label,
                     "matches": matches,
                 }
             return
@@ -134,7 +134,7 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
         return
 
     soup = BeautifulSoup(content, "html.parser")
-
+    
     matches = []
     for kw_re in keywords:
         log.info(f"Check keyword: {kw_re['keyword']}")
@@ -171,11 +171,12 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
             })
 
     if matches:
+        title = soup.title.string.strip() or label
         yield {
             "type": "HTML",
             "group": group,
             "url": url,
-            "label": label.strip(),
+            "label": title,
             "matches": matches,
         }
 
