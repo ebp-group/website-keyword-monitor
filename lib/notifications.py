@@ -32,7 +32,7 @@ arguments = docopt(__doc__, version="Send a notification message to Microsoft Te
 log = logging.getLogger(__name__)
 loglevel = logging.INFO
 if arguments["--verbose"]:
-    loglevel = logging.DEBUG
+    log.setLevel(logging.DEBUG)
 
 logging.basicConfig(
     format="%(asctime)s %(levelname)-8s %(message)s",
