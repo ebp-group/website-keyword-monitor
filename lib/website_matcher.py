@@ -214,7 +214,7 @@ try:
 
     loglevel = logging.INFO
     if arguments["--verbose"]:
-        loglevel = logging.DEBUG
+        log.setLevel(logging.DEBUG) 
 
     logging.basicConfig(
         format="%(asctime)s %(levelname)-8s %(message)s",
