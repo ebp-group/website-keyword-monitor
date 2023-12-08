@@ -60,8 +60,8 @@ try:
                 section = cards[group]['section']
             else:
                 card = pymsteams.connectorcard(team_webhook_url)
-                card.title(f"🟢 Standort «{group}» hat Änderungen - {date_str}")
-                card.summary(f"🟢 Standort «{group}» hat Änderungen - {date_str}")
+                card.title(f"🟢 «{group}» Änderungen {date_str}")
+                card.summary(f"🟢 «{group}» Änderungen {date_str}")
 
                 section = pymsteams.cardsection()
                 card.addSection(section)
