@@ -3,7 +3,7 @@
 """Send a notification message to Microsoft Teams
 
 Usage:
-  notifications.py --matches <matches-file> [--run-url <run-url>] [--verbose] [--no-verify]
+  notifications.py --matches <matches-file> [--run-url <run-url>] [--dry-run] [--verbose] [--no-verify]
   notifications.py (-h | --help)
   notifications.py --version
 
@@ -12,6 +12,7 @@ Options:
   --version                     Show version.
   -m, --matches <matches-file>  Path to the JSONL file containing the matches.
   -r, --run-url <run-url>       URL to the current GitHub run.
+  -d, --dry-run                 Only a dry run, no MS Teams notifications are sent.
   --verbose                     Option to enable more verbose output.
 """
 
@@ -68,6 +69,7 @@ try:
             fact = {
                 'keyword': f"«{match['keyword']}»",
                 'text': f"[{r['label']}]({r['url']}) ({r['type']}): {match['texts'][0]}",
+                'url': r['url'],
             }
             if fact not in entries[group]['facts']:
                 entries[group]['facts'].append(fact)
@@ -80,13 +82,15 @@ try:
     # Sort entries by key
     entries = dict(sorted(entries.items(), key=lambda i: i[0]))
     
+    # Log all notifications
     console = Console()
     for k, v in entries.items():
         table = Table(title=v['title'])
         table.add_column("Keyword", style="magenta", no_wrap=True)
         table.add_column("Text", style="green")
+        table.add_column("URL", style="green", overflow="fold")
         for f in v['facts']:
-            table.add_row(f['keyword'], Markdown(f['text']))
+            table.add_row(f['keyword'], Markdown(f['text']), f['url'])
 
         console.print(table)
 
@@ -116,6 +120,9 @@ try:
             else:
                 log.info("Can't add more facts to section, skipping.")
 
+    if arguments["--dry-run"]:
+        log.info("Only a dry run, stopping...")
+        sys.exit(0)
 
     failed = False
     for group, msg in cards.items():
