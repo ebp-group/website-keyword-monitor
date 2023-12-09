@@ -28,6 +28,8 @@ import time
 from rich.table import Table
 from rich.console import Console
 from rich.markdown import Markdown
+from rich.padding import Padding
+from rich.text import Text
 load_dotenv(find_dotenv())
 
 
@@ -83,15 +85,20 @@ try:
     entries = dict(sorted(entries.items(), key=lambda i: i[0]))
     
     # Log all notifications
-    console = Console()
+    console = Console(force_terminal=True)
     for k, v in entries.items():
-        table = Table(title=v['title'])
+        table = Table(title=v['title'], caption_justify="left")
         table.add_column("Keyword", style="magenta", no_wrap=True)
         table.add_column("Text", style="green")
         table.add_column("URL", style="green", overflow="fold")
+        num_rows = 0
         for f in v['facts']:
             table.add_row(f['keyword'], Markdown(f['text']), f['url'])
+            num_rows += 1
 
+
+        caption_text = Text(f"{num_rows} Entries", style="bold blue")
+        table.caption = Padding(caption_text, (0, 0, 2, 0))
         console.print(table)
 
     # create cards
