@@ -10,3 +10,4 @@ pyvirtualdisplay
 pymsteams
 ghapi
 jsonlines
+rich

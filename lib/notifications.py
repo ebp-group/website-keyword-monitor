@@ -3,7 +3,7 @@
 """Send a notification message to Microsoft Teams
 
 Usage:
-  notifications.py --matches <matches-file> [--run-url <run-url>] [--verbose] [--no-verify]
+  notifications.py --matches <matches-file> [--run-url <run-url>] [--dry-run] [--verbose] [--no-verify]
   notifications.py (-h | --help)
   notifications.py --version
 
@@ -12,6 +12,7 @@ Options:
   --version                     Show version.
   -m, --matches <matches-file>  Path to the JSONL file containing the matches.
   -r, --run-url <run-url>       URL to the current GitHub run.
+  -d, --dry-run                 Only a dry run, no MS Teams notifications are sent.
   --verbose                     Option to enable more verbose output.
 """
 
@@ -24,6 +25,11 @@ import pymsteams
 from docopt import docopt
 from dotenv import load_dotenv, find_dotenv
 import time
+from rich.table import Table
+from rich.console import Console
+from rich.markdown import Markdown
+from rich.padding import Padding
+from rich.text import Text
 load_dotenv(find_dotenv())
 
 
@@ -49,38 +55,81 @@ try:
     assert team_webhook_url, "MS_TEAMS_WEBHOOK_URL is not set"
 
     date_str = datetime.now().strftime('%d.%m.%Y')
-    cards = {}
+    entries = {}
     # iterate over matches
     with jsonlines.open(matches_path) as reader:
         for r in reader:
-            print(r)
             group = r['group']
-            if group in cards:
-                card = cards[group]['card']
-                section = cards[group]['section']
-            else:
-                card = pymsteams.connectorcard(team_webhook_url)
-                card.title(f"🟢 «{group}» Änderungen {date_str}")
-                card.summary(f"🟢 «{group}» Änderungen {date_str}")
-
-                section = pymsteams.cardsection()
-                card.addSection(section)
-                cards[group] = {
-                    'card': card,
-                    'section': section,
+            if group not in entries:
+                entries[group] = {
+                    'title': f"🟢 «{group}» Änderungen {date_str}",
+                    'facts': []
                 }
 
+
             match = r['matches'][0]
-            # stop after 50 facts
+            fact = {
+                'keyword': f"«{match['keyword']}»",
+                'text': f"[{r['label']}]({r['url']}) ({r['type']}): {match['texts'][0]}",
+                'url': r['url'],
+            }
+            if fact not in entries[group]['facts']:
+                entries[group]['facts'].append(fact)
+
+    # sort facts
+    for k, v in entries.items():
+        sorted_facts = sorted(v['facts'], key=lambda d: d['keyword'].lower()) 
+        entries[k]['facts'] = sorted_facts
+
+    # Sort entries by key
+    entries = dict(sorted(entries.items(), key=lambda i: i[0]))
+    
+    # Log all notifications
+    console = Console(force_terminal=True)
+    for k, v in entries.items():
+        table = Table(title=v['title'], caption_justify="left")
+        table.add_column("Keyword", style="magenta", no_wrap=True)
+        table.add_column("Text", style="green")
+        table.add_column("URL", style="green", overflow="fold")
+        num_rows = 0
+        for f in v['facts']:
+            table.add_row(f['keyword'], Markdown(f['text']), f['url'])
+            num_rows += 1
+
+
+        caption_text = Text(f"{num_rows} Entries", style="bold blue")
+        table.caption = Padding(caption_text, (0, 0, 2, 0))
+        console.print(table)
+
+    # create cards
+    cards = {}
+    for k, v in entries.items():
+        if k in cards:
+            card = cards[k]['card']
+            section = cards[k]['section']
+        else:
+            card = pymsteams.connectorcard(team_webhook_url)
+            card.title(v['title'])
+            card.summary(v['title'])
+
+            section = pymsteams.cardsection()
+            card.addSection(section)
+            cards[k] = {
+                'card': card,
+                'section': section,
+            }
+
+        for fact in v['facts']:
             if len(section.dumpSection().get('facts', [])) < 50:
-                section.addFact(f"«{match['keyword']}»", f"[{r['label']}]({r['url']}) ({r['type']}): {match['texts'][0]}")
+                section.addFact(fact['keyword'], fact['text'])
             elif len(section.dumpSection().get('facts', [])) == 50:
                 section.addFact("...", "mehr als 50 Matches vorhanden...")
             else:
                 log.info("Can't add more facts to section, skipping.")
 
-    # Sort dict by key
-    cards = dict(sorted(cards.items(), key=lambda i: i[0]))
+    if arguments["--dry-run"]:
+        log.info("Only a dry run, stopping...")
+        sys.exit(0)
 
     failed = False
     for group, msg in cards.items():
@@ -93,7 +142,7 @@ try:
             # Send the notification
             msg['card'].send()
             log.info(f"Send notification for \"{group}\"")
-            time.sleep(10)
+            time.sleep(5)
         except pymsteams.TeamsWebhookException as e:
             # catch this exception here, so that all valid messages will be sent, re-raise later
             log.exception(f"Error when sending group {group}")
