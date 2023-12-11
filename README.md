@@ -6,13 +6,17 @@ Website Monitoring mit Schlüsselwörtern, implementiert in Python und GitHub Ac
 
 ## Schlüsselwörter 
 
-Die Schlüsselwörter (`keywords`) sind in Textdateien im Ordner [`keywords`](https://github.com/ebp-group/website-keyword-monitor/tree/main/keywords) definiert, jeweils ein Schlüsselwort pro Zeile:
+Die Schlüsselwörter (`keywords`) sind in Textdateien im Ordner [`keywords`](https://github.com/ebp-group/website-keyword-monitor/tree/main/keywords) definiert, jeweils ein Schlüsselwort pro Zeile.
+Jedes Schlüsselwort wird als [regulärer Ausdruck](https://danielfett.de/2006/03/20/regulaere-ausdruecke-tutorial/) (Regex) interpretiert, so lassen sich auch komplexere Begriffe in Texten finden.
 
+Beispiel-Datei: 
 ```
 rue
 geschwindigkeit
 fermeture de route
 Nouvelles mesures
+Plan d[’']affectation
+(?:Dévelopment)\s+(?:urbaine|de la ville|de la commune|du quartier)?
 ```
 
 ## Webseiten
@@ -20,7 +24,7 @@ Nouvelles mesures
 Das CSV muss die folgende Struktur haben:
 
 ```
-label,active,slug,error_count,url,selector,type,hash
+label,active,slug,error_count,url,timeout,type,hash
 ```
 
 * `label`: a label or title of the website
@@ -28,14 +32,14 @@ label,active,slug,error_count,url,selector,type,hash
 * `slug`: A short name for this entry (must be unique)
 * `error_count`: The number of times an error has occured for this entry
 * `url`: the actual URL of the website
-* `selector`: as CSS selector for elements on the website
+* `timeout`: timeout in seconds to wait until a webpage is loaded (only for dynamic websites)
 * `type`: determines the type of the website, use `static` for static websites or `dynamic` for websites, that load most of their contant at runtime. Dynamic websites will be parsed using Selenium. Use `static` as a default.
 
 Beispiel:
 
-| `label`              | `active` | `slug`        | `error_count` | `url`                                         | `selector`       | `type` |
-|----------------------|----------|---------------|---------------|-----------------------------------------------|------------------|--------|
-| "Thalwil informiert" | yes      | thalwil_news  | 0             | https://www.thalwil.ch/aktuellesinformationen | #informationList | static |
+| `label`              | `active` | `slug`        | `error_count` | `url`                                         | `timeout`     | `type` |
+|----------------------|----------|---------------|---------------|-----------------------------------------------|---------------|--------|
+| "Thalwil informiert" | yes      | thalwil_news  | 0             | https://www.thalwil.ch/aktuellesinformationen | 5             | static |
 
 
 Webseiten werden im Ordner [`csv`](https://github.com/ebp-group/website-keyword-monitor/blob/main/csv) definiert.
