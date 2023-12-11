@@ -150,17 +150,22 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
             text = text.replace("  ", " ")
             text_hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
             log.debug(f"Check against hash list to see if it's new: {text_hash}")
-            if re.search(r"\w", text) and text_hash not in old_hashes:
-                log.info(f"New match found in {url}!")
-                # add highlights to text
-                m = kw_re['re'].search(text)
-                short_text = text[max(0, m.start()-70):m.end()+70]
-                hl_text = kw_re['re'].sub(r"**\1**", short_text)
-                source_list.append(f"…{hl_text}…")
-                source_hashes.append(text_hash)
-            else:
+            if text_hash in old_hashes:
                 log.info("Text already known, no new match.")
-
+                continue
+            
+            if not re.search(r"\w", text):
+                log.info("Text has no word-characters in it, skipping...")
+                continue
+                
+            log.info(f"New match found in {url}!")
+            # add highlights to text
+            m = kw_re['re'].search(text)
+            short_text = text[max(0, m.start()-70):m.end()+70]
+            hl_text = kw_re['re'].sub(r"**\1**", short_text)
+            source_list.append(f"…{hl_text}…")
+            source_hashes.append(text_hash)
+                
         unique_source_list = list(set(source_list))
         if len(unique_source_list) > 0:
             log.debug("Unique list:")
