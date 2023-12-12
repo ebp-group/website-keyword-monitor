@@ -8,7 +8,7 @@ on:
       location:
         description: 'Location slug'
         required: true
-        default: all
+        default: aubonne
         type: string
       notifications:
           description: 'True to send notifications'
