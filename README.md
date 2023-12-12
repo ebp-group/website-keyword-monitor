@@ -24,7 +24,7 @@ Plan d[’']affectation
 Das CSV muss die folgende Struktur haben:
 
 ```
-label,active,slug,error_count,url,timeout,type,hash
+label,active,slug,error_count,url,timeout,type
 ```
 
 * `label`: a label or title of the website
