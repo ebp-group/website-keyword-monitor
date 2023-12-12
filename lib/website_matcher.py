@@ -45,7 +45,7 @@ log = logging.getLogger(__name__)
 def load_keywords(path):
     keywords = []
     with open(path) as f:
-        keywords = [line.strip() for line in f]
+        keywords = [line.strip() for line in f if line.strip()]
 
     regex_keywords = [{"re": re.compile(rf'\b({k})\b', re.IGNORECASE), 'keyword': k} for k in keywords]
     return regex_keywords
