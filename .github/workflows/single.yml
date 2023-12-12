@@ -25,6 +25,7 @@ jobs:
   check_single_location:
     uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
     with:
+      title: ${{ inputs.location }}
       environment: ${{ inputs.environment }}
       csv-path: csv/${{ inputs.location }}.csv
       keywords-path: keywords/${{ inputs.location }}.txt
