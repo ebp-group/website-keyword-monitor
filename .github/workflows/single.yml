@@ -31,9 +31,19 @@ jobs:
       send-notifications: ${{ inputs.notifications }}
       commit-error-count: ${{ inputs.commit }}
     secrets: inherit
-      
-  update_hashes:
+    
+  notify:
     needs: check_single_location
+    if: ${{ always() }}
+    uses: ebp-group/website-keyword-monitor/.github/workflows/notifications.yml@main
+    with:
+      environment: ${{ inputs.environment }}
+      send-notifications: ${{ inputs.notifications }}
+    secrets: inherit
+
+  update_hashes:
+    needs: notify
+    if: ${{ needs.notify.result == 'success' }}
     uses: ebp-group/website-keyword-monitor/.github/workflows/update_hashes.yml@main
     with:
       environment: ${{ inputs.environment }}
