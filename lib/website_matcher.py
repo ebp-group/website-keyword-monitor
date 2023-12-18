@@ -146,11 +146,12 @@ def get_content(url, timeout, dl_type, verify):
         content_type = dl.get_content_type(url, verify=verify)
         if "application/pdf" in content_type:
             content = dl.pdfdownload(url)
-        elif "text" not in content_type:
+            return (content_type, content)
+
+        if "text" not in content_type:
             raise ValueError(
                 f"Unsupported content type: {content_type}, skipping URL {url}"
             )
-
         if dl_type == "static":
             content = dl.download_content(url, verify=verify)
         elif dl_type == "dynamic":
