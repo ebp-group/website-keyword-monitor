@@ -1,4 +1,5 @@
 [![Check all websites](https://github.com/ebp-group/website-keyword-monitor/actions/workflows/all.yml/badge.svg)](https://github.com/ebp-group/website-keyword-monitor/actions/workflows/all.yml)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 # website-keyword-monitor
 
@@ -66,3 +67,20 @@ Die Actions brauchen **Schreibberechtigungen** um Commits erstellen zu können:
 
 ![Schreibberechtigungen für Actions](https://github.com/metaodi/website-keyword-monitor/assets/538415/bc0ff7d4-d5b1-4bbd-a97b-ea3145216d9b)
 
+## Entwicklung
+
+Falls `make` nicht vorhanden ist, kann alternativ auch `pymake`` verwendet werden (`pip install py-make`).
+
+Um den website-keyword-monitor weiterzuentwickeln, solltest du dieses Repository klonen und dann die Abhängigkeiten installieren:
+
+    make deps
+
+Verwende am besten das Skript [`setup.sh`](https://github.com/ebp-group/website-keyword-monitor/blob/main/setup.sh) um das Virtualenv und deine Umgebung einzurichten.
+
+Code Linting:
+
+    make lint
+
+Formatierung des Codes Anpassen (mit dem `black` Code-Style):
+
+    make format
