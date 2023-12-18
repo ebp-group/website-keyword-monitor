@@ -140,7 +140,7 @@ def match_html(soup, keywords, old_hashes):
     return matches
 
 
-def get_content(url, verify, dl_type, timeout):
+def get_content(url, timeout, dl_type, verify):
     log.info(f"Get content from URL {url}")
     try:
         content_type = dl.get_content_type(url, verify=verify)
@@ -184,7 +184,7 @@ def crawl_urls(
     all_urls.append(url)
 
     try:
-        content_type, content = get_content(url, verify, dl_type, timeout, level)
+        content_type, content = get_content(url, timeout, dl_type, verify)
     except ValueError:
         if level == 0:
             raise
