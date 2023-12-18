@@ -25,30 +25,30 @@ from dotenv import load_dotenv, find_dotenv
 
 
 load_dotenv(find_dotenv())
-arguments = docopt(__doc__, version='Update website count 1.0')
+arguments = docopt(__doc__, version="Update website count 1.0")
 
 loglevel = logging.INFO
-if arguments['--verbose']:
+if arguments["--verbose"]:
     loglevel = logging.DEBUG
 
 logging.basicConfig(
-    format='%(asctime)s %(levelname)-8s %(message)s',
+    format="%(asctime)s %(levelname)-8s %(message)s",
     level=loglevel,
-    datefmt='%Y-%m-%d %H:%M:%S'
+    datefmt="%Y-%m-%d %H:%M:%S",
 )
 logging.captureWarnings(True)
 log = logging.getLogger(__name__)
 
 conn = None
 try:
-    conn = sqlite3.connect(arguments['--db'])
+    conn = sqlite3.connect(arguments["--db"])
     conn.row_factory = sqlite3.Row
-    
-    slug = arguments['--slug']
+
+    slug = arguments["--slug"]
 
     cur = conn.cursor()
     try:
-        update_sql = ('UPDATE website set error_count = 0 WHERE slug = ?')
+        update_sql = "UPDATE website set error_count = 0 WHERE slug = ?"
         cur.execute(update_sql, [slug])
     except Exception:
         conn.rollback()

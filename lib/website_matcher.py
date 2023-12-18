@@ -21,7 +21,7 @@ Options:
   -o, --output <path>           Save the matched output to a file.
   --verbose                     Option to enable more verbose output.
   --no-verify                   Option to disable SSL verification for requests.
-"""
+"""  # noqa: E501
 
 import os
 import hashlib
@@ -47,7 +47,9 @@ def load_keywords(path):
     with open(path) as f:
         keywords = [line.strip() for line in f if line.strip()]
 
-    regex_keywords = [{"re": re.compile(rf'\b({k})\b', re.IGNORECASE), 'keyword': k} for k in keywords]
+    regex_keywords = [
+        {"re": re.compile(rf"\b({k})\b", re.IGNORECASE), "keyword": k} for k in keywords
+    ]
     return regex_keywords
 
 
@@ -65,33 +67,37 @@ def load_old_hashes(path):
 def match_texts(texts, keywords, old_hashes):
     matches = []
     for text in texts:
-        matched_keywords = list(filter(lambda k: k['re'].search(text), keywords))
+        matched_keywords = list(filter(lambda k: k["re"].search(text), keywords))
         if not matched_keywords:
             continue
 
         text_hash = hashlib.sha256(text.encode("utf-8")).hexdigest()
         log.debug(f"Check against hash list to see if it's new: {text_hash}")
-        
+
         if text_hash in old_hashes:
             log.debug("Text already known, no new match.")
             continue
-            
+
         log.info("New match found!")
         # add highlights to text
         for k in matched_keywords:
-            m = k['re'].search(text)
-            short_text = text[max(0, m.start()-70):m.end()+70]
-            hl_text = k['re'].sub(r"**\1**", short_text)
-            matches.append({
-                'keyword': k['keyword'],
-                'texts': [f"…{hl_text}…"],
-                'hashes': [text_hash],
-            })
+            m = k["re"].search(text)
+            short_text = text[max(0, m.start() - 70) : m.end() + 70]
+            hl_text = k["re"].sub(r"**\1**", short_text)
+            matches.append(
+                {
+                    "keyword": k["keyword"],
+                    "texts": [f"…{hl_text}…"],
+                    "hashes": [text_hash],
+                }
+            )
 
     return matches
 
 
-def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes, verify=True):
+def crawl_urls(
+    url, label, group, timeout, level, dl_type, keywords, old_hashes, verify=True
+):
     if level >= 2 or not url:
         log.debug(f"Level: {level}, URL: {url}, skipping..")
         return
@@ -105,7 +111,7 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
     log.info(f"Crawl from URL {url}")
     try:
         content_type = dl.get_content_type(url, verify=verify)
-        if 'application/pdf' in content_type:
+        if "application/pdf" in content_type:
             content = dl.pdfdownload(url)
             split_text = content.split("\n\n")
             matches = match_texts(split_text, keywords, old_hashes)
@@ -120,26 +126,28 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
                     "matches": matches,
                 }
             return
-        elif 'text' not in content_type:
-            raise ValueError(f"Unsupported content type: {content_type}, skipping URL {url}")
+        elif "text" not in content_type:
+            raise ValueError(
+                f"Unsupported content type: {content_type}, skipping URL {url}"
+            )
         if dl_type == "static":
             content = dl.download_content(url, verify=verify)
         elif dl_type == "dynamic":
             content = dl.download_with_selenium(url, timeout)
         else:
             raise Exception(f"Invalid type: {dl_type}")
-    except (RequestException, WebDriverException, ValueError) as e:
+    except (RequestException, WebDriverException, ValueError):
         log.exception(f"Error when trying to request from URL: {url}")
         if level == 0:
             raise
         return
 
     soup = BeautifulSoup(content, "html.parser")
-    
+
     matches = []
     for kw_re in keywords:
         log.info(f"Check keyword: {kw_re['keyword']}")
-        texts = soup.find_all(string=kw_re['re'])
+        texts = soup.find_all(string=kw_re["re"])
 
         source_list = []
         source_hashes = []
@@ -153,28 +161,30 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
             if text_hash in old_hashes:
                 log.info("Text already known, no new match.")
                 continue
-            
+
             if not re.search(r"\w", text):
                 log.info("Text has no word-characters in it, skipping...")
                 continue
-                
+
             log.info(f"New match found in {url}!")
             # add highlights to text
-            m = kw_re['re'].search(text)
-            short_text = text[max(0, m.start()-70):m.end()+70]
-            hl_text = kw_re['re'].sub(r"**\1**", short_text)
+            m = kw_re["re"].search(text)
+            short_text = text[max(0, m.start() - 70) : m.end() + 70]
+            hl_text = kw_re["re"].sub(r"**\1**", short_text)
             source_list.append(f"…{hl_text}…")
             source_hashes.append(text_hash)
-                
+
         unique_source_list = list(set(source_list))
         if len(unique_source_list) > 0:
             log.debug("Unique list:")
             log.debug(pformat(unique_source_list))
-            matches.append({
-                'keyword': kw_re['keyword'],
-                'texts': unique_source_list,
-                'hashes': source_hashes,
-            })
+            matches.append(
+                {
+                    "keyword": kw_re["keyword"],
+                    "texts": unique_source_list,
+                    "hashes": source_hashes,
+                }
+            )
 
     if matches:
         try:
@@ -190,11 +200,11 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
         }
 
     # find all links with href attribute, limit to 500 results
-    for link in soup.find_all('a', href=True, limit=500):
+    for link in soup.find_all("a", href=True, limit=500):
         try:
             # skip empty or anchor links
-            href = link['href']
-            if not href or href.startswith('#') or href.startswith('mailto:'):
+            href = link["href"]
+            if not href or href.startswith("#") or href.startswith("mailto:"):
                 continue
             absolute_url = urllib.parse.urljoin(url, href)
         except KeyError:
@@ -211,7 +221,7 @@ def crawl_urls(url, label, group, timeout, level, dl_type, keywords, old_hashes,
             dl_type,
             keywords,
             old_hashes,
-            verify
+            verify,
         )
 
 
@@ -220,7 +230,7 @@ try:
 
     loglevel = logging.INFO
     if arguments["--verbose"]:
-        log.setLevel(logging.DEBUG) 
+        log.setLevel(logging.DEBUG)
 
     logging.basicConfig(
         format="%(asctime)s %(levelname)-8s %(message)s",
@@ -248,11 +258,13 @@ try:
 
     all_urls = []
 
-    with jsonlines.open(output, mode='w') as writer:
-        for result in crawl_urls(url, label, group, timeout, 0, dl_type, keywords, hashes, verify):
+    with jsonlines.open(output, mode="w") as writer:
+        for result in crawl_urls(
+            url, label, group, timeout, 0, dl_type, keywords, hashes, verify
+        ):
             texts = []
-            for match in result['matches']:
-                hashes.extend(match['hashes'])
+            for match in result["matches"]:
+                hashes.extend(match["hashes"])
 
             log.debug("Match result:")
             log.debug(pformat(result))
@@ -269,6 +281,6 @@ try:
     url_str = "\n".join(all_urls)
     log.info(f"All checked URLs: {url_str}")
 
-except Exception as e:
+except Exception:
     log.exception("Error in website_matcher.py")
     sys.exit(1)

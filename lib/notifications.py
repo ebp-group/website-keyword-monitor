@@ -14,7 +14,7 @@ Options:
   -r, --run-url <run-url>       URL to the current GitHub run.
   -d, --dry-run                 Only a dry run, no MS Teams notifications are sent.
   --verbose                     Option to enable more verbose output.
-"""
+"""  # noqa: E501
 
 import os
 import sys
@@ -30,10 +30,13 @@ from rich.console import Console
 from rich.markdown import Markdown
 from rich.padding import Padding
 from rich.text import Text
+
 load_dotenv(find_dotenv())
 
 
-arguments = docopt(__doc__, version="Send a notification message to Microsoft Teams 2.0")
+arguments = docopt(
+    __doc__, version="Send a notification message to Microsoft Teams 2.0"
+)
 
 log = logging.getLogger(__name__)
 loglevel = logging.INFO
@@ -47,55 +50,53 @@ logging.basicConfig(
 )
 logging.captureWarnings(True)
 
-try:
-    matches_path = arguments['--matches']
-    github_run_url = arguments['--run-url']
-  
-    team_webhook_url = os.getenv('MS_TEAMS_WEBHOOK_URL')
+try:  # noqa
+    matches_path = arguments["--matches"]
+    github_run_url = arguments["--run-url"]
+
+    team_webhook_url = os.getenv("MS_TEAMS_WEBHOOK_URL")
     assert team_webhook_url, "MS_TEAMS_WEBHOOK_URL is not set"
 
-    date_str = datetime.now().strftime('%d.%m.%Y')
+    date_str = datetime.now().strftime("%d.%m.%Y")
     entries = {}
     # iterate over matches
     with jsonlines.open(matches_path) as reader:
         for r in reader:
-            group = r['group']
+            group = r["group"]
             if group not in entries:
                 entries[group] = {
-                    'title': f"🟢 «{group}» Änderungen {date_str}",
-                    'facts': []
+                    "title": f"🟢 «{group}» Änderungen {date_str}",
+                    "facts": [],
                 }
 
-
-            match = r['matches'][0]
+            match = r["matches"][0]
             fact = {
-                'keyword': f"«{match['keyword']}»",
-                'text': f"[{r['label']}]({r['url']}) ({r['type']}): {match['texts'][0]}",
-                'url': r['url'],
+                "keyword": f"«{match['keyword']}»",
+                "text": f"[{r['label']}]({r['url']}) ({r['type']}): {match['texts'][0]}",  # noqa
+                "url": r["url"],
             }
-            if fact not in entries[group]['facts']:
-                entries[group]['facts'].append(fact)
+            if fact not in entries[group]["facts"]:
+                entries[group]["facts"].append(fact)
 
     # sort facts
     for k, v in entries.items():
-        sorted_facts = sorted(v['facts'], key=lambda d: d['keyword'].lower()) 
-        entries[k]['facts'] = sorted_facts
+        sorted_facts = sorted(v["facts"], key=lambda d: d["keyword"].lower())
+        entries[k]["facts"] = sorted_facts
 
     # Sort entries by key
     entries = dict(sorted(entries.items(), key=lambda i: i[0]))
-    
+
     # Log all notifications
     console = Console(force_terminal=True)
     for k, v in entries.items():
-        table = Table(title=v['title'], caption_justify="left")
+        table = Table(title=v["title"], caption_justify="left")
         table.add_column("Keyword", style="magenta", no_wrap=True)
         table.add_column("Text", style="green")
         table.add_column("URL", style="green", overflow="fold")
         num_rows = 0
-        for f in v['facts']:
-            table.add_row(f['keyword'], Markdown(f['text']), f['url'])
+        for f in v["facts"]:
+            table.add_row(f["keyword"], Markdown(f["text"]), f["url"])
             num_rows += 1
-
 
         caption_text = Text(f"{num_rows} Entries", style="bold blue")
         table.caption = Padding(caption_text, (0, 0, 2, 0))
@@ -105,24 +106,24 @@ try:
     cards = {}
     for k, v in entries.items():
         if k in cards:
-            card = cards[k]['card']
-            section = cards[k]['section']
+            card = cards[k]["card"]
+            section = cards[k]["section"]
         else:
             card = pymsteams.connectorcard(team_webhook_url)
-            card.title(v['title'])
-            card.summary(v['title'])
+            card.title(v["title"])
+            card.summary(v["title"])
 
             section = pymsteams.cardsection()
             card.addSection(section)
             cards[k] = {
-                'card': card,
-                'section': section,
+                "card": card,
+                "section": section,
             }
 
-        for fact in v['facts']:
-            if len(section.dumpSection().get('facts', [])) < 50:
-                section.addFact(fact['keyword'], fact['text'])
-            elif len(section.dumpSection().get('facts', [])) == 50:
+        for fact in v["facts"]:
+            if len(section.dumpSection().get("facts", [])) < 50:
+                section.addFact(fact["keyword"], fact["text"])
+            elif len(section.dumpSection().get("facts", [])) == 50:
                 section.addFact("...", "mehr als 50 Matches vorhanden...")
             else:
                 log.info("Can't add more facts to section, skipping.")
@@ -135,16 +136,17 @@ try:
     for group, msg in cards.items():
         try:
             if github_run_url:
-                msg['card'].addLinkButton("Logs anschauen", github_run_url)
-    
-            msg['card'].color("3AB660")
-    
+                msg["card"].addLinkButton("Logs anschauen", github_run_url)
+
+            msg["card"].color("3AB660")
+
             # Send the notification
-            msg['card'].send()
-            log.info(f"Send notification for \"{group}\"")
+            msg["card"].send()
+            log.info(f'Send notification for "{group}"')
             time.sleep(5)
-        except pymsteams.TeamsWebhookException as e:
-            # catch this exception here, so that all valid messages will be sent, re-raise later
+        except pymsteams.TeamsWebhookException:
+            # catch this exception here, so that all valid messages will be sent
+            # re-raise later
             log.exception(f"Error when sending group {group}")
             failed = True
             continue
@@ -152,6 +154,6 @@ try:
     if failed:
         raise Exception("There was an error sending a teams message, see above")
 
-except Exception as e:
+except Exception:
     log.exception("Error in notifications.py")
     sys.exit(1)
