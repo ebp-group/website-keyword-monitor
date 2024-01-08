@@ -221,7 +221,7 @@ def crawl_urls(
     for link in soup.find_all("a", href=True, limit=500):
         href = link["href"]
         # skip empty or anchor links
-        if not href or href.startswith("#") or href.startswith("mailto:"):
+        if not href or href.startswith("#") or href.startswith("mailto:") or href.startswith("javascript:"):
             continue
         absolute_url = urllib.parse.urljoin(url, href)
 
