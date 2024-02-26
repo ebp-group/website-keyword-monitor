@@ -38,10 +38,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Set up Python 3.8
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: 3.8
       - name: Install dependencies
@@ -71,10 +71,10 @@ jobs:
       matrix: ${{fromJSON(needs.build-matrix.outputs.matrix)}}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Set up Python 3.8
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: 3.8
       - name: Install dependencies
@@ -113,7 +113,7 @@ jobs:
           actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
             
       - name: Upload hash as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: ${{ always() }}
         with:
           name: output
@@ -129,10 +129,10 @@ jobs:
     environment: ${{ inputs.environment }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python 3.8
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: 3.8
       - name: Install dependencies
@@ -146,7 +146,7 @@ jobs:
         run: ./workflow/populate_database.sh $CSV_PATH
 
       - name: Download output
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: output
           path: output
