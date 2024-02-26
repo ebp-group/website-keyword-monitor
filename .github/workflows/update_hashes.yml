@@ -42,8 +42,9 @@ jobs:
       - name: Download output
         uses: actions/download-artifact@v4
         with:
-          name: output
+          pattern: output-*
           path: output
+          merge-multiple: true
       
       - name: Copy hash files
         run: cp output/new_hashes/*.txt hashes/
