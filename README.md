@@ -67,6 +67,26 @@ Die Actions brauchen **Schreibberechtigungen** um Commits erstellen zu können:
 
 ![Schreibberechtigungen für Actions](https://github.com/metaodi/website-keyword-monitor/assets/538415/bc0ff7d4-d5b1-4bbd-a97b-ea3145216d9b)
 
+### Neuen Job aufsetzen
+
+Alle Webseiten-Checker Jobs sind im [Workflow `all.yml`](https://github.com/ebp-group/website-keyword-monitor/blob/main/.github/workflows/all.yml) erfasst, z.B. so:
+
+```yml
+jobs:
+  check_aubonne_websites:
+    uses: ebp-group/website-keyword-monitor/.github/workflows/check_websites.yml@main
+    with:
+      title: Aubonne
+      environment: production
+      csv-path: csv/aubonne.csv
+      keywords-path: keywords/aubonne.txt
+      send-notifications: ${{ !contains(inputs.notifications, 'false') }}
+      commit-error-count: ${{ !contains(inputs.commit, 'false') }} 
+    secrets: inherit
+```
+
+Als Parameter sind die oben definierten [Webseiten CSV-Dateien](#webseiten) und [Keywords](#schlüsselwörter) nötig.
+
 ## Entwicklung
 
 Falls `make` nicht vorhanden ist, kann alternativ auch `pymake`` verwendet werden (`pip install py-make`).
