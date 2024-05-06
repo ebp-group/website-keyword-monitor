@@ -160,7 +160,7 @@ jobs:
 
   update_hashes:
     needs: notify
-    if: ${{ needs.notify.result == 'success' }}
+    if: ${{ always() && needs.notify.result == 'success' }}
     uses: ebp-group/website-keyword-monitor/.github/workflows/update_hashes.yml@main
     with:
       environment: production
