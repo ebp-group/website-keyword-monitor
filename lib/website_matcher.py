@@ -272,17 +272,28 @@ try:
 
     all_urls = []
 
-    with jsonlines.open(output, mode="w") as writer:
-        for result in crawl_urls(
-            url, label, group, timeout, 0, dl_type, keywords, hashes, verify
-        ):
-            texts = []
-            for match in result["matches"]:
-                hashes.extend(match["hashes"])
+    try:
+        written_to_file = False
+        with jsonlines.open(output, mode="w") as writer:
+            for result in crawl_urls(
+                url, label, group, timeout, 0, dl_type, keywords, hashes, verify
+            ):
+                texts = []
+                for match in result["matches"]:
+                    hashes.extend(match["hashes"])
 
-            log.debug("Match result:")
-            log.debug(pformat(result))
-            writer.write(result)
+                log.debug("Match result:")
+                log.debug(pformat(result))
+                writer.write(result)
+                written_to_file = True
+    except ValueError:
+        # make sure to remove the created file if there was an error and no write occured
+        # because the existence of this file indicates a successful check of the website
+        if not written_to_file:
+            log.error("Error occured when crawling the website, deleting output file")
+            os.remove(output)
+        raise
+
 
     log.info("Write new hash file...")
     hashes = list(set(hashes))
