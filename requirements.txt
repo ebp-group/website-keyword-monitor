@@ -11,3 +11,4 @@ pymsteams
 ghapi
 jsonlines
 rich
+certifi
