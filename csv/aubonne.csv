@@ -3,7 +3,7 @@ label,active,slug,error_count,url,timeout,type
 "Association régionale ARCAM, Mylittoralparc",no,arcam_mylittoralparc,1,https://www.mylittoralparc.ch/,1,static
 "Association régionale ARCAM, Publications",yes,arcam_publications,0,https://arcam-vd.ch/thematique/organisation/,1,static
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/toutes-les-autorites/departements/departement-des-institutions-du-territoire-et-du-sport-dits/direction-generale-du-territoire-et-du-logement-dgtl/actualites,1,static
-"Municipality of Allaman, Actualités",yes,allaman_actualites,1,https://www.allaman.ch/aktuellesinformationen,5,dynamic
+"Municipality of Allaman, Actualités",yes,allaman_actualites,0,https://www.allaman.ch/aktuellesinformationen,5,dynamic
 "Municipality of Allaman, Avis d'enquête",yes,allaman_avisdenquetes,0,https://www.allaman.ch/avisdenquetes,1,static
 "Municipality of Allaman, INFORMATIONS UTILES",yes,allaman_information_utiles,0,https://www.allaman.ch/informationsdiverses,1,static
 "Municipality of Aubonne, News",yes,aubonne_news,0,https://www.aubonne.ch/accueil,1,static
