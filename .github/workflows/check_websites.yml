@@ -82,10 +82,11 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+          sudo apt update || true # do not fail if update does not work
           sudo apt-get install sqlite3
           sudo apt-get install poppler-utils
           if [ "${{ matrix.type }}" = "dynamic" ] ; then
-                sudo apt-get update
                 sudo apt-get install chromium-browser
           fi
       
