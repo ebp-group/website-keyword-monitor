@@ -1,6 +1,6 @@
 label,active,slug,error_count,url,timeout,type
 "Amtsblatt, Publications",yes,pratteln_publications,0,https://www.amtsblatt.bl.ch/#!/search/publications?keyword=pratteln,10,dynamic
-"Canton Basel-Country, Baugesuche",yes,baugesuche_bl,0,https://bgauflage.bl.ch/index.html,1,static
+"Canton Basel-Country, Baugesuche",yes,baugesuche_bl,1,https://bgauflage.bl.ch/index.html,1,static
 "Canton Basel-Country, News concerning planning and environment",no,news_listing_bl,7,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/ftw-news-newslistingblock/news_listing,10,dynamic
 "Canton Basel-Country, News concerning spatial development",no,raumplanung_bl,7,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/raumplanung,10,dynamic
 "Canton Basel-Country, Planauflagen",yes,planauflagen_bl,0,https://www.amtsblatt.bl.ch/#!/search/publications?keyword=pratteln,10,dynamic
