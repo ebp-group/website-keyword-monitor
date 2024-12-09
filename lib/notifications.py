@@ -144,11 +144,12 @@ try:  # noqa
             msg["card"].send()
             log.info(f'Send notification for "{group}"')
             time.sleep(5)
-        except pymsteams.TeamsWebhookException:
+        except (pymsteams.TeamsWebhookException, requests.exceptions.RequestException):
             # catch this exception here, so that all valid messages will be sent
             # re-raise later
             log.exception(f"Error when sending group {group}")
             failed = True
+            time.sleep(5)
             continue
 
     if failed:
