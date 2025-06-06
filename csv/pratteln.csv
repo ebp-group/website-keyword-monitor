@@ -7,6 +7,6 @@ label,active,slug,error_count,url,timeout,type
 "Canton Basel-Country, Vernehmlassungen",no,vernehmlassungen_bl,7,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,10,dynamic
 "Entwicklungsstrategie 2020, Aktuelles und News",yes,regbas_news,0,https://www.regbas.ch/de/aktuell/news/,1,static
 "Entwicklungsstrategie 2020, News",yes,regbas_raum,0,https://www.regbas.ch/de/unsere-themen/raum/,1,static
-"Municipality of Pratteln, Aktuelle Planungen",yes,pratteln_atuelleplanungen,42,https://www.pratteln.ch/aktuelleplanungen,1,static
+"Municipality of Pratteln, Aktuelle Planungen",yes,pratteln_atuelleplanungen,43,https://www.pratteln.ch/aktuelleplanungen,1,static
 "Municipality of Pratteln, News",yes,pratteln_aktuellesinformationen,0,https://www.pratteln.ch/aktuellesinformationen,3,dynamic
 "Municiplaity of Pratteln, Auflagen / Mitwirkung",yes,mach_mit_pratteln,0,https://mach-mit.pratteln.ch/,5,dynamic
