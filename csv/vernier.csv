@@ -4,5 +4,5 @@ label,active,slug,error_count,url,timeout,type
 "Canton of Geneva, Spatial departement",yes,departement_du_territoire,0,https://www.ge.ch/organisation/departement-du-territoire-dt,1,static
 "Municipality of Vernier, News",yes,vernier_actualites,0,https://www.vernier.ch/actualites,1,static
 "Municipality of Vernier, Plandirecteur",yes,vernier_plandirecteur,0,https://www.vernier.ch/fr/territoire/plandirecteur/,1,static
-"Municipality of Vernier, Plandirecteur Publication",yes,vernier_plandirecteur_pub,1,https://www.vernier.ch/administration-et-autorites/publications/plan-directeur-communal,1,static
+"Municipality of Vernier, Plandirecteur Publication",yes,vernier_plandirecteur_pub,0,https://www.vernier.ch/administration-et-autorites/publications/plan-directeur-communal,1,static
 "Official gazette Canton of Geneva, Publications",yes,ge_publication,0,https://www.ge.ch/publication,1,static
