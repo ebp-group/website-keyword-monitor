@@ -1,6 +1,6 @@
 label,active,slug,error_count,url,timeout,type
 "Canton Lucerne, Bekanntmachungen",yes,luzern_bekanntmachungen,0,https://www.lu.ch/verwaltung/BUWD/buwd_bekanntmachungen_planauflagen,10,dynamic
-"Municipality of Rothenburg, Aktuelle Projekte",yes,rothenburg_gebietsentwicklung,10,https://www.rothenburg.ch/projektethemen,1,static
+"Municipality of Rothenburg, Aktuelle Projekte",yes,rothenburg_gebietsentwicklung,11,https://www.rothenburg.ch/projektethemen,1,static
 "Municipality of Rothenburg, Baugesuche",yes,rothenburg_baugesuche,0,https://planauflage.rothenburg.ch/directories/baugesuche,10,dynamic
 "Municipality of Rothenburg, Info Rothenburg",yes,rothenburg_info,0,https://www.rothenburg.ch/publikationen,10,dynamic
 "Municipality of Rothenburg, Local planning revision",yes,rothenburg_ortsplanung,0,https://zukunft-rothenburg.ch/de/gesamtrevision-ortsplanung/participant/survey-document-groups-informational/2360,5,dynamic
