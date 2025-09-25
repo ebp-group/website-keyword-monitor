@@ -144,7 +144,7 @@ def match_html(soup, keywords, old_hashes):
 
 def get_content(url, timeout, dl_type, verify):
     log.info(f"Get content from URL {url}")
-    delay = random.randint(2,10)
+    delay = random.randint(1,5)
     log.info(f"Wait for {delay} second delay")
     time.sleep(delay)
     try:
