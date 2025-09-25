@@ -34,6 +34,8 @@ from bs4 import BeautifulSoup
 from docopt import docopt
 import jsonlines
 import urllib3
+import random
+import time
 from requests.exceptions import RequestException
 from selenium.common.exceptions import WebDriverException
 import download as dl
@@ -142,6 +144,9 @@ def match_html(soup, keywords, old_hashes):
 
 def get_content(url, timeout, dl_type, verify):
     log.info(f"Get content from URL {url}")
+    delay = random.randint(2,10)
+    log.info(f"Wait for {delay} second delay")
+    time.sleep(delay)
     try:
         content_type = dl.get_content_type(url, verify=verify)
         if "application/pdf" in content_type:
