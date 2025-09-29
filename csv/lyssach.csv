@@ -4,7 +4,7 @@ label,active,slug,error_count,url,timeout,type
 "Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,10,dynamic
 "Municipality of Kirchberg, News",yes,kilchberg_PlanenBauen,0,https://www.kirchberg-be.ch/PlanenBauen/51941,5,dynamic
 "Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,0,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,10,dynamic
-"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,0,https://www.lyssach.ch/publikationen,10,dynamic
+"Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,1,https://www.lyssach.ch/publikationen,10,dynamic
 "Municipality of Rüdtlingen Alchenflüh, News",yes,ruedtlingen_alchenflueh_aktuelles,0,https://www.rual.ch/de/aktuelles/index.php,5,dynamic
 "Official gazette Canton Bern",yes,canton_bern_publikationen,0,https://amtsblatt.be.ch/#!/search/publications?keyword=lyssach,10,dynamic
 "Website Regionalkonferenz Emmental",yes,region_emmental,0,https://www.region-emmental.ch/,1,static
