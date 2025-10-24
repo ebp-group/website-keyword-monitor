@@ -3,7 +3,7 @@ label,active,slug,error_count,url,timeout,type
 "Canton Basel-Country, Baugesuche",yes,baugesuche_bl,0,https://bgauflage.bl.ch/index.html,1,static
 "Canton Basel-Country, News concerning planning and environment",no,news_listing_bl,7,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/ftw-news-newslistingblock/news_listing,10,dynamic
 "Canton Basel-Country, News concerning spatial development",no,raumplanung_bl,7,https://www.baselland.ch/politik-und-behorden/direktionen/bau-und-umweltschutzdirektion/raumplanung,10,dynamic
-"Canton Basel-Country, Planauflagen",yes,planauflagen_bl,1,https://www.amtsblatt.bl.ch/#!/search/publications?keyword=pratteln,10,dynamic
+"Canton Basel-Country, Planauflagen",yes,planauflagen_bl,0,https://www.amtsblatt.bl.ch/#!/search/publications?keyword=pratteln,10,dynamic
 "Canton Basel-Country, Vernehmlassungen",no,vernehmlassungen_bl,7,https://www.baselland.ch/themen/p/politische-rechte/vernehmlassungen,10,dynamic
 "Entwicklungsstrategie 2020, Aktuelles und News",yes,regbas_news,0,https://www.regbas.ch/de/aktuell/news/,1,static
 "Entwicklungsstrategie 2020, News",yes,regbas_raum,0,https://www.regbas.ch/de/unsere-themen/raum/,1,static
