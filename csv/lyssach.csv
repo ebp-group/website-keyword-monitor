@@ -1,7 +1,7 @@
 label,active,slug,error_count,url,timeout,type
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_start,0,https://www.bvd.be.ch/de/start.html,1,static
 "Canton Bern, Departement for planning and mobility",yes,canton_bern_medienmitteilungen,0,https://www.bvd.be.ch/de/start/ueber-uns/medienmitteilungen.html,10,dynamic
-"Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,0,https://www.kirchberg-be.ch/baupublikationen,10,dynamic
+"Municipality of Kirchberg, Building publications",yes,kilchberg_baupublikationen,1,https://www.kirchberg-be.ch/baupublikationen,10,dynamic
 "Municipality of Kirchberg, News",yes,kilchberg_PlanenBauen,0,https://www.kirchberg-be.ch/PlanenBauen/51941,5,dynamic
 "Municipality of Lyssach, Aktuelles",yes,lyssach_aktuellesinformationen,0,http://www.lyssach.ch/de/aktuelles/aktuellesinformationen/,10,dynamic
 "Municipality of Lyssach, official gazette and news",yes,lyssach_publikationen,0,https://www.lyssach.ch/publikationen,10,dynamic
