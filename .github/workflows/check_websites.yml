@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       
       - name: Set up Python 3.10
         uses: actions/setup-python@v6
@@ -115,7 +115,7 @@ jobs:
           actions: '[{ "@type": "OpenUri", "name": "Logs anschauen", "targets": [{ "os": "default", "uri": "https://github.com/ebp-group/website-keyword-monitor/actions/runs/${{ github.run_id }}?check_suite_focus=true" }] }]'
             
       - name: Upload hash as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: ${{ always() }}
         with:
           name: output-${{ matrix.slug }}
@@ -148,7 +148,7 @@ jobs:
         run: ./workflow/populate_database.sh $CSV_PATH
 
       - name: Download output
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           pattern: output-*
           path: output
