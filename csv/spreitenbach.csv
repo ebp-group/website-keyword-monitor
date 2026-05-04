@@ -1,7 +1,7 @@
 label,active,slug,error_count,url,timeout,type
-"Amtliche Nachrichten Spreitenbach",yes,spreitenbach_amtlich,1,https://www.amtliche-nachrichten.ch/kanton-aargau?sort=PUBLISHED_DESC&limit=10&offset=0&cities=City%3A4040,10,dynamic
+"Amtliche Nachrichten Spreitenbach",yes,spreitenbach_amtlich,0,https://www.amtliche-nachrichten.ch/kanton-aargau?sort=PUBLISHED_DESC&limit=10&offset=0&cities=City%3A4040,10,dynamic
 "Canton Argovia, Amtsblatt",yes,argovia_publikationen,0,https://amtsblatt.ag.ch/publikationen/,1,static
-"Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,1,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,5,dynamic
+"Canton Argovia, Auflage traffic projects",yes,argovia_auflage_strassenprojekte,0,https://www.ag.ch/de/verwaltung/bvu/mobilitaet-verkehr/strasseninfrastruktur/auflage-strassenprojekte,5,dynamic
 "Canton Argovia, Spatial development",yes,aargau_raumentwicklung,0,https://www.ag.ch/de/verwaltung/bvu/raumentwicklung,1,static
 "Kanton Aargau, Amtliche Publikationen",yes,kanton_aargau,0,https://www.amtliche-nachrichten.ch/kanton-aargau,1,static
 "Municipality of Spreitenbach, Amtsblatt",yes,spreitenbach_amtliche_publikationen,0,https://www.spreitenbach.ch/aktuelles/amtliche-publikationen/,1,static
