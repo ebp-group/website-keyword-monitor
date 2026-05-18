@@ -1,6 +1,6 @@
 label,active,slug,error_count,url,timeout,type
 "Municipality of Riddes, News",yes,riddes_news,0,https://www.riddes.ch/commune/news-161.html,1,static
-"Municipality of Saxon, News",yes,saxon_actualites,1,https://www.saxon.ch/actualites/,1,static
+"Municipality of Saxon, News",yes,saxon_actualites,0,https://www.saxon.ch/actualites/,1,static
 "Official gazette municipality of Riddes",yes,riddes_pilier_public,0,https://www.riddes.ch/commune/pilier-public-130.html,1,static
 "Official gazette municipality of Saxon",yes,saxon_publications,0,https://www.saxon.ch/publications/,1,static
 "Website Agglomération Coude du Rhône",yes,agglo_coude_rhone,0,https://agglo-coude-rhone.ch/,1,static
