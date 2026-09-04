@@ -5,7 +5,7 @@ label,active,slug,error_count,url,timeout,type
 "Canton Vaud, Departement of urban planning, News ",yes,vd_urban_planning,0,https://www.vd.ch/dfts/dgtl/actualites,1,static
 "Municipality of Allaman, Actualités",yes,allaman_actualites,0,https://www.allaman.ch/aktuellesinformationen,5,dynamic
 "Municipality of Allaman, Avis d'enquête",yes,allaman_avisdenquetes,0,https://www.allaman.ch/avisdenquetes,1,static
-"Municipality of Allaman, INFORMATIONS UTILES",yes,allaman_information_utiles,0,https://www.allaman.ch/informationsdiverses,1,static
+"Municipality of Allaman, INFORMATIONS UTILES",yes,allaman_information_utiles,1,https://www.allaman.ch/informationsdiverses,1,static
 "Municipality of Aubonne, News",yes,aubonne_news,0,https://www.aubonne.ch/accueil,1,static
 "Municipality of Aubonne, Pilier public",yes,aubonne_pilier_public,0,https://www.aubonne.ch/administration/pilier-public,1,static
 "Official gazette Canton of Vaud (building requests)",yes,faovd_building_requests,0,https://www.faovd.ch/permis-de-construire/district/morges/,1,static
