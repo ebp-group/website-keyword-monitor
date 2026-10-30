@@ -1,5 +1,5 @@
 label,active,slug,error_count,url,timeout,type
 "City of St.Gallen, Press releases",yes,stgallen_medienmitteilungen,0,https://www.stadt.sg.ch/home/verwaltung-politik/newsroom-medienmitteilungen/medienmitteilungen.html,1,static
 "Municipality of St.Gallen, Amtliche Publikationen",yes,stgallen_amtliche_publikationen,0,https://publikationen.sg.ch/amtliche-publikationen/?filter%5Bauthority%5D%5B0%5D=10%2Ci81%2Ci84&filter%5Btype%5D%5B0%5D=tx_ekab_publication_domain_model_publication&timerange%5Btype%5D=4,1,static
-"Municipality of St.Gallen, Stadtplanung",yes,stgallen_stadtplanung,0,https://www.stadt.sg.ch/home/raum-umwelt/stadtplanung.html,1,static
+"Municipality of St.Gallen, Stadtplanung",yes,stgallen_stadtplanung,1,https://www.stadt.sg.ch/home/raum-umwelt/stadtplanung.html,1,static
 "Municipality of St.Gallen, städtische Projekte",yes,stgallen_staedtische_projekte,0,https://www.stadt.sg.ch/home/raum-umwelt/staedtische-projekte.html,1,static
